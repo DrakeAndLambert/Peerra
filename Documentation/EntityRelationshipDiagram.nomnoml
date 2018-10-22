@@ -1,0 +1,17 @@
+[Tag] - [Related To]
+[Related To] -> [Tag]
+
+[User] +- [Has Experience With]
+[Has Experience With] -> [Tag]
+[User] +- [Is Mentor of]
+[Is Mentor of] -> [Connection]
+[User] +- [Is Mentoree of]
+[Is Mentoree of] -> [Connection]
+
+[Connection] +- [Has Common]
+[Has Common] -> [Tag]
+
+[User] +- [Is Requesting]
+[Is Requesting] -> [Connection Request]
+[Connection Request] +- [Is Looking For]
+[Is Looking For] -> [Tag]

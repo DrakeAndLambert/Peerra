@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Peerra
+namespace DrakeLambert.Peerra
 {
     public class Program
     {

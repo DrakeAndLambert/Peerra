@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Ardalis.GuardClauses" Version="1.2.3" />
   </ItemGroup>
 
 </Project>

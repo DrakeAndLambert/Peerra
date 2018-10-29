@@ -1,7 +1,4 @@
-﻿using System;
-using Ardalis.GuardClauses;
-
-namespace DrakeLambert.Peerra.Core.Entities
+﻿namespace DrakeLambert.Peerra.Core.Entities
 {
     /// <summary>
     /// A user of the Peerra system, referred to as a Peer.

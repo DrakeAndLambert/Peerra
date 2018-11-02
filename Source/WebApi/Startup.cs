@@ -1,6 +1,9 @@
-﻿using DrakeLambert.Peerra.WebApi.Infrastructure.Identity;
+﻿using DrakeLambert.Peerra.WebApi.Infrastructure;
+using DrakeLambert.Peerra.WebApi.Infrastructure.Data;
+using DrakeLambert.Peerra.WebApi.Infrastructure.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,12 +30,20 @@ namespace DrakeLambert.Peerra.WebApi
                 options.Password.RequireLowercase = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
-            });
+            }).AddEntityFrameworkStores<AppIdentityDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new Info { Title = nameof(Peerra.WebApi), Version = "v1" });
             });
+
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseInMemoryDatabase(nameof(AppDbContext));
+            });
+
+            services.AddTransient<UserRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

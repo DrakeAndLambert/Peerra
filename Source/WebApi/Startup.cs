@@ -1,4 +1,4 @@
-﻿using DrakeLambert.Peerra.WebApi.Infrastructure;
+﻿using DrakeLambert.Peerra.WebApi.Core.Data;
 using DrakeLambert.Peerra.WebApi.Infrastructure.Data;
 using DrakeLambert.Peerra.WebApi.Infrastructure.Identity;
 using Microsoft.AspNetCore.Builder;
@@ -43,7 +43,7 @@ namespace DrakeLambert.Peerra.WebApi
                 options.UseInMemoryDatabase(nameof(AppDbContext));
             });
 
-            services.AddTransient<UserRepository>();
+            services.AddTransient(typeof(IAsyncRepository<,>), typeof(EFRepository<,>));
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

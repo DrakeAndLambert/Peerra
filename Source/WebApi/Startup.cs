@@ -1,5 +1,4 @@
-﻿using DrakeLambert.Peerra.WebApi.Identity.Data;
-using DrakeLambert.Peerra.WebApi.Identity.Entities;
+﻿using DrakeLambert.Peerra.WebApi.Infrastructure.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

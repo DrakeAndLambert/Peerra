@@ -10,12 +10,22 @@ namespace DrakeLambert.Peerra.WebApi.Controllers
     [Route("api/account")]
     public class AccountController : ControllerBase
     {
+        /// <summary>
+        /// Registers a new user.
+        /// </summary>
+        /// <param name="registerUserRequest">The new user's username and password.</param>
+        /// <param name="userService">The UserService to register the user with.</param>
+        /// <returns>200 if success, 400 otherwise.</returns>
+        /// <response code=200>The user was created successfully.</response>
+        /// <response code=400>The user could not be created. Returns an error message.</response>
         [HttpPost]
-        public async Task<IActionResult> RegisterUserAsync([FromBody] RegisterUserRequest model, [FromServices] UserService userService)
+        [ProducesResponseType(200)]
+        [ProducesResponseType(typeof(string), 400)]
+        public async Task<IActionResult> RegisterUserAsync([FromBody] RegisterUserRequest registerUserRequest, [FromServices] UserService userService)
         {
             try
             {
-                await userService.CreateAsync(model.Username, model.Password);
+                await userService.CreateAsync(registerUserRequest.Username, registerUserRequest.Password);
 
                 return Ok();
             }

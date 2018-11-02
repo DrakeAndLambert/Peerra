@@ -1,4 +1,7 @@
-﻿using DrakeLambert.Peerra.WebApi.Core.Data;
+﻿using System;
+using System.IO;
+using System.Reflection;
+using DrakeLambert.Peerra.WebApi.Core.Data;
 using DrakeLambert.Peerra.WebApi.Infrastructure.Data;
 using DrakeLambert.Peerra.WebApi.Infrastructure.Identity;
 using DrakeLambert.Peerra.WebApi.Infrastructure.Services;
@@ -37,6 +40,10 @@ namespace DrakeLambert.Peerra.WebApi
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new Info { Title = nameof(Peerra.WebApi), Version = "v1" });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                options.IncludeXmlComments(xmlPath);
             });
 
             services.AddDbContext<AppDbContext>(options =>

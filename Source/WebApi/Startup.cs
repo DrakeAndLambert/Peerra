@@ -21,12 +21,12 @@ namespace DrakeLambert.Peerra.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<AppIdentityDbContext>(options =>
+            services.AddDbContext<IdentityDbContext>(options =>
             {
-                options.UseInMemoryDatabase(nameof(AppIdentityDbContext));
+                options.UseInMemoryDatabase(nameof(IdentityDbContext));
             });
 
-            services.AddIdentityCore<AppUser>(options =>
+            services.AddIdentityCore<Infrastructure.Identity.IdentityUser>(options =>
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequiredLength = 6;
@@ -34,7 +34,7 @@ namespace DrakeLambert.Peerra.WebApi
                 options.Password.RequireLowercase = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
-            }).AddEntityFrameworkStores<AppIdentityDbContext>()
+            }).AddEntityFrameworkStores<IdentityDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddSwaggerGen(options =>

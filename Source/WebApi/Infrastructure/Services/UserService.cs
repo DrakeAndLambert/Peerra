@@ -11,11 +11,11 @@ namespace DrakeLambert.Peerra.WebApi.Infrastructure.Services
 {
     public class UserService
     {
-        private readonly UserManager<AppUser> _userManager;
+        private readonly UserManager<Identity.IdentityUser> _userManager;
 
         private readonly IAsyncRepository<Peer, Guid> _peerRepository;
 
-        public UserService(UserManager<AppUser> userManager, IAsyncRepository<Peer, Guid> peerRepository)
+        public UserService(UserManager<Identity.IdentityUser> userManager, IAsyncRepository<Peer, Guid> peerRepository)
         {
             _userManager = userManager;
             _peerRepository = peerRepository;
@@ -26,7 +26,7 @@ namespace DrakeLambert.Peerra.WebApi.Infrastructure.Services
             Guard.Against.Null(username, nameof(username));
             Guard.Against.Null(password, nameof(password));
 
-            var newAppUser = new AppUser
+            var newAppUser = new Identity.IdentityUser
             {
                 UserName = username
             };
@@ -35,7 +35,7 @@ namespace DrakeLambert.Peerra.WebApi.Infrastructure.Services
 
             if (!createUserResult.Succeeded)
             {
-                throw new CreateUserException(createUserResult);
+                throw new RegisterUserException(createUserResult);
             }
 
             var newPeer = new Peer(newAppUser.Id);

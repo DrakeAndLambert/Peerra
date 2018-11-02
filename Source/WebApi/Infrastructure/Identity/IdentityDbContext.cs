@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DrakeLambert.Peerra.WebApi.Infrastructure.Identity
 {
-    public class AppIdentityDbContext : IdentityDbContext<AppUser, AppRole, Guid>
+    public class IdentityDbContext : IdentityDbContext<IdentityUser, IdentityRole, Guid>
     {
-        public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options) : base(options)
+        public IdentityDbContext(DbContextOptions<IdentityDbContext> options) : base(options)
         { }
     }
 }

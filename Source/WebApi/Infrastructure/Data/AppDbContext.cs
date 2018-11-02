@@ -1,9 +1,9 @@
 using DrakeLambert.Peerra.WebApi.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DrakeLambert.Peerra.WebApi.Data
+namespace DrakeLambert.Peerra.WebApi.Infrastructure.Data
 {
-    public class Name : DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<Connection> Connections { get; set; }
 
@@ -13,7 +13,7 @@ namespace DrakeLambert.Peerra.WebApi.Data
 
         public DbSet<Skill> Skills { get; set; }
 
-        public Name(DbContextOptions<Name> options) : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         { }
     }
 }

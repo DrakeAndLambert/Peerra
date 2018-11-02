@@ -8,6 +8,6 @@
         /// <summary>
         /// The unique identifier of the peer.
         /// </summary>
-        public string Id { get; }
+        public string Id { get; set; }
     }
 }

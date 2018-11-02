@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace DrakeLambert.Peerra.WebApi
 {
@@ -28,7 +29,10 @@ namespace DrakeLambert.Peerra.WebApi
                 options.Password.RequireUppercase = false;
             });
 
-            
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new Info { Title = nameof(Peerra.WebApi), Version = "v1" });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -37,11 +41,16 @@ namespace DrakeLambert.Peerra.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
+
+            app.UseHsts();
+            app.UseHttpsRedirection();
+
+            app.UseSwaggerUI(options =>
             {
-                app.UseHsts();
-                app.UseHttpsRedirection();
-            }
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", nameof(Peerra.WebApi) + " v1");
+            });
+
+            app.UseSwagger();
 
             app.UseMvc();
         }

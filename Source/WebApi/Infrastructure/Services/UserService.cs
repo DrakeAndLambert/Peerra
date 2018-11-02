@@ -21,7 +21,7 @@ namespace DrakeLambert.Peerra.WebApi.Infrastructure.Services
             _peerRepository = peerRepository;
         }
 
-        public async Task CreateAsync(string username, string password)
+        public async Task RegisterAsync(string username, string password)
         {
             Guard.Against.Null(username, nameof(username));
             Guard.Against.Null(password, nameof(password));

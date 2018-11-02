@@ -23,7 +23,7 @@ namespace DrakeLambert.Peerra.WebApi.Controllers
         {
             try
             {
-                await userService.CreateAsync(registerUserRequest.Username, registerUserRequest.Password);
+                await userService.RegisterAsync(registerUserRequest.Username, registerUserRequest.Password);
 
                 return Ok();
             }

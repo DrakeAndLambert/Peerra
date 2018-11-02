@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace DrakeLambert.Peerra.WebApi.Identity.Data
+namespace DrakeLambert.Peerra.WebApi.Identity
 {
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {

@@ -1,6 +1,7 @@
 ﻿using DrakeLambert.Peerra.WebApi.Core.Data;
 using DrakeLambert.Peerra.WebApi.Infrastructure.Data;
 using DrakeLambert.Peerra.WebApi.Infrastructure.Identity;
+using DrakeLambert.Peerra.WebApi.Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -44,6 +45,8 @@ namespace DrakeLambert.Peerra.WebApi
             });
 
             services.AddTransient(typeof(IAsyncRepository<,>), typeof(EFRepository<,>));
+
+            services.AddTransient<UserService>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

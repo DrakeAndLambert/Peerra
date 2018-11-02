@@ -27,7 +27,7 @@ namespace DrakeLambert.Peerra.WebApi.Controllers
 
                 return Ok();
             }
-            catch (CreateUserException exception)
+            catch (RegisterUserException exception)
             {
                 return BadRequest(exception.Message);
             }

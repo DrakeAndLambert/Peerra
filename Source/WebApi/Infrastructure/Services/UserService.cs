@@ -48,7 +48,7 @@ namespace DrakeLambert.Peerra.WebApi.Infrastructure.Services
             {
                 await _userManager.DeleteAsync(newAppUser);
 
-                throw new CreateUserException($"The username '{username}' is already in use.", exception);
+                throw new RegisterUserException($"The username '{username}' is already in use.", exception);
             }
         }
     }

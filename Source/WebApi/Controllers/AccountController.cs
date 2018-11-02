@@ -6,9 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DrakeLambert.Peerra.WebApi.Controllers
 {
-    [ApiController]
-    [Route("api/account")]
-    public class AccountController : ControllerBase
+    public class AccountController : ApiControllerBase
     {
         /// <summary>
         /// Registers a new user.
@@ -16,8 +14,8 @@ namespace DrakeLambert.Peerra.WebApi.Controllers
         /// <param name="registerUserRequest">The new user's username and password.</param>
         /// <param name="userService">The UserService to register the user with.</param>
         /// <returns>200 if success, 400 otherwise.</returns>
-        /// <response code=200>The user was created successfully.</response>
-        /// <response code=400>The user could not be created. Returns an error message.</response>
+        /// <response code="200">The user was created successfully.</response>
+        /// <response code="400">The user could not be created. Returns an error message.</response>
         [HttpPost]
         [ProducesResponseType(200)]
         [ProducesResponseType(typeof(string), 400)]

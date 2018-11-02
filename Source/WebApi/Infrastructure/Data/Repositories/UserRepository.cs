@@ -52,7 +52,7 @@ namespace DrakeLambert.Peerra.WebApi.Infrastructure
                 var appUser = await _userManager.FindByNameAsync(username);
                 await _userManager.DeleteAsync(appUser);
 
-                throw new CreateUserException($"The username '{username}' is already in user.", exception);
+                throw new CreateUserException($"The username '{username}' is already in use.", exception);
             }
         }
     }

@@ -1,5 +1,4 @@
-﻿using DrakeLambert.Peerra.WebApi.Identity.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace DrakeLambert.Peerra.WebApi.Identity

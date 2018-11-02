@@ -1,22 +1,24 @@
+using System;
 using System.Threading.Tasks;
 using Ardalis.GuardClauses;
+using DrakeLambert.Peerra.WebApi.Core.Data;
 using DrakeLambert.Peerra.WebApi.Core.Entities;
-using DrakeLambert.Peerra.WebApi.Infrastructure.Data;
 using DrakeLambert.Peerra.WebApi.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace DrakeLambert.Peerra.WebApi.Infrastructure
+namespace DrakeLambert.Peerra.WebApi.Infrastructure.Services
 {
-    public class UserRepository
+    public class UserService
     {
         private readonly UserManager<AppUser> _userManager;
-        private readonly AppDbContext _appDbContext;
 
-        public UserRepository(UserManager<AppUser> userManager, AppDbContext appDbContext)
+        private readonly IAsyncRepository<Peer, Guid> _peerRepository;
+
+        public UserService(UserManager<AppUser> userManager, IAsyncRepository<Peer, Guid> peerRepository)
         {
             _userManager = userManager;
-            _appDbContext = appDbContext;
+            _peerRepository = peerRepository;
         }
 
         public async Task CreateAsync(string username, string password)
@@ -36,21 +38,15 @@ namespace DrakeLambert.Peerra.WebApi.Infrastructure
                 throw new CreateUserException(createUserResult);
             }
 
-            var newPeer = new Peer
-            {
-                Id = username
-            };
-
-            _appDbContext.Peers.Add(newPeer);
+            var newPeer = new Peer(newAppUser.Id);
 
             try
             {
-                await _appDbContext.SaveChangesAsync();
+                await _peerRepository.AddAsync(newPeer);
             }
             catch (DbUpdateConcurrencyException exception)
             {
-                var appUser = await _userManager.FindByNameAsync(username);
-                await _userManager.DeleteAsync(appUser);
+                await _userManager.DeleteAsync(newAppUser);
 
                 throw new CreateUserException($"The username '{username}' is already in use.", exception);
             }

@@ -8,9 +8,9 @@ namespace DrakeLambert.Peerra.WebApi.Infrastructure.UseCases
 {
     public class DeleteUser : IDeleteUser
     {
-        private readonly UserManager<Peer> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public DeleteUser(UserManager<Peer> userManager)
+        public DeleteUser(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
         }

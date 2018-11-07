@@ -10,9 +10,9 @@ namespace DrakeLambert.Peerra.WebApi.Infrastructure.UseCases
 {
     public class CreateUser : ICreateUser
     {
-        private readonly UserManager<Peer> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public CreateUser(UserManager<Peer> userManager)
+        public CreateUser(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
         }
@@ -22,7 +22,7 @@ namespace DrakeLambert.Peerra.WebApi.Infrastructure.UseCases
             Guard.Against.Null(username, nameof(username));
             Guard.Against.Null(password, nameof(password));
 
-            var newUser = new Peer
+            var newUser = new ApplicationUser
             {
                 UserName = username
             };

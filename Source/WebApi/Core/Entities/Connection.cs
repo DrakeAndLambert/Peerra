@@ -19,12 +19,12 @@ namespace DrakeLambert.Peerra.WebApi.Core.Entities
         /// <summary>
         /// The peer mentor of the connection.
         /// </summary>
-        public Peer Mentor { get; private set; }
+        public ApplicationUser Mentor { get; private set; }
 
         /// <summary>
         /// The peer mentoree of the connection.
         /// </summary>
-        public Peer Mentoree { get; private set; }
+        public ApplicationUser Mentoree { get; private set; }
 
         /// <summary>
         /// The intersection of skills requested by the mentoree and advertised by the mentor.
@@ -33,7 +33,7 @@ namespace DrakeLambert.Peerra.WebApi.Core.Entities
 
         private List<Skill> _commonSkills;
 
-        public Connection(Peer mentor, Peer mentoree, IEnumerable<Skill> commonSkills)
+        public Connection(ApplicationUser mentor, ApplicationUser mentoree, IEnumerable<Skill> commonSkills)
         {
             Guard.Against.Null(mentor, nameof(mentor));
             Guard.Against.Null(mentoree, nameof(mentoree));

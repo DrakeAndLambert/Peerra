@@ -19,7 +19,7 @@ namespace DrakeLambert.Peerra.WebApi.Core.Entities
         /// <summary>
         /// The peer mentoree of the connection.
         /// </summary>
-        public Peer Requestor { get; private set; }
+        public ApplicationUser Requestor { get; private set; }
 
         /// <summary>
         /// The skills requested by the mentoree.
@@ -28,7 +28,7 @@ namespace DrakeLambert.Peerra.WebApi.Core.Entities
 
         private List<Skill> _requestedSkills;
 
-        public ConnectionRequest(Guid id, Peer requestor, IEnumerable<Skill> requestedSkills)
+        public ConnectionRequest(Guid id, ApplicationUser requestor, IEnumerable<Skill> requestedSkills)
         {
             Guard.Against.Null(requestor, nameof(requestor));
             Guard.Against.Null(requestedSkills, nameof(requestedSkills));

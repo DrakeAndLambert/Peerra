@@ -2,9 +2,8 @@
 using System.IO;
 using System.Reflection;
 using DrakeLambert.Peerra.WebApi.Core.Data;
+using DrakeLambert.Peerra.WebApi.Core.Entities;
 using DrakeLambert.Peerra.WebApi.Infrastructure.Data;
-using DrakeLambert.Peerra.WebApi.Infrastructure.Identity;
-using DrakeLambert.Peerra.WebApi.Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -21,12 +20,12 @@ namespace DrakeLambert.Peerra.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<IdentityDbContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseInMemoryDatabase(nameof(IdentityDbContext));
+                options.UseInMemoryDatabase(nameof(ApplicationDbContext));
             });
 
-            services.AddIdentityCore<Infrastructure.Identity.IdentityUser>(options =>
+            services.AddIdentityCore<ApplicationUser>(options =>
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequiredLength = 6;
@@ -34,7 +33,7 @@ namespace DrakeLambert.Peerra.WebApi
                 options.Password.RequireLowercase = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
-            }).AddEntityFrameworkStores<IdentityDbContext>()
+            }).AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddSwaggerGen(options =>
@@ -46,14 +45,17 @@ namespace DrakeLambert.Peerra.WebApi
                 options.IncludeXmlComments(xmlPath);
             });
 
-            services.AddDbContext<AppDbContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseInMemoryDatabase(nameof(AppDbContext));
+                options.UseInMemoryDatabase(nameof(ApplicationDbContext));
             });
 
             services.AddTransient(typeof(IAsyncRepository<,>), typeof(EFRepository<,>));
 
-            services.AddTransient<UserService>();
+            services.AddAuthentication().AddJwtBearer(options =>
+            {
+                
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

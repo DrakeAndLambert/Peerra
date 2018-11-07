@@ -8,9 +8,9 @@ namespace DrakeLambert.Peerra.WebApi.Infrastructure.Data
 {
     public class EFRepository<T, TKey> : IAsyncRepository<T, TKey> where T : class, IEntity<TKey>
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public EFRepository(AppDbContext context)
+        public EFRepository(ApplicationDbContext context)
         {
             _context = context;
         }

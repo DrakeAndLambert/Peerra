@@ -5,6 +5,6 @@ namespace DrakeLambert.Peerra.WebApi.Core.UseCases
 {
     public interface IGenerateTokens
     {
-        Task<(AccessToken, RefreshToken)> Handle(string username, string password, string ipAddress);
+        Task<(AccessToken, RefreshToken)> HandleAsync(string username, string password, string ipAddress);
     }
 }

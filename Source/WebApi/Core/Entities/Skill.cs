@@ -1,22 +1,23 @@
-using System;
-using Ardalis.GuardClauses;
-
 namespace DrakeLambert.Peerra.WebApi.Core.Entities
 {
-    /// <summary>
-    /// A skill that users can have. Advertised skills are used to make connections.
-    /// </summary>
-    public class Skill : IEntity<Guid>
+    using Ardalis.GuardClauses;
+
+    public class Skill
     {
-        public Guid Id { get; private set; }
+        private string _name;
 
-        public string Name { get; private set; }
-
-        public Skill(Guid id, string name)
+        public string Name
         {
-            Guard.Against.NullOrWhiteSpace(name, nameof(name));
+            get => _name;
+            set
+            {
+                Guard.Against.Null(value, nameof(Name));
+                _name = value.ToLower();
+            }
+        }
 
-            Id = id;
+        public Skill(string name)
+        {
             Name = name;
         }
     }

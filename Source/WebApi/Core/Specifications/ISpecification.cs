@@ -8,5 +8,7 @@ namespace DrakeLambert.Peerra.WebApi.Core.Specifications
     public interface ISpecification<TEntity> where TEntity : IEntity
     {
         IReadOnlyCollection<Expression<Func<TEntity, bool>>> Criteria { get; }
+
+        Expression<Func<TEntity, bool>> ComposedCriteria { get; }
     }
 }

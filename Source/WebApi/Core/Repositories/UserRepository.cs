@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Ardalis.GuardClauses;
+using DrakeLambert.Peerra.WebApi.Core.Dto;
 using DrakeLambert.Peerra.WebApi.Core.Entities;
 using DrakeLambert.Peerra.WebApi.Core.ExternalServices;
 using DrakeLambert.Peerra.WebApi.Core.Specifications;

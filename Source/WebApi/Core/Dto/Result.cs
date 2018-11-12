@@ -1,4 +1,4 @@
-namespace DrakeLambert.Peerra.WebApi.Core.Repositories
+namespace DrakeLambert.Peerra.WebApi.Core.Dto
 {
     public class Result
     {

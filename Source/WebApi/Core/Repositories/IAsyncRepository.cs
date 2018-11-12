@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using DrakeLambert.Peerra.WebApi.Core.Dto;
 using DrakeLambert.Peerra.WebApi.Core.Entities;
 using DrakeLambert.Peerra.WebApi.Core.Specifications;
 

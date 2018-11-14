@@ -24,7 +24,7 @@ namespace DrakeLambert.Peerra.WebApi.Controllers
                 return BadRequest(tokensResult.Error);
             }
 
-            return Ok(tokensResult.Value);
+            return Ok(new TokensDto(tokensResult.Value.Item1, tokensResult.Value.Item2));
         }
 
         [HttpPost("refresh")]
@@ -37,7 +37,7 @@ namespace DrakeLambert.Peerra.WebApi.Controllers
                 return BadRequest(refreshResult.Error);
             }
 
-            return Ok(refreshResult.Value);
+            return Ok(new TokensDto(refreshResult.Value.Item1, refreshResult.Value.Item2));
         }
     }
 }

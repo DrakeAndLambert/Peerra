@@ -8,9 +8,9 @@ namespace DrakeLambert.Peerra.WebApi.Controllers.Dto
     public class NewUserDto : UserCredentialsDto
     {
         [Required]
-        public string Email { get; internal set; }
+        public string Email { get; set; }
 
         [Required]
-        public string Bio { get; internal set; }
+        public string Bio { get; set; }
     }
 }

@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using DrakeLambert.Peerra.WebApi.Core.Repositories;
+using DrakeLambert.Peerra.WebApi.Infrastructure;
 using DrakeLambert.Peerra.WebApi.Infrastructure.Data;
+using DrakeLambert.Peerra.WebApi.WebCore;
 using DrakeLambert.Peerra.WebApi.WebCore.Authentication;
 using DrakeLambert.Peerra.WebApi.WebCore.Authentication.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -40,7 +43,7 @@ namespace DrakeLambert.Peerra.WebApi
 
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseInMemoryDatabase(nameof(ApplicationDbContext));
+                options.UseInMemoryDatabase("testname");
             });
 
             services.AddIdentityCore<WebUser>(options =>
@@ -94,6 +97,15 @@ namespace DrakeLambert.Peerra.WebApi
                 options.SaveToken = true;
                 options.RequireHttpsMetadata = false;
             });
+
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IWebUserRepository, WebUserRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(EFRepository<>));
+            services.AddTransient(typeof(Core.ExternalServices.ILogger<>), typeof(Logger<>));
+            services.AddScoped<IWebUserTokenService, WebUserTokenService>();
+            services.AddScoped<ITokenFactory, TokenFactory>();
+            services.AddScoped<ITokenValidator, TokenValidator>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

@@ -69,6 +69,11 @@ namespace DrakeLambert.Peerra.WebApi.WebCore.Authentication
 
             var updateResult = await _userRepository.UpdateAsync(user);
 
+            foreach (var token in user.RefreshTokens)
+            {
+                _logger.LogWarning(Newtonsoft.Json.JsonConvert.SerializeObject(token));
+            }
+
             if (updateResult.Failed)
             {
                 return Result<(AccessToken, RefreshToken)>.Fail("Refresh token conflict. Try again.", updateResult);

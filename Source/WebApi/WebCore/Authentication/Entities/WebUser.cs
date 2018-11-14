@@ -5,6 +5,19 @@ namespace DrakeLambert.Peerra.WebApi.WebCore.Authentication.Entities
 {
     public class WebUser : IdentityUser
     {
-        public List<RefreshToken> RefreshTokens { get; set; }
+        private List<RefreshToken> _refreshTokens;
+
+        public List<RefreshToken> RefreshTokens
+        {
+            get
+            {
+                if (_refreshTokens == null)
+                {
+                    _refreshTokens = new List<RefreshToken>();
+                }
+                return _refreshTokens;
+            }
+            set => _refreshTokens = value;
+        }
     }
 }

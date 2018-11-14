@@ -1,46 +1,46 @@
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq.Expressions;
-using Ardalis.GuardClauses;
-using DrakeLambert.Peerra.WebApi.Core.Entities;
+using System.Collections.Generic;
 
 namespace DrakeLambert.Peerra.WebApi.Core.Specifications
 {
-    public abstract class BaseSpecification<TEntity> : ISpecification<TEntity> where TEntity : IEntity
+    public abstract class BaseSpecification<T> : ISpecification<T>
     {
-        private List<Expression<Func<TEntity, bool>>> _criteria = new List<Expression<Func<TEntity, bool>>>();
-
-        public IReadOnlyCollection<Expression<Func<TEntity, bool>>> Criteria => _criteria.AsReadOnly();
-
-        public Expression<Func<TEntity, bool>> ComposedCriteria
+        protected BaseSpecification(Expression<Func<T, bool>> criteria)
         {
-            get
-            {
-                Expression<Func<TEntity, bool>> defaultExpression = entity => true;
-
-                if (_criteria.Count == 0)
-                {
-                    return defaultExpression;
-                }
-
-                Expression composed = defaultExpression;
-
-                foreach (var criterion in _criteria)
-                {
-                    composed = Expression.And(composed, criterion.Body);
-                }
-
-                return Expression.Lambda<Func<TEntity, bool>>(composed, Expression.Parameter(typeof(TEntity), nameof(TEntity)));
-            }
+            Criteria = criteria;
         }
+        public Expression<Func<T, bool>> Criteria { get; }
+        public List<Expression<Func<T, object>>> Includes { get; } = new List<Expression<Func<T, object>>>();
+        public List<string> IncludeStrings { get; } = new List<string>();
+        public Expression<Func<T, object>> OrderBy { get; private set; }
+        public Expression<Func<T, object>> OrderByDescending { get; private set; }
 
-        public BaseSpecification(params Expression<Func<TEntity, bool>>[] criteria)
+        public int Take { get; private set; }
+        public int Skip { get; private set; }
+        public bool isPagingEnabled { get; private set; } = false;
+
+        protected virtual void AddInclude(Expression<Func<T, object>> includeExpression)
         {
-            foreach (var criterion in criteria)
-            {
-                Guard.Against.Null(criterion, nameof(criteria));
-            }
-            _criteria.AddRange(criteria);
+            Includes.Add(includeExpression);
+        }
+        protected virtual void AddInclude(string includeString)
+        {
+            IncludeStrings.Add(includeString);
+        }
+        protected virtual void ApplyPaging(int skip, int take)
+        {
+            Skip = skip;
+            Take = take;
+            isPagingEnabled = true;
+        }
+        protected virtual void ApplyOrderBy(Expression<Func<T, object>> orderByExpression)
+        {
+            OrderBy = orderByExpression;
+        }
+        protected virtual void ApplyOrderByDescending(Expression<Func<T, object>> orderByDescendingExpression)
+        {
+            OrderByDescending = orderByDescendingExpression;
         }
     }
 }

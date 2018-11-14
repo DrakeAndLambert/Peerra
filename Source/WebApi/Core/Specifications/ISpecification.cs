@@ -1,14 +1,19 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using DrakeLambert.Peerra.WebApi.Core.Entities;
 
 namespace DrakeLambert.Peerra.WebApi.Core.Specifications
 {
-    public interface ISpecification<TEntity> where TEntity : IEntity
+    public interface ISpecification<T>
     {
-        IReadOnlyCollection<Expression<Func<TEntity, bool>>> Criteria { get; }
+        Expression<Func<T, bool>> Criteria { get; }
+        List<Expression<Func<T, object>>> Includes { get; }
+        List<string> IncludeStrings { get; }
+        Expression<Func<T, object>> OrderBy { get; }
+        Expression<Func<T, object>> OrderByDescending { get; }
 
-        Expression<Func<TEntity, bool>> ComposedCriteria { get; }
+        int Take { get; }
+        int Skip { get; }
+        bool isPagingEnabled { get;}
     }
 }

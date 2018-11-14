@@ -1,6 +1,6 @@
 # General
 
-- Register user with username, email, bio
++- Register user with username, email, bio
 - Delete user and user data
 - Add skills to profile
 - View skills of user

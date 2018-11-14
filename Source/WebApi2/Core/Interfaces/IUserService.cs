@@ -9,7 +9,7 @@ namespace DrakeLambert.Peerra.WebApi2.Core.Interfaces
     {
         Task<Result<User>> AddUser(User user);
 
-        Task<Result<User>> GetUserById(Guid id);
+        Task<Result<User>> GetUserAsync(string username);
 
         Task<Result> DeleteUser(Guid id);
     }

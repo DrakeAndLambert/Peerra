@@ -46,7 +46,7 @@ namespace DrakeLambert.Peerra.WebApi2.SharedKernel.Dto
 
         public static new Result<TValue> Fail(string error, Result innerResult = null)
         {
-            return new Result<TValue>(false, innerResult: innerResult);
+            return new Result<TValue>(false, error, innerResult);
         }
     }
 }

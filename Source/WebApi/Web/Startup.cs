@@ -20,6 +20,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
+using DrakeLambert.Peerra.WebApi.Web.Controllers;
 
 namespace DrakeLambert.Peerra.WebApi.Web
 {
@@ -43,6 +44,10 @@ namespace DrakeLambert.Peerra.WebApi.Web
         {
             // Add mvc
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.InvalidModelStateResponseFactory = InvalidModelStateResponseFactory.Handle;
+            });
 
             // Configure Db Context
             services.AddDbContext<ApplicationDbContext>(options =>
@@ -125,6 +130,8 @@ namespace DrakeLambert.Peerra.WebApi.Web
 
             app.UseHsts();
             app.UseHttpsRedirection();
+
+            app.UseCors(builder => builder.WithOrigins("https://localhost:5001").AllowAnyHeader().AllowAnyMethod());
 
             app.UseSwaggerUI(c =>
             {

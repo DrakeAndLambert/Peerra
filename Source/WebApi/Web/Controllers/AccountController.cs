@@ -94,7 +94,7 @@ namespace DrakeLambert.Peerra.WebApi.Web.Controllers
             if (tokenResult.Failed)
             {
                 _logger.LogWarning("Token generation for user '{username}' failed.", userCredentials.Username);
-                return BadRequest(tokenResult);
+                return BadRequest(new ErrorDto(tokenResult));
             }
 
             return StatusCode(StatusCodes.Status201Created, new TokenDto(tokenResult.Value));

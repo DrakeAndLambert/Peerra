@@ -53,13 +53,15 @@ namespace DrakeLambert.Peerra.WebApi.Web
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseInMemoryDatabase(nameof(ApplicationDbContext));
+                options.EnableSensitiveDataLogging();
             });
+            services.AddTransient<SeedData, SeedData>();
 
             // Configure identity
             var identityBuilder = services.AddIdentityCore<User>(options =>
             {
                 // configure identity options
-                options.Password.RequireDigit = false;
+                options.Password.RequireDigit = false; 
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
@@ -118,10 +120,9 @@ namespace DrakeLambert.Peerra.WebApi.Web
 
             // Configure shared kernel
             services.AddTransient(typeof(IAppLogger<>), typeof(AppLogger<>));
-
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedData seed)
         {
             if (env.IsDevelopment())
             {
@@ -143,6 +144,8 @@ namespace DrakeLambert.Peerra.WebApi.Web
             app.UseAuthentication();
 
             app.UseMvc();
+
+            seed.Seed();
         }
     }
 }

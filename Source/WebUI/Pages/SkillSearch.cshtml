@@ -13,11 +13,29 @@
     </div>
 </div>
 
+<div class="table-responsive mt-3">
+    <table id="results" class="table">
+        <tr>
+            <th>Username</th>
+            <th>Relevant Skills</th>
+        </tr>
+    </table>
+</div>
 
 @section Scripts {
 <script>
-    let searchTerms = new URLSearchParams(window.location.search);
-    document.getElementById("skillSearchTerms").value = searchTerms.get("skills");
+    let searchTerms = new URLSearchParams(window.location.search).get("skills");
+    document.getElementById("skillSearchTerms").value = searchTerms;
+    search(searchTerms).then(results => {
+        let table = document.getElementById("results");
+        results.forEach(element => {
+            let row = table.insertRow();
+            let userCell = row.insertCell();
+            let skillCell = row.insertCell();
+            userCell.innerHTML = element.user;
+            skillCell.innerHTML = element.skills;
+        });
+    });
 
     function skillSearch() {
         let searchTerms = document.getElementById("skillSearchTerms").value;
@@ -25,13 +43,14 @@
     }
 
     async function search(terms) {
-        let searchResponse = await fetch(apiHost + "account/info", {
+        let searchResponse = await fetch(apiHost + "skill/usersWithSkills?skills=" + terms, {
             method: "GET", // *GET, POST, PUT, DELETE, etc.
             mode: "cors",
             headers: {
-                "Authorization": "Bearer " + accessToken
+                "Content-Type": "application/json; charset=utf-8"
             }
         });
+        return await searchResponse.json();
     }
 </script>
 }

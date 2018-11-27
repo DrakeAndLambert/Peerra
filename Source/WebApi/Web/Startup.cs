@@ -61,7 +61,7 @@ namespace DrakeLambert.Peerra.WebApi.Web
             var identityBuilder = services.AddIdentityCore<User>(options =>
             {
                 // configure identity options
-                options.Password.RequireDigit = false; 
+                options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireNonAlphanumeric = false;
@@ -132,7 +132,9 @@ namespace DrakeLambert.Peerra.WebApi.Web
             app.UseHsts();
             app.UseHttpsRedirection();
 
-            app.UseCors(builder => builder.WithOrigins("https://localhost:5001").AllowAnyHeader().AllowAnyMethod());
+            var allowedOrigins = Configuration.GetSection("Origins").Get<string[]>();
+
+            app.UseCors(builder => builder.WithOrigins(allowedOrigins).AllowAnyHeader().AllowAnyMethod());
 
             app.UseSwaggerUI(c =>
             {

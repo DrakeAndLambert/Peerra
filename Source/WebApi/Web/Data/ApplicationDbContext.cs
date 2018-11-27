@@ -37,7 +37,7 @@ namespace DrakeLambert.Peerra.WebApi.Web.Data
             builder.Entity<SkillRequest>().HasKey(s => s.Id);
             builder.Entity<SkillRequest>().HasIndex(s => s.RequestorUsername);
 
-            builder.Entity<UserSkill>().HasKey(u => new { u.Username, u.SkillName });
+            builder.Entity<UserSkill>().HasKey(u => new { Username = u.Username, u.SkillName });
             builder.Entity<UserSkill>().HasIndex(u => u.SkillName);
             builder.Entity<UserSkill>().HasIndex(u => u.Username);
 

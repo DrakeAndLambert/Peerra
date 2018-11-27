@@ -32,7 +32,7 @@ namespace DrakeLambert.Peerra.WebApi.Web.Controllers
                 .GroupBy(userSkill => userSkill.Username)
                 .OrderByDescending(userSkillGroup => userSkillGroup.Count())
                 .ToDictionary(userSkill => userSkill.Key, userSkill => userSkill.ToList())
-                .Select(group => new { User = group.Key, Skills = group.Value.Select(us => us.SkillName).Distinct() });
+                .Select(group => new { Username = group.Key, Skills = group.Value.Select(us => us.SkillName).Distinct() });
             return Ok(groups);
         }
     }

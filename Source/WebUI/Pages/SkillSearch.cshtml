@@ -26,14 +26,20 @@
 <script>
     let searchTerms = new URLSearchParams(window.location.search).get("skills");
     document.getElementById("skillSearchTerms").value = searchTerms;
-    search(searchTerms).then(results => {
+    search(searchTerms).then(users => {
         let table = document.getElementById("results");
-        results.forEach(element => {
+        users.forEach(user => {
             let row = table.insertRow();
+
             let userCell = row.insertCell();
+            let userLink = document.createElement("a");
+            userLink.href = "/user?id=" + user.username;
+            userLink.innerText = user.username;
+            userCell.appendChild(userLink);
+            console.log(user);
+
             let skillCell = row.insertCell();
-            userCell.innerHTML = element.user;
-            skillCell.innerHTML = element.skills;
+            skillCell.innerHTML = user.skills.join(", ");
         });
     });
 
@@ -50,7 +56,7 @@
                 "Content-Type": "application/json; charset=utf-8"
             }
         });
-        return await searchResponse.json();
+        return searchResponse.json();
     }
 </script>
 }

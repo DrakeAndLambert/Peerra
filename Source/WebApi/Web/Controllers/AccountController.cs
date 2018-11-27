@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using DrakeLambert.Peerra.WebApi.Web.Data;
 
 namespace DrakeLambert.Peerra.WebApi.Web.Controllers
 {
@@ -15,12 +16,14 @@ namespace DrakeLambert.Peerra.WebApi.Web.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly IUserTokenService _tokenService;
+        private readonly ApplicationDbContext _context;
         private readonly IAppLogger<AccountController> _logger;
 
-        public AccountController(UserManager<User> userManager, IUserTokenService tokenService, IAppLogger<AccountController> logger)
+        public AccountController(UserManager<User> userManager, IUserTokenService tokenService, ApplicationDbContext context, IAppLogger<AccountController> logger)
         {
             _userManager = userManager;
             _tokenService = tokenService;
+            _context = context;
             _logger = logger;
         }
 
@@ -49,6 +52,16 @@ namespace DrakeLambert.Peerra.WebApi.Web.Controllers
             {
                 _logger.LogWarning("New user with name '{username}', was invalid.", newUser.Username);
                 return BadRequest(new ErrorDto(addUserResult.Errors.Select(error => error.Description).FirstOrDefault()));
+            }
+
+            if (newUser.Skills != null)
+            {
+                _context.UserSkills.AddRange(newUser.Skills.Select(skill => new UserSkill
+                {
+                    SkillName = skill,
+                    Username = newUser.Username
+                }));
+                await _context.SaveChangesAsync();
             }
 
             return CreatedAtAction(nameof(Info), new UserInfoDto(appUser));

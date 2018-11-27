@@ -18,11 +18,19 @@
 
     <div class="row">
         <div class="col-lg">
-            <h3>Connections</h3>
+            <h3>My Connections</h3>
+            <div class="table-responsive">
+                <table hidden="true" class="table" id="connections"></table>
+                <p hidden="true" id="noConnectionsMessage">After you make some connections, they will appear here!</p>
+            </div>
         </div>
         <div style="border-left:1px solid rgba(0,0,0,.1);"></div>
         <div class="col-lg">
-            <h3>Skill Requests</h3>
+            <h3>Incoming Connections</h3>
+            <div class="table-responsive">
+                <table hidden="true" class="table" id="incomingConnections"></table>
+                <p hidden="true" id="noIncomingConnectionsMessage">After you make some connections, they will appear here!</p>
+            </div>
         </div>
     </div>
 </div>
@@ -30,8 +38,83 @@
 
 @section Scripts {
 <script>
-    isLoggedIn().then(value => {
+    isLoggedIn().then(async value => {
         document.getElementById("connectionsAndRequests").hidden = !value;
+
+        let response = await fetch(apiHost + "Connections/Connections", {
+            method: "GET", // *GET, POST, PUT, DELETE, etc.,
+            mode: "cors",
+            headers: {
+                "Authorization": "Bearer " + getAccessToken()
+            }
+        });
+        let body = await response.json();
+
+        if (response.ok) {
+            let table = document.getElementById("connections");
+            table.hidden = !body.length > 0;
+            document.getElementById("noConnectionsMessage").hidden = body.length > 0;
+            body.forEach(connection => {
+                let row = table.insertRow();
+
+                let userCell = row.insertCell();
+                let userLink = document.createElement("a");
+                userLink.href = "/connection?id=" + connection.targetUsername;
+                userLink.innerText = connection.targetUsername;
+                userCell.appendChild(userLink);
+
+                let statusCell = row.insertCell();
+                let status = connection.status;
+                statusCell.innerText = status;
+                if (status === "Accepted") {
+                    statusCell.classList.add("text-success");
+                }
+                if (status === "Pending") {
+                    statusCell.classList.add("text-warning");
+                }
+                if (status === "Declined") {
+                    statusCell.classList.add("text-danger");
+                }
+            });
+        }
+
+        response = await fetch(apiHost + "Connections/IncomingConnections", {
+            method: "GET", // *GET, POST, PUT, DELETE, etc.,
+            mode: "cors",
+            headers: {
+                "Authorization": "Bearer " + getAccessToken()
+            }
+        });
+        body = await response.json();
+
+        if (response.ok) {
+            let table = document.getElementById("incomingConnections");
+            table.hidden = !body.length > 0;
+            document.getElementById("noIncomingConnectionsMessage").hidden = body.length > 0;
+
+            body.forEach(connection => {
+                let row = table.insertRow();
+
+                let userCell = row.insertCell();
+                let userLink = document.createElement("a");
+                userLink.href = "/incomingconnection?id=" + connection.requestorUsername;
+                userLink.innerText = connection.requestorUsername;
+                userCell.appendChild(userLink);
+
+                let statusCell = row.insertCell();
+                let status = connection.status;
+                statusCell.innerText = status;
+                if (status === "Accepted") {
+                    statusCell.classList.add("text-success");
+                }
+                if (status === "Pending") {
+                    statusCell.classList.add("text-warning");
+                }
+                if (status === "Declined") {
+                    statusCell.classList.add("text-danger");
+                }
+            });
+        }
     });
 
     function skillSearch() {

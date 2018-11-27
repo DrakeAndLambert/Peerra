@@ -19,7 +19,7 @@ isLoggedIn().then(value => {
 function logout() {
     setAccessToken("");
     setRefreshToken("");
-    window.location.href = "/";
+    location.reload();
 }
 
 async function isLoggedIn() {

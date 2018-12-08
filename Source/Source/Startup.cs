@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using DrakeLambert.Peerra.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using DrakeLambert.Peerra.Entities;
 
 namespace DrakeLambert.Peerra
 {
@@ -38,7 +39,7 @@ namespace DrakeLambert.Peerra
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
+            services.AddDefaultIdentity<ApplicationUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 

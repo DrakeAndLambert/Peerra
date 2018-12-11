@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/b5315975-c056-4f9c-8e2d-5e6264478c0f/resourceGroups/appsvc_rg_windows_centralus/providers/Microsoft.Web/sites/PeerraApi",
-    "appService.deploySubpath": "Web"
-}

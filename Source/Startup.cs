@@ -41,7 +41,7 @@ namespace DrakeLambert.Peerra
                 // }
                 // else
                 // {
-                //     options.UseSqlite("Data Source=./Peerra.db");
+                //     options.Use[SOME OTHER DB PROVIDER]([CONNECTION STRING]);
                 // }
             });
             services.AddTransient<InitialDataSeed>();

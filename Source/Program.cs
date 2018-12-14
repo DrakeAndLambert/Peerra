@@ -43,6 +43,10 @@ namespace DrakeLambert.Peerra
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureLogging(options => 
+                {
+                    options.AddAzureWebAppDiagnostics();
+                })
                 .UseStartup<Startup>();
     }
 }

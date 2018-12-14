@@ -34,14 +34,15 @@ namespace DrakeLambert.Peerra
 
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                if (_environment.IsDevelopment())
-                {
+                // TODO: Figure out real DB situation
+                // if (_environment.IsDevelopment())
+                // {
                     options.UseInMemoryDatabase(nameof(ApplicationDbContext));
-                }
-                else
-                {
-                    options.UseSqlite("Data Source=./Peerra.db");
-                }
+                // }
+                // else
+                // {
+                //     options.UseSqlite("Data Source=./Peerra.db");
+                // }
             });
             services.AddTransient<InitialDataSeed>();
 

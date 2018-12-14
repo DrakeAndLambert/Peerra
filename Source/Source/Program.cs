@@ -22,11 +22,12 @@ namespace DrakeLambert.Peerra
                 {
                     var environment = services.GetRequiredService<IHostingEnvironment>();
 
-                    if (!environment.IsDevelopment())
-                    {
-                        var context = services.GetRequiredService<ApplicationDbContext>();
-                        context.Database.Migrate();
-                    }
+                    // TODO: Figure out real DB situation
+                    // if (!environment.IsDevelopment())
+                    // {
+                    //     var context = services.GetRequiredService<ApplicationDbContext>();
+                    //     context.Database.Migrate();
+                    // }
                     var seed = services.GetRequiredService<InitialDataSeed>();
                     seed.Seed();
                 }

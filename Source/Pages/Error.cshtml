@@ -6,7 +6,7 @@
 
     var supportEmail = "dlamb19@lsu.edu";
 
-    var header = UrlPathEncode("Peerra Error Support Request");
+    var subject = UrlPathEncode("Peerra Error Support Request");
 
     var body = UrlPathEncode($"Hi Peerra Team,\n\nI encountered an error while [actions that led to the error here].\n\nRequest Id: {Model.RequestId}\n\nThank you!");
 }
@@ -22,5 +22,5 @@
 }
 
 <p>
-    We're sorry that you've experienced an error. Please contact support <a href="mailto:@supportEmail?subject=Peerra%20Error%20Support%20Request&body=@body">here</a> and we will do all we can to get the error resolved.
+    We're sorry that you've experienced an error. Please contact support <a href="mailto:@supportEmail?subject=@subject&body=@body">here</a> and we will do all we can to get the error resolved.
 </p>

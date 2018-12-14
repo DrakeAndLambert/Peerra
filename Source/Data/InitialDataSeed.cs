@@ -34,7 +34,7 @@ namespace DrakeLambert.Peerra.Data
                 new Issue("Scheduling"),
                 new Issue("Professors"),
             }),
-            new Issue("Campus Life", "When you have questions about life on campus.", new[]
+            new Issue("Campus Life", "On campus housing, dining, transportation, and the like.", new[]
             {
                 new Issue("Housing")
             }),

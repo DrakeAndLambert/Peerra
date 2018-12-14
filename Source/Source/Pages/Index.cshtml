@@ -1,9 +1,43 @@
 ﻿@page
+@model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+ViewData["Title"] = "Home";
 }
 
+@if(Model.ParentIssue == null)
+{
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Get Help From Your Peers</h1>
+</div>
+<hr>
+}
+
+<div class="row">
+    <div class="col">
+        @if(Model.ParentIssue != null)
+        {
+        <h1>@Model.ParentIssue.Id</h1>
+        }
+        else
+        {
+        <h2>First, Let's Break Down Your Problem.</h2>
+        <p>
+            We live pretty diverse lives. Choose the area that best relates to your issue.
+        </p>
+        }
+        <div class="card-columns">
+            @foreach(var issue in Model.ChildIssues)
+            {
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@issue.Title</h5>
+                    @if (!string.IsNullOrWhiteSpace(issue.Description))
+                    {
+                    <p class="card-text">@issue.Description</p>
+                    }
+                </div>
+            </div>
+            }
+        </div>
+    </div>
 </div>

@@ -29,7 +29,7 @@ ViewData["Title"] = "Home";
         }
     </div>
     <div class="col">
-        <input type="text" class="form-control mb-3" placeholder="Filter..." oninput="filterCards(this);" onkeydown="filterCards(this);">
+        <input type="text" class="form-control mb-3" placeholder="Filter..." oninput="filterCards(this.value);" onkeydown="filterCards(this.value);">
     </div>
 </div>
 <div class="card-columns">
@@ -69,8 +69,8 @@ ViewData["Title"] = "Home";
         card.issueTitle = card.querySelector(".card-title").innerHTML.toUpperCase() + card.querySelector(".card-body").innerHTML.toUpperCase();
     }
 
-    let filterCards = (filterElement) => {
-        let filterText = filterElement.value.toUpperCase();
+    let filterCards = (filterText) => {
+        filterText = filterText.toUpperCase();
         if (filterText === "") {
             for (const card of cards) {
                 card.style.display = "inline-block";

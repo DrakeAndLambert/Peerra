@@ -1,0 +1,8 @@
+@page
+@model IssueTreeModel
+@{
+    ViewData["Title"] = "Issue Tree";
+    ViewData["DefaultHeader"] = "true";
+}
+
+<pre><code>@Model.JsonIssues</code></pre>

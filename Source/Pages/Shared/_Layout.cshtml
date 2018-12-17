@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -38,6 +38,10 @@
 
     <main class="container">
         <partial name="_CookieConsentPartial" />
+        @if((string)ViewData["DefaultHeader"] == "true") {
+            <h1>@ViewData["Title"]</h1>
+            <hr>
+        }
         @RenderBody()
     </main>
 

@@ -28,15 +28,17 @@ ViewData["Title"] = "Home";
         <div class="card-columns">
             @foreach(var issue in Model.ChildIssues)
             {
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">@issue.Title</h5>
-                    @if (!string.IsNullOrWhiteSpace(issue.Description))
-                    {
-                    <p class="card-text">@issue.Description</p>
-                    }
+            <a href="#">
+                <div class="card" href="#">
+                    <div class="card-body">
+                        <h5 class="card-title">@issue.Title</h5>
+                        @if (!string.IsNullOrWhiteSpace(issue.Description))
+                        {
+                        <p class="card-text">@issue.Description</p>
+                        }
+                    </div>
                 </div>
-            </div>
+            </a>
             }
         </div>
     </div>
@@ -45,16 +47,12 @@ ViewData["Title"] = "Home";
 <style>
     .card {
         transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        color: black;
     }
 
     .card:hover {
         color: #007bff;
-        background-color: transparent;
-        background-image: none;
         border-color: #007bff;
+        cursor: pointer;
     }
 </style>
-
-@section Scripts {
-
-}

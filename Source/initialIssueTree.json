@@ -1,0 +1,69 @@
+{
+    "InitialIssueTree": [
+        {
+            "Title": "Academic Life",
+            "Description": "When you're having trouble dealing with courses, professors, and more.",
+            "Children": [
+                {
+                    "Title": "Course Work",
+                    "Description": "For problems with course material, or general questions.",
+                    "Children": null
+                },
+                {
+                    "Title": "Scheduling",
+                    "Description": "For questions about how scheduling works, or recommendations on what courses to choose.",
+                    "Children": null
+                },
+                {
+                    "Title": "Professors",
+                    "Description": "When you're having issues with a professor or want to know more about them.",
+                    "Children": null
+                }
+            ]
+        },
+        {
+            "Title": "Campus Life",
+            "Description": "On campus housing, dining, transportation, and the like.",
+            "Children": [
+                {
+                    "Title": "Housing",
+                    "Description": null,
+                    "Children": null
+                }
+            ]
+        },
+        {
+            "Title": "Off Campus Life",
+            "Description": "Careers, local restaurants, and everything in between.",
+            "Children": [
+                {
+                    "Title": "Careers",
+                    "Description": null,
+                    "Children": null
+                }
+            ]
+        },
+        {
+            "Title": "University Affairs",
+            "Description": "Financial aid, clubs... really anything outside of class.",
+            "Children": [
+                {
+                    "Title": "Scholarships",
+                    "Description": null,
+                    "Children": null
+                }
+            ]
+        },
+        {
+            "Title": "Something Else",
+            "Description": "When your problem doesn't fit anywhere else.",
+            "Children": [
+                {
+                    "Title": "VOID",
+                    "Description": null,
+                    "Children": null
+                }
+            ]
+        }
+    ]
+}

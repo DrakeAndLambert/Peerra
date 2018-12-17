@@ -1,65 +1,32 @@
+using System.Linq;
 using DrakeLambert.Peerra.Entities;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace DrakeLambert.Peerra.Data
 {
     public class InitialDataSeed
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<InitialDataSeed> _logger;
+        private readonly InitialIssueTreeOptions _initialIssueTree;
 
-        public InitialDataSeed(ApplicationDbContext context)
+        public InitialDataSeed(ApplicationDbContext context, IOptions<InitialIssueTreeOptions> initialIssueTree, ILogger<InitialDataSeed> logger)
         {
             _context = context;
+            _logger = logger;
+            _initialIssueTree = initialIssueTree.Value;
         }
 
         public void Seed()
         {
             _context.Issues.RemoveRange(_context.Issues);
 
-            foreach (var issue in Issues)
-            {
-                // issue.Description = _fillerText;
-            }
+            _logger.LogInformation("Adding {count} top level issues.", _initialIssueTree.InitialIssueTree.Length);
 
-            _context.Issues.AddRange(Issues);
+            _context.Issues.AddRange(_initialIssueTree.InitialIssueTree.Select(io => (Issue)io));
             _context.SaveChanges();
         }
-
-        private const string _fillerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mi elit, pretium quis massa vehicula, placerat convallis erat. Quisque mattis.";
-
-        private readonly Issue[] Issues =
-        {
-            new Issue("Academic Life", "When you're having trouble dealing with courses, professors, and more.", new[]
-            {
-                new Issue("Course Work", "For problems with course material, or general questions."),
-                new Issue("Scheduling", "For questions about how scheduling works, or recommendations on what courses to choose."),
-                new Issue("Professors", "When you're having issues with a professor or want to know more about them."),
-            }),
-            new Issue("Campus Life", "On campus housing, dining, transportation, and the like.", new[]
-            {
-                new Issue("Housing")
-            }),
-            new Issue("Off Campus Life", "Careers, local restaurants, and everything in between.", new[]
-            {
-                new Issue("Careers")
-            }),
-            new Issue("University Affairs", "Financial aid, clubs... really anything outside of class.", new[]
-            {
-                new Issue("Scholarships")
-            }),
-            new Issue("Something Else", "When your problem doesn't fit anywhere else.", new[]
-            {
-                new Issue("VOID")
-            })
-        };
-
-        private readonly string[] TopLevelItems =
-        {
-            "Academic Life",
-            "Campus Life",
-            "Off Campus Life",
-            "University Affairs",
-            "Something Else"
-        };
     }
 }
 /*

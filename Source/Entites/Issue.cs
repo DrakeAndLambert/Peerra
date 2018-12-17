@@ -28,7 +28,7 @@ namespace DrakeLambert.Peerra.Entities
 
         public Issue(string title, IEnumerable<Issue> children) : this(title)
         {
-            Children = children.ToList();
+            Children = children?.ToList();
         }
 
         public Issue(string title, string description, IEnumerable<Issue> children) : this(title, children)

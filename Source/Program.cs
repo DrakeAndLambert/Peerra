@@ -2,6 +2,7 @@
 using DrakeLambert.Peerra.Data;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -42,9 +43,13 @@ namespace DrakeLambert.Peerra
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .ConfigureLogging(options => 
+                .ConfigureLogging(options =>
                 {
                     options.AddAzureWebAppDiagnostics();
+                })
+                .ConfigureAppConfiguration((context, config) =>
+                {
+                    config.AddJsonFile("initialIssueTree.json", optional: false);
                 })
                 .UseStartup<Startup>();
     }

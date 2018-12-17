@@ -1,4 +1,4 @@
-@page
+﻿@page "{parentId?}"
 @model IndexModel
 @{
 ViewData["Title"] = "Home";
@@ -12,33 +12,36 @@ ViewData["Title"] = "Home";
 <hr>
 }
 
-        @if(Model.ParentIssue != null)
-        {
-        <h1>@Model.ParentIssue.Id</h1>
-        }
-        else
-        {
-        <h2>First, Let's Break Down Your Problem.</h2>
-        <p>
-            We live pretty diverse lives. Choose the area that best relates to your issue.
-        </p>
-        }
-        <div class="card-columns">
-            @foreach(var issue in Model.ChildIssues)
-            {
-            <a href="#">
-                <div class="card" href="#">
-                    <div class="card-body">
-                        <h5 class="card-title">@issue.Title</h5>
-                        @if (!string.IsNullOrWhiteSpace(issue.Description))
-                        {
-                        <p class="card-text">@issue.Description</p>
-                        }
-                    </div>
-                </div>
-            </a>
-            }
+@if(Model.ParentIssue != null)
+{
+<h1>@Model.ParentIssue.Title</h1>
+<p>
+    Keep narrowing down your issue to get the best help.
+</p>
+}
+else
+{
+<h2>First, Let's Break Down Your Problem.</h2>
+<p>
+    We live pretty diverse lives. Choose the area that best relates to your issue.
+</p>
+}
+<div class="card-columns">
+    @foreach(var issue in Model.ChildIssues)
+    {
+    <a asp-page="/Index" asp-route-parentId="@issue.Id">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@issue.Title</h5>
+                @if (!string.IsNullOrWhiteSpace(issue.Description))
+                {
+                <p class="card-text">@issue.Description</p>
+                }
+            </div>
         </div>
+    </a>
+    }
+</div>
 
 <style>
     .card {

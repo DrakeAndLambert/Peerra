@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model IndexModel
 @{
 ViewData["Title"] = "Home";
@@ -12,8 +12,6 @@ ViewData["Title"] = "Home";
 <hr>
 }
 
-<div class="row">
-    <div class="col">
         @if(Model.ParentIssue != null)
         {
         <h1>@Model.ParentIssue.Id</h1>
@@ -41,8 +39,6 @@ ViewData["Title"] = "Home";
             </a>
             }
         </div>
-    </div>
-</div>
 
 <style>
     .card {

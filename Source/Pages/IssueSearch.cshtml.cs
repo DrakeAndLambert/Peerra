@@ -27,20 +27,13 @@ namespace DrakeLambert.Peerra.Pages
             _logger = logger;
         }
 
-        public async Task<IActionResult> OnGetAsync([FromRoute] Guid? parentId)
+        public async Task<IActionResult> OnGetAsync([FromRoute] Guid parentId)
         {
             _logger.LogInformation("Retrieving issues for parent {id}.", parentId);
-            if (parentId.HasValue)
+            ParentIssue = await _context.Issues.FindAsync(parentId);
+            if (ParentIssue == null)
             {
-                ParentIssue = await _context.Issues.FindAsync(parentId);
-                if (ParentIssue == null)
-                {
-                    return NotFound("Sorry, that issue could not be found.");
-                }
-            }
-            else
-            {
-                parentId = Guid.Empty;
+                return NotFound("Sorry, that issue could not be found.");
             }
             ChildIssues = await _context.Issues.Where(issue => issue.ParentId == parentId).ToListAsync();
             return Page();

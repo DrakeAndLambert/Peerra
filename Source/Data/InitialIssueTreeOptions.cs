@@ -18,7 +18,12 @@ namespace DrakeLambert.Peerra.Data
 
         public static implicit operator Issue(IssueOption issueOption)
         {
-            return new Issue(issueOption.Title, issueOption.Description, issueOption.Children?.Select(io => (Issue)io));
+            return new Issue
+            {
+                Title = issueOption.Title,
+                Description = issueOption.Description,
+                Children = issueOption.Children?.Select(io => (Issue)io).ToList()
+            };
         }
     }
 }

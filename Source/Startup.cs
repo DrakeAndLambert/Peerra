@@ -32,7 +32,7 @@ namespace DrakeLambert.Peerra
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.Configure<InitialIssueTreeOptions>(_configuration);
+            services.Configure<InitialDataOptions>(_configuration);
 
             services.AddDbContext<ApplicationDbContext>(options =>
             {

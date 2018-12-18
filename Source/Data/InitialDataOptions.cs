@@ -1,11 +1,18 @@
-using System.Linq;
+﻿using System.Linq;
 using DrakeLambert.Peerra.Entities;
 
 namespace DrakeLambert.Peerra.Data
 {
-    public class InitialIssueTreeOptions
+    public class InitialDataOptions
     {
         public IssueOption[] Issues { get; set; }
+
+        public UserOption[] Users { get; set; }
+    }
+
+    public class UserOption
+    {
+        public string UserName { get; set; }
     }
 
     public class IssueOption

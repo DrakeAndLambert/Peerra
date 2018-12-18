@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using DrakeLambert.Peerra.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -9,23 +10,27 @@ namespace DrakeLambert.Peerra.Data
     {
         private readonly ApplicationDbContext _context;
         private readonly ILogger<DbInitializer> _logger;
-        private readonly InitialIssueTreeOptions _initialIssueTree;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly InitialDataOptions _initialIssueTree;
 
-        public DbInitializer(ApplicationDbContext context, IOptions<InitialIssueTreeOptions> initialIssueTree, ILogger<DbInitializer> logger)
+        public DbInitializer(ApplicationDbContext context, IOptions<InitialDataOptions> initialData, ILogger<DbInitializer> logger, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _initialIssueTree = initialData.Value;
             _logger = logger;
-            _initialIssueTree = initialIssueTree.Value;
+            _userManager = userManager;
         }
 
         public void Seed()
         {
             _context.Issues.RemoveRange(_context.Issues);
 
-            _logger.LogInformation("Adding {count} top level issues.", _initialIssueTree.InitialIssueTree.Length);
+            _logger.LogInformation("Adding {count} top level issues.", _initialIssueTree.Issues.Length);
 
-            _context.Issues.AddRange(_initialIssueTree.InitialIssueTree.Select(io => (Issue)io));
+            _context.Issues.AddRange(_initialIssueTree.Issues.Select(io => (Issue)io));
             _context.SaveChanges();
+
+            
         }
     }
 }

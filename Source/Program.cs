@@ -28,7 +28,7 @@ namespace DrakeLambert.Peerra
                     //     var context = services.GetRequiredService<ApplicationDbContext>();
                     //     context.Database.Migrate();
                     // }
-                    var seed = services.GetRequiredService<InitialDataSeed>();
+                    var seed = services.GetRequiredService<DbInitializer>();
                     seed.Seed();
                 }
                 catch (Exception ex)

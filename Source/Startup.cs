@@ -46,7 +46,7 @@ namespace DrakeLambert.Peerra
                 //     options.Use[SOME OTHER DB PROVIDER]([CONNECTION STRING]);
                 // }
             });
-            services.AddTransient<InitialDataSeed>();
+            services.AddTransient<DbInitializer>();
 
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)

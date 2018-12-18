@@ -1,17 +1,17 @@
-using System.Linq;
+﻿using System.Linq;
 using DrakeLambert.Peerra.Entities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace DrakeLambert.Peerra.Data
 {
-    public class InitialDataSeed
+    public class DbInitializer
     {
         private readonly ApplicationDbContext _context;
-        private readonly ILogger<InitialDataSeed> _logger;
+        private readonly ILogger<DbInitializer> _logger;
         private readonly InitialIssueTreeOptions _initialIssueTree;
 
-        public InitialDataSeed(ApplicationDbContext context, IOptions<InitialIssueTreeOptions> initialIssueTree, ILogger<InitialDataSeed> logger)
+        public DbInitializer(ApplicationDbContext context, IOptions<InitialIssueTreeOptions> initialIssueTree, ILogger<DbInitializer> logger)
         {
             _context = context;
             _logger = logger;

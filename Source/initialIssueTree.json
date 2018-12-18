@@ -7,7 +7,773 @@
                 {
                     "Title": "Course Work",
                     "Description": "For problems with course material, or general questions.",
-                    "Children": null
+                    "Children": [
+                        {
+                            "Title": "Accounting",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Administrative and Foundation Se",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Aerospace Studies",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "African and African-american Stu",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Agric Education",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Agric and Extension Ed and Evaluat",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Agricultural Economics",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Agricultural Economics and Agrib",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Agriculture",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Agri, Extension and Adult Educat",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Agronomy",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Animal Sciences",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Anthropology",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Arabic",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Architecture",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Art",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Art History",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Astronomy",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Athletic Training",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Audio-visual Arts",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Basic Sciences",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Biological Engineering",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Biological Sciences",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Business Administration",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Business Education",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Business Law",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Chemical Engineering",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Chemistry",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Child and Family Studies",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Chinese",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Civil Engineering",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Civil and Environmental Engineer",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Classical Studies",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Communication Disorders",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Communication Studies",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Comparative Biomedical Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Comparative Literature",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Computer Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Construction Management",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Curriculum and Instruction",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Dairy Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Digital Media Arts and Engineeri",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Disaster Science Management",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Doctor of Design",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Economics",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Educ Leadership Research Couns",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Education",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Electrical Engineering",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Engineering",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "English",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Entomology",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Entrepreneurship",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Environmental Engineering",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Environmental Management Syste",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Environmental Sciences",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Environmental Studies",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Epidemiology and Community Healt",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Experimental Statistics",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Extension Education",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Film and Media Arts",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Finance",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Fisheries",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Food Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Forestry",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "French",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "French Studies",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Freshman Forum",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Freshman Seminar",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "General Business",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Geography",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Geology",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "German",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Greek",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Hebrew",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "History",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Home Econ Educ",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Honors",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Horticulture",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "How to Do Lsu",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Human Ecology",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Human Resource Education",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Humanities",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Humanities and Social Sciences",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Industrial Education",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Industrial Engineering",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Industrial Technology",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Industrial and Manufactur Engine",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Info Systems and Decision Scie",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Interior Design",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "International Studies",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Italian",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Japanese",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Junior Division",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Kinesiology",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Landscape Architecture",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Latin",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Leadership and Human Resources D",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Liberal Arts",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Library and Information Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Life Course and Aging",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Life Course in Aging",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Linguistics",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Management",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Marketing",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Mass Communication",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Mathematics",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Mechanical Engineering",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Medical Physics",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Military Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Music",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Music Education",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Nuclear Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Nutrition and Food Sciences",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Oceanography and Coastal Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Pathobiological Sciences",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Petroleum Engineering",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Philosophy",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Philosophy and Religious Studies",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Physical Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Physics",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Plant Health",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Political Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Portuguese",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Poultry Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Psychology",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Public Administration",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Religious Studies",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Renewable Natural Resources",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Russian",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Screen Arts",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Social Work",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Sociology",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Spanish",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Speech Communication",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Student Support Services",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Swahili",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Systems Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Textiles,Apparel and Merchandisi",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Theatre",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "University",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "University College",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "University Studies",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Veterinary Anatomy",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Veterinary Clinical Sciences",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Veterinary Medicine",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Veterinary Microbiol and Parasit",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Veterinary Pathology",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Veterinary Physiol, Pharmac And",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Veterinary Science",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Vocational Education",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Vocational Trade and Ind Ed",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Wildlife",
+                            "Description": "",
+                            "Children": null
+                        },
+                        {
+                            "Title": "Women's and Gender Studies",
+                            "Description": "",
+                            "Children": null
+                        }
+                    ]
                 },
                 {
                     "Title": "Scheduling",
@@ -49,17 +815,6 @@
             "Children": [
                 {
                     "Title": "Scholarships",
-                    "Description": null,
-                    "Children": null
-                }
-            ]
-        },
-        {
-            "Title": "Something Else",
-            "Description": "When your problem doesn't fit anywhere else.",
-            "Children": [
-                {
-                    "Title": "VOID",
                     "Description": null,
                     "Children": null
                 }

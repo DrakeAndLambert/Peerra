@@ -1,5 +1,5 @@
 {
-    "InitialIssueTree": [
+    "Issues": [
         {
             "Title": "Academic Life",
             "Description": "When you're having trouble dealing with courses, professors, and more.",
@@ -820,5 +820,8 @@
                 }
             ]
         }
+    ],
+    "Users": [
+        
     ]
 }

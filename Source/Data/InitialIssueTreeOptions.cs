@@ -5,7 +5,7 @@ namespace DrakeLambert.Peerra.Data
 {
     public class InitialIssueTreeOptions
     {
-        public IssueOption[] InitialIssueTree { get; set; }
+        public IssueOption[] Issues { get; set; }
     }
 
     public class IssueOption

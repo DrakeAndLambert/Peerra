@@ -49,7 +49,7 @@ namespace DrakeLambert.Peerra
                 })
                 .ConfigureAppConfiguration((context, config) =>
                 {
-                    config.AddJsonFile("initialIssueTree.json", optional: false);
+                    config.AddJsonFile("initialData.json", optional: false);
                 })
                 .UseStartup<Startup>();
     }

@@ -14,5 +14,7 @@ namespace DrakeLambert.Peerra.Entities
         public Issue Parent { get; set; }
 
         public List<Issue> Children { get; set; }
+
+        public bool IsLeaf { get; set; } = true;
     }
 }

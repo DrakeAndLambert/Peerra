@@ -22,7 +22,8 @@ namespace DrakeLambert.Peerra.Data
             {
                 Title = issueOption.Title,
                 Description = issueOption.Description,
-                Children = issueOption.Children?.Select(io => (Issue)io).ToList()
+                Children = issueOption.Children?.Select(io => (Issue)io).ToList(),
+                IsLeaf = issueOption.Children == null
             };
         }
     }

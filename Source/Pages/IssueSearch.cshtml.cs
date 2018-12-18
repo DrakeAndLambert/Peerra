@@ -27,15 +27,15 @@ namespace DrakeLambert.Peerra.Pages
             _logger = logger;
         }
 
-        public async Task<IActionResult> OnGetAsync([FromRoute] Guid parentId)
+        public async Task<IActionResult> OnGetAsync([FromRoute] Guid id)
         {
-            _logger.LogInformation("Retrieving issues for parent {id}.", parentId);
-            ParentIssue = await _context.Issues.FindAsync(parentId);
+            _logger.LogInformation("Retrieving issues for parent {id}.", id);
+            ParentIssue = await _context.Issues.FindAsync(id);
             if (ParentIssue == null)
             {
                 return NotFound("Sorry, that issue could not be found.");
             }
-            ChildIssues = await _context.Issues.Where(issue => issue.ParentId == parentId).ToListAsync();
+            ChildIssues = await _context.Issues.Where(issue => issue.ParentId == id).ToListAsync();
             return Page();
         }
     }

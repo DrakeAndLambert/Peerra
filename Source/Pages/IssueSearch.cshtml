@@ -1,4 +1,4 @@
-@page "{parentId}"
+@page "{id}"
 @model IssueSearchModel
 @{
 ViewData["Title"] = "Issue Search";
@@ -18,7 +18,7 @@ ViewData["Title"] = "Issue Search";
 <div class="card-columns">
     @foreach(var issue in Model.ChildIssues)
     {
-    <a asp-page="/IssueSearch" asp-route-parentId="@issue.Id">
+    <a asp-page="@(issue.IsLeaf ? "/GetHelp" : "/IssueSearch")" asp-route-id="@issue.Id">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">@issue.Title</h5>

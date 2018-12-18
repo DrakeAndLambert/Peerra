@@ -33,6 +33,10 @@ namespace DrakeLambert.Peerra.Pages
             if (parentId != Guid.Empty)
             {
                 ParentIssue = await _context.Issues.FindAsync(parentId);
+                if (ParentIssue == null)
+                {
+                    return NotFound("Sorry, that issue could not be found.");
+                }
             }
             ChildIssues = await _context.Issues.Where(issue => issue.ParentId == parentId).ToListAsync();
             return Page();

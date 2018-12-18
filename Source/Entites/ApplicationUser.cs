@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Identity;
 
 namespace DrakeLambert.Peerra.Entities
 {
-    public class ApplicationUser : IdentityUser<Guid> { 
-        
+    public class ApplicationUser : IdentityUser<Guid>
+    {
+
     }
 }

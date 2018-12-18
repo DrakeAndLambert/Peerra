@@ -11,12 +11,12 @@ namespace DrakeLambert.Peerra.Data
         private readonly ApplicationDbContext _context;
         private readonly ILogger<DbInitializer> _logger;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly InitialDataOptions _initialIssueTree;
+        private readonly InitialDataOptions _initialData;
 
         public DbInitializer(ApplicationDbContext context, IOptions<InitialDataOptions> initialData, ILogger<DbInitializer> logger, UserManager<ApplicationUser> userManager)
         {
             _context = context;
-            _initialIssueTree = initialData.Value;
+            _initialData = initialData.Value;
             _logger = logger;
             _userManager = userManager;
         }
@@ -25,12 +25,21 @@ namespace DrakeLambert.Peerra.Data
         {
             _context.Issues.RemoveRange(_context.Issues);
 
-            _logger.LogInformation("Adding {count} top level issues.", _initialIssueTree.Issues.Length);
+            _logger.LogInformation("Adding {count} top level issues.", _initialData.Issues.Length);
 
-            _context.Issues.AddRange(_initialIssueTree.Issues.Select(io => (Issue)io));
+            _context.Issues.AddRange(_initialData.Issues.Select(io => (Issue)io));
             _context.SaveChanges();
 
-            
+            foreach (var user in _initialData.Users)
+            {
+                var applicationUser = new ApplicationUser
+                {
+                    Email = $"{user.UserName}@email.com",
+                    EmailConfirmed = true
+                };
+                applicationUser.UserName = applicationUser.Email;
+                _userManager.CreateAsync(applicationUser, "Password1!").GetAwaiter().GetResult();
+            }
         }
     }
 }

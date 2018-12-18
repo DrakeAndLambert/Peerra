@@ -1,0 +1,108 @@
+@page "{parentId?}"
+@model IssueSearchModel
+@{
+ViewData["Title"] = "Issue Search";
+}
+
+<div class="row align-items-center">
+    <div class="col-xl-9 col-lg-8">
+        <h1>@Model.ParentIssue.Title</h1>
+        <p class="mb-3">
+            Keep narrowing down your issue to get the best help.
+        </p>
+    </div>
+    <div class="col">
+        <input type="text" class="form-control mb-3" placeholder="Filter..." oninput="filterCards(this.value);" onkeydown="filterCards(this.value);">
+    </div>
+</div>
+<div class="card-columns">
+    @foreach(var issue in Model.ChildIssues)
+    {
+    <a asp-page="/IssueSearch" asp-route-parentId="@issue.Id">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@issue.Title</h5>
+                @if (!string.IsNullOrWhiteSpace(issue.Description))
+                {
+                <p class="card-text">@issue.Description</p>
+                }
+            </div>
+        </div>
+    </a>
+    }
+</div>
+
+<style>
+    .card {
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        color: black;
+    }
+
+    .card:hover {
+        color: #007bff;
+        border-color: #007bff;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .card-columns {
+        column-gap: .75rem;
+    }
+
+    @@media(max-width: 576px) {
+        .card-columns {
+            column-count: 1;
+        }
+    }
+
+    @@media(min-width: 576px) {
+        .card-columns {
+            column-count: 2;
+        }
+    }
+
+    @@media(min-width: 768px) {
+        .card-columns {
+            column-count: 3;
+        }
+    }
+
+    @@media(min-width: 992px) {
+        .card-columns {
+            column-count: 4;
+        }
+    }
+
+    /* @@media(min-width: 1200px) {
+        .card-columns {
+            column-count: 5;
+        }
+    } */
+</style>
+
+@section Scripts {
+<script>
+    let cards = document.getElementsByClassName("card");
+    for (const card of cards) {
+        card.issueTitle = card.querySelector(".card-title").innerHTML.toUpperCase() + card.querySelector(".card-body").innerHTML.toUpperCase();
+    }
+
+    let filterCards = (filterText) => {
+        filterText = filterText.toUpperCase();
+        if (filterText === "") {
+            for (const card of cards) {
+                card.style.display = "inline-block";
+            }
+        } else {
+            for (const card of cards) {
+                if (card.issueTitle.includes(filterText) || filterText.includes(card.issueTitle)) {
+                    card.style.display = "inline-block";
+                } else {
+                    card.style.display = "none";
+                }
+            }
+        }
+    };
+
+</script>
+}

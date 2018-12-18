@@ -17,9 +17,7 @@ namespace DrakeLambert.Peerra.Pages
 
         private readonly ILogger<IndexModel> _logger;
 
-        public Issue ParentIssue { get; set; }
-
-        public IEnumerable<Issue> ChildIssues { get; set; }
+        public IEnumerable<Issue> RootIssues { get; set; }
 
         public IndexModel(ApplicationDbContext context, ILogger<IndexModel> logger)
         {
@@ -27,18 +25,9 @@ namespace DrakeLambert.Peerra.Pages
             _logger = logger;
         }
 
-        public async Task<IActionResult> OnGetAsync([FromRoute] Guid parentId)
+        public async Task<IActionResult> OnGetAsync()
         {
-            _logger.LogInformation("Retrieving issues for parent {id}.", parentId);
-            if (parentId != Guid.Empty)
-            {
-                ParentIssue = await _context.Issues.FindAsync(parentId);
-                if (ParentIssue == null)
-                {
-                    return NotFound("Sorry, that issue could not be found.");
-                }
-            }
-            ChildIssues = await _context.Issues.Where(issue => issue.ParentId == parentId).ToListAsync();
+            RootIssues = await _context.Issues.Where(issue => issue.ParentId == Guid.Empty).ToListAsync();
             return Page();
         }
     }

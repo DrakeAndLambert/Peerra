@@ -2,7 +2,15 @@
 @model GetHelpModel
 @{
     ViewData["Title"] = "Get Help";
-    ViewData["UseDefaultHeader"] = "true";
 }
 
-<h2>@Model.Issue.Title</h2>
+<h1>We Found You Some Help For @Model.Topic.Title</h1>
+<p class="mb-3">
+    Keep narrowing down your topic to get the best help.
+</p>
+
+<ul>
+    @foreach (var user in Model.HelpUsers) {
+    <li>@user.UserName</li>
+    }
+</ul>

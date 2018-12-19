@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using DrakeLambert.Peerra.Entities;
 
 namespace DrakeLambert.Peerra.Data
@@ -17,6 +18,8 @@ namespace DrakeLambert.Peerra.Data
 
     public class IssueOption
     {
+        public Guid Id { get; set; }
+
         public string Title { get; set; }
 
         public string Description { get; set; }
@@ -27,6 +30,7 @@ namespace DrakeLambert.Peerra.Data
         {
             return new Issue
             {
+                Id = issueOption.Id,
                 Title = issueOption.Title,
                 Description = issueOption.Description,
                 Children = issueOption.Children?.Select(io => (Issue)io).ToList(),

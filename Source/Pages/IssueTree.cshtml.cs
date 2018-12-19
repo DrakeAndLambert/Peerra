@@ -30,7 +30,6 @@ namespace DrakeLambert.Peerra.Pages
 
             var jsonResolver = new PropertyIgnoreContractResolver();
             jsonResolver.Ignore<Issue>("Parent", "ParentId", "IsLeaf");
-            jsonResolver.Ignore<BaseEntity>("Id");
 
             var serializerSettings = new JsonSerializerSettings();
             serializerSettings.ContractResolver = jsonResolver;

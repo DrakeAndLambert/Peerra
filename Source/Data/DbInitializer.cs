@@ -46,7 +46,7 @@ namespace DrakeLambert.Peerra.Data
             var random = new Random();
             foreach (var user in _context.Users)
             {
-                var skillCount = random.Next(0, 5);
+                var skillCount = random.Next(5, 10);
                 var skillSet = new HashSet<Guid>();
                 for (int i = 0; i < skillCount; i++)
                 {

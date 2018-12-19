@@ -15,6 +15,7 @@ ViewData["Title"] = "Topic Search";
         <input type="text" class="form-control mb-3" placeholder="Filter..." oninput="filterCards(this.value);" onkeydown="filterCards(this.value);">
     </div>
 </div>
+<hr class="mt-0">
 <div class="card-columns">
     @foreach(var topic in Model.ChildTopics)
     {

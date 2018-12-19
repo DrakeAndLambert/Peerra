@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using DrakeLambert.Peerra.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
@@ -40,6 +42,22 @@ namespace DrakeLambert.Peerra.Data
                 applicationUser.UserName = applicationUser.Email;
                 _userManager.CreateAsync(applicationUser, "Password1!").GetAwaiter().GetResult();
             }
+
+            var random = new Random();
+            foreach (var user in _context.Users)
+            {
+                var skillCount = random.Next(0, 5);
+                var skillSet = new HashSet<Guid>();
+                for (int i = 0; i < skillCount; i++)
+                {
+                    var issue = _context.Issues.OrderBy(iss => iss.Id).Skip(random.Next(0, _context.Issues.Count() - 1)).First();
+                    skillSet.Add(issue.Id);
+                }
+                _context.UserSkills.AddRange(skillSet
+                    .Select(issueId => new UserSkill { UserId = user.Id, IssueId = issueId })
+                );
+            }
+            _context.SaveChanges();
         }
     }
 }

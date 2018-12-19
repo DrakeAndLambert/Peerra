@@ -17,7 +17,7 @@ namespace DrakeLambert.Peerra.Pages
 
         private readonly ILogger<IndexModel> _logger;
 
-        public IEnumerable<Issue> RootIssues { get; set; }
+        public IEnumerable<Topic> RootTopics { get; set; }
 
         public IndexModel(ApplicationDbContext context, ILogger<IndexModel> logger)
         {
@@ -27,7 +27,7 @@ namespace DrakeLambert.Peerra.Pages
 
         public async Task<IActionResult> OnGetAsync()
         {
-            RootIssues = await _context.Issues.Where(issue => issue.ParentId == Guid.Empty).ToListAsync();
+            RootTopics = await _context.Topics.Where(topic => topic.ParentId == Guid.Empty).ToListAsync();
             return Page();
         }
     }

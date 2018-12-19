@@ -6,7 +6,7 @@ namespace DrakeLambert.Peerra.Data
 {
     public class InitialDataOptions
     {
-        public IssueOption[] Issues { get; set; }
+        public TopicOption[] Topics { get; set; }
 
         public UserOption[] Users { get; set; }
     }
@@ -16,7 +16,7 @@ namespace DrakeLambert.Peerra.Data
         public string UserName { get; set; }
     }
 
-    public class IssueOption
+    public class TopicOption
     {
         public Guid Id { get; set; }
 
@@ -24,17 +24,17 @@ namespace DrakeLambert.Peerra.Data
 
         public string Description { get; set; }
 
-        public IssueOption[] Children { get; set; }
+        public TopicOption[] Children { get; set; }
 
-        public static implicit operator Issue(IssueOption issueOption)
+        public static implicit operator Topic(TopicOption topicOption)
         {
-            return new Issue
+            return new Topic
             {
-                Id = issueOption.Id,
-                Title = issueOption.Title,
-                Description = issueOption.Description,
-                Children = issueOption.Children?.Select(io => (Issue)io).ToList(),
-                IsLeaf = issueOption.Children == null
+                Id = topicOption.Id,
+                Title = topicOption.Title,
+                Description = topicOption.Description,
+                Children = topicOption.Children?.Select(io => (Topic)io).ToList(),
+                IsLeaf = topicOption.Children == null
             };
         }
     }

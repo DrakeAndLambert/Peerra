@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DrakeLambert.Peerra.Entities
 {
-    public class Issue : BaseEntity
+    public class Topic : BaseEntity
     {
         public string Title { get; set; }
 
@@ -11,10 +11,10 @@ namespace DrakeLambert.Peerra.Entities
 
         public Guid ParentId { get; set; }
 
-        public Issue Parent { get; set; }
+        public Topic Parent { get; set; }
 
         public bool IsLeaf { get; set; } = true;
 
-        public List<Issue> Children { get; set; }
+        public List<Topic> Children { get; set; }
     }
 }

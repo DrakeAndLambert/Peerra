@@ -25,11 +25,11 @@ namespace DrakeLambert.Peerra.Data
 
         public void Seed()
         {
-            _context.Issues.RemoveRange(_context.Issues);
+            _context.Topics.RemoveRange(_context.Topics);
 
-            _logger.LogInformation("Adding {count} top level issues.", _initialData.Issues.Length);
+            _logger.LogInformation("Adding {count} top level topics.", _initialData.Topics.Length);
 
-            _context.Issues.AddRange(_initialData.Issues.Select(io => (Issue)io));
+            _context.Topics.AddRange(_initialData.Topics.Select(io => (Topic)io));
             _context.SaveChanges();
 
             foreach (var user in _initialData.Users)
@@ -50,11 +50,11 @@ namespace DrakeLambert.Peerra.Data
                 var skillSet = new HashSet<Guid>();
                 for (int i = 0; i < skillCount; i++)
                 {
-                    var issue = _context.Issues.OrderBy(iss => iss.Id).Skip(random.Next(0, _context.Issues.Count() - 1)).First();
-                    skillSet.Add(issue.Id);
+                    var topic = _context.Topics.OrderBy(iss => iss.Id).Skip(random.Next(0, _context.Topics.Count() - 1)).First();
+                    skillSet.Add(topic.Id);
                 }
-                _context.UserSkills.AddRange(skillSet
-                    .Select(issueId => new UserSkill { UserId = user.Id, IssueId = issueId })
+                _context.UserTopics.AddRange(skillSet
+                    .Select(topicId => new UserTopic { UserId = user.Id, TopicId = topicId })
                 );
             }
             _context.SaveChanges();

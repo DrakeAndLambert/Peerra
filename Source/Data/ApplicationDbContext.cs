@@ -8,20 +8,20 @@ namespace DrakeLambert.Peerra.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
     {
-        public DbSet<Issue> Issues { get; set; }
+        public DbSet<Topic> Topics { get; set; }
 
-        public DbSet<UserSkill> UserSkills { get; set; }
+        public DbSet<UserTopic> UserTopics { get; set; }
 
         public ApplicationDbContext(DbContextOptions options) : base(options)
         { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<UserSkill>(userSkill =>
+            builder.Entity<UserTopic>(userSkill =>
             {
-                userSkill.HasKey(us => new { us.UserId, us.IssueId });
+                userSkill.HasKey(us => new { us.UserId, us.TopicId });
                 userSkill.HasIndex(us => us.UserId);
-                userSkill.HasIndex(us => us.IssueId);
+                userSkill.HasIndex(us => us.TopicId);
             });
 
             base.OnModelCreating(builder);

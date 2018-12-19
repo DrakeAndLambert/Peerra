@@ -13,32 +13,32 @@ using Newtonsoft.Json.Serialization;
 
 namespace DrakeLambert.Peerra.Pages
 {
-    public class IssueTreeModel : PageModel
+    public class TopicTreeModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public IssueTreeModel(ApplicationDbContext context)
+        public TopicTreeModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public string JsonIssues { get; set; }
+        public string JsonTopics { get; set; }
 
         public async Task<IActionResult> OnGet([FromQuery] bool raw = false)
         {
-            var issues = (await _context.Issues.ToListAsync()).Where(issue => issue.ParentId == Guid.Empty);
+            var topics = (await _context.Topics.ToListAsync()).Where(topic => topic.ParentId == Guid.Empty);
 
             var jsonResolver = new PropertyIgnoreContractResolver();
-            jsonResolver.Ignore<Issue>("Parent", "ParentId", "IsLeaf");
+            jsonResolver.Ignore<Topic>("Parent", "ParentId", "IsLeaf");
 
             var serializerSettings = new JsonSerializerSettings();
             serializerSettings.ContractResolver = jsonResolver;
 
-            JsonIssues = JsonConvert.SerializeObject(issues, Formatting.Indented, serializerSettings);
+            JsonTopics = JsonConvert.SerializeObject(topics, Formatting.Indented, serializerSettings);
 
             if (raw)
             {
-                return new OkObjectResult(JsonIssues);
+                return new OkObjectResult(JsonTopics);
             }
             else
             {

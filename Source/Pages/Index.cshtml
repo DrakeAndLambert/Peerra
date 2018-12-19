@@ -10,18 +10,18 @@ ViewData["Title"] = "Home";
 <hr>
 <h2>First, Let's Break Down Your Problem.</h2>
 <p class="mb-3">
-    We live pretty diverse lives. Choose the area that best relates to your issue.
+    We live pretty diverse lives. Choose the topic that best relates to your issue.
 </p>
 <div class="card-columns">
-    @foreach(var issue in Model.RootIssues)
+    @foreach(var topic in Model.RootTopics)
     {
-    <a asp-page="/IssueSearch" asp-route-id="@issue.Id">
+    <a asp-page="/TopicSearch" asp-route-id="@topic.Id">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">@issue.Title</h5>
-                @if (!string.IsNullOrWhiteSpace(issue.Description))
+                <h5 class="card-title">@topic.Title</h5>
+                @if (!string.IsNullOrWhiteSpace(topic.Description))
                 {
-                <p class="card-text">@issue.Description</p>
+                <p class="card-text">@topic.Description</p>
                 }
             </div>
         </div>

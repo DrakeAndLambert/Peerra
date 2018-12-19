@@ -1,14 +1,14 @@
 @page "{id}"
-@model IssueSearchModel
+@model TopicSearchModel
 @{
-ViewData["Title"] = "Issue Search";
+ViewData["Title"] = "Topic Search";
 }
 
 <div class="row align-items-center">
     <div class="col-xl-9 col-lg-8">
-        <h1>@Model.ParentIssue.Title</h1>
+        <h1>@Model.ParentTopic.Title</h1>
         <p class="mb-3">
-            Keep narrowing down your issue to get the best help.
+            Keep narrowing down your topic to get the best help.
         </p>
     </div>
     <div class="col">
@@ -16,15 +16,15 @@ ViewData["Title"] = "Issue Search";
     </div>
 </div>
 <div class="card-columns">
-    @foreach(var issue in Model.ChildIssues)
+    @foreach(var topic in Model.ChildTopics)
     {
-    <a asp-page="@(issue.IsLeaf ? "/GetHelp" : "/IssueSearch")" asp-route-id="@issue.Id">
+    <a asp-page="@(topic.IsLeaf ? "/GetHelp" : "/TopicSearch")" asp-route-id="@topic.Id">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">@issue.Title</h5>
-                @if (!string.IsNullOrWhiteSpace(issue.Description))
+                <h5 class="card-title">@topic.Title</h5>
+                @if (!string.IsNullOrWhiteSpace(topic.Description))
                 {
-                <p class="card-text">@issue.Description</p>
+                <p class="card-text">@topic.Description</p>
                 }
             </div>
         </div>
@@ -50,7 +50,7 @@ ViewData["Title"] = "Issue Search";
 <script>
     let cards = document.getElementsByClassName("card");
     for (const card of cards) {
-        card.issueTitle = card.querySelector(".card-title").innerHTML.toUpperCase() + card.querySelector(".card-body").innerHTML.toUpperCase();
+        card.topicTitle = card.querySelector(".card-title").innerHTML.toUpperCase() + card.querySelector(".card-body").innerHTML.toUpperCase();
     }
 
     let filterCards = (filterText) => {
@@ -61,7 +61,7 @@ ViewData["Title"] = "Issue Search";
             }
         } else {
             for (const card of cards) {
-                if (card.issueTitle.includes(filterText) || filterText.includes(card.issueTitle)) {
+                if (card.topicTitle.includes(filterText) || filterText.includes(card.topicTitle)) {
                     card.style.display = "inline-block";
                 } else {
                     card.style.display = "none";

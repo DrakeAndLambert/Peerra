@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DrakeLambert.Peerra.Pages
 {
-    public class GetHelpModel : PageModel
+    public class TopicHelpModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
@@ -20,7 +20,7 @@ namespace DrakeLambert.Peerra.Pages
 
         public IEnumerable<(ApplicationUser User, int RelatedTopicCount)> SecondaryUsers { get; set; }
 
-        public GetHelpModel(ApplicationDbContext context)
+        public TopicHelpModel(ApplicationDbContext context)
         {
             _context = context;
         }

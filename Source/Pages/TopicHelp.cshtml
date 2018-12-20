@@ -1,9 +1,10 @@
 @page "{id}"
-@model GetHelpModel
+@model TopicHelpModel
+@using Microsoft.AspNetCore.Html
 @{
-ViewData["Title"] = "Get Help";
-var displayPrimary = Model.PrimaryUsers.Count() != 0;
-var displaySecondary = Model.SecondaryUsers.Count() != 0;
+ViewData["Title"] = "Topic Help";
+var hasPrimary = Model.PrimaryUsers.Count() != 0;
+var hasSecondary = Model.SecondaryUsers.Count() != 0;
 }
 
 <h1>We Found You Some Help</h1>
@@ -11,6 +12,7 @@ var displaySecondary = Model.SecondaryUsers.Count() != 0;
 <hr>
 
 <table class="table table-hover table-borderless">
+    @if (hasPrimary) {
     <thead>
         <tr>
             <th>Peers With @Model.Topic.Title Experience</th>
@@ -29,23 +31,27 @@ var displaySecondary = Model.SecondaryUsers.Count() != 0;
         </tr>
         }
     </tbody>
+    }
+    @if (hasSecondary) {
     <thead>
         <tr>
             <th>Peers With Related Experience</th>
+            <th>Number of Related Skills</th>
         </tr>
     </thead>
     <tbody>
-            @foreach (var user in Model.SecondaryUsers) {
-            <tr class="link-row">
-                <td>
-                    <a href="#">@user.User.UserName</a>
-                </td>
-                <td>
-                    <a href="#">@user.RelatedTopicCount</a>
-                </td>
-            </tr>
-            }
-        </tbody>
+        @foreach (var user in Model.SecondaryUsers) {
+        <tr class="link-row">
+            <td>
+                <a href="#">@user.User.UserName</a>
+            </td>
+            <td>
+                <a href="#">@user.RelatedTopicCount</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+    }
 </table>
 
 <style>

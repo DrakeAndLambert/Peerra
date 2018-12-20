@@ -11,17 +11,17 @@ using Microsoft.Extensions.Logging;
 
 namespace DrakeLambert.Peerra.Pages.Topics
 {
-    public class SearchModel : PageModel
+    public class ExploreModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        private readonly ILogger<SearchModel> _logger;
+        private readonly ILogger<ExploreModel> _logger;
 
         public Topic ParentTopic { get; set; }
 
         public IEnumerable<Topic> ChildTopics { get; set; }
 
-        public SearchModel(ApplicationDbContext context, ILogger<SearchModel> logger)
+        public ExploreModel(ApplicationDbContext context, ILogger<ExploreModel> logger)
         {
             _context = context;
             _logger = logger;

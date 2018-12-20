@@ -1,16 +1,62 @@
 @page "{id}"
 @model GetHelpModel
 @{
-    ViewData["Title"] = "Get Help";
+ViewData["Title"] = "Get Help";
+var displayPrimary = Model.PrimaryUsers.Count() != 0;
+var displaySecondary = Model.SecondaryUsers.Count() != 0;
 }
 
-<h1>We Found You Some Help For @Model.Topic.Title</h1>
-<p class="mb-3">
-    Keep narrowing down your topic to get the best help.
-</p>
+<h1>We Found You Some Help</h1>
+<p>Click on a user to see their profile.</p>
+<hr>
 
-<ul>
-    @foreach (var user in Model.HelpUsers) {
-    <li>@user.UserName</li>
+<table class="table table-hover table-borderless">
+    <thead>
+        <tr>
+            <th>Peers With @Model.Topic.Title Experience</th>
+            <th>Number of Related Skills</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.PrimaryUsers) {
+        <tr class="link-row">
+            <td>
+                <a href="/">@user.User.UserName</a>
+            </td>
+            <td>
+                <a href="/">@user.RelatedTopicCount</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+    <thead>
+        <tr>
+            <th>Peers With Related Experience</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var user in Model.SecondaryUsers) {
+            <tr class="link-row">
+                <td>
+                    <a href="/">@user.User.UserName</a>
+                </td>
+                <td>
+                    <a href="/">@user.RelatedTopicCount</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+</table>
+
+<style>
+    tr.link-row td a {
+        display: inline-block;
+        min-height: 100%;
+        width: 100%;
+        padding: .75rem;
     }
-</ul>
+
+    tr.link-row td {
+        padding: 0 !important;
+    }
+</style>

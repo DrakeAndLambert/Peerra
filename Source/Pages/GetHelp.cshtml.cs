@@ -16,7 +16,9 @@ namespace DrakeLambert.Peerra.Pages
 
         public Topic Topic { get; set; }
 
-        public IEnumerable<ApplicationUser> HelpUsers { get; set; }
+        public IEnumerable<(ApplicationUser User, int RelatedTopicCount)> PrimaryUsers { get; set; }
+
+        public IEnumerable<(ApplicationUser User, int RelatedTopicCount)> SecondaryUsers { get; set; }
 
         public GetHelpModel(ApplicationDbContext context)
         {
@@ -31,12 +33,65 @@ namespace DrakeLambert.Peerra.Pages
                 return NotFound("We could not find that topic.");
             }
 
-            HelpUsers = await _context.Users
-                .Join(
-                    _context.UserTopics.Where(skill => skill.TopicId == id),
-                    user => user.Id, userTopic => userTopic.UserId,
-                    (user, skills) => user
-                ).ToListAsync();
+            var relatedTopics = _context.Topics.Where(
+                relatedTopic => relatedTopic.ParentId == Topic.ParentId
+            );
+
+            var usersOfRelatedTopics = (await relatedTopics.Join(
+                inner: _context.UserTopics,
+                outerKeySelector: relatedTopic => relatedTopic.Id,
+                innerKeySelector: userTopic => userTopic.TopicId,
+                resultSelector: (relatedTopic, userTopic) => userTopic
+            ).GroupBy(
+                keySelector: userTopic => userTopic.UserId,
+                elementSelector: userTopic => userTopic.TopicId
+            ).OrderByDescending(
+                userGroup => userGroup.Count()
+            ).OrderByDescending(
+                userGroup => userGroup.Any(
+                    topicId => topicId == id
+                )
+            ).Join(
+                inner: _context.Users,
+                outerKeySelector: userGroup => userGroup.Key,
+                innerKeySelector: user => user.Id,
+                resultSelector: (userGroup, user) => new
+                {
+                    User = user,
+                    Topics = userGroup.Join(
+                        _context.Topics,
+                        topicId => topicId,
+                        topic => topic.Id,
+                        (topicId, topic) => topic
+                    )
+                }
+            ).Select(
+                userGroup => new
+                {
+                    User = userGroup.User,
+                    TopicCount = userGroup.Topics.Count(),
+                    HasPrimaryTopic = userGroup.Topics.Any(
+                        topic => topic.Id == id
+                    )
+                }
+            ).ToListAsync()).Select(
+                userGroup => new {
+                    UserGroup = new Tuple<ApplicationUser, int>(userGroup.User, userGroup.TopicCount).ToValueTuple(),
+                    HasPrimaryTopic = userGroup.HasPrimaryTopic
+                }
+            );
+
+            PrimaryUsers = usersOfRelatedTopics.Where(
+                userGroup => userGroup.HasPrimaryTopic
+            ).Take(10).Select(
+                userGroup => userGroup.UserGroup
+            );
+
+            SecondaryUsers = usersOfRelatedTopics.Where(
+                userGroup => !userGroup.HasPrimaryTopic
+            ).Take(10).Select(
+                userGroup => userGroup.UserGroup
+            );
 
             return Page();
         }

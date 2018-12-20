@@ -1,0 +1,13 @@
+@using Entities
+@model Guid
+@{
+    var somethingElseTopic = new Topic
+    {
+        Title = "Something Else",
+        Description = "For when your issue doesn't quite fit anywhere else."
+    };
+}
+
+<a asp-page="/Topics/Search" asp-route-id="@Model">
+    <partial name="_TopicCard" for="@somethingElseTopic" />
+</a>

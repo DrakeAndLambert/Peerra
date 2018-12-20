@@ -1,20 +1,20 @@
 @using Entities
 @model IEnumerable<Topic>
+@{
+var columnSizes = "col-sm-6 col-md-4 col-lg-3 pr-2 pl-2 pb-3";
+}
 
-<div class="card-columns">
+<!-- <div class="card-columns"> -->
+<div id="topicCards" class="row" style="margin: 0 -.5rem">
     @foreach(var topic in Model)
     {
-    <a asp-page="/Topics/@(topic.IsLeaf ? "Help" : "Explore" )" asp-route-id="@topic.Id">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">@topic.Title</h5>
-                @if (!string.IsNullOrWhiteSpace(topic.Description))
-                {
-                <p class="card-text">@topic.Description</p>
-                }
-            </div>
-        </div>
-    </a>
+    <div class="@columnSizes">
+        <a asp-page="/Topics/@(topic.IsLeaf ? " Help" : "Explore" )" asp-route-id="@topic.Id">
+            <partial name="_TopicCard" for="@topic" />
+        </a>
+    </div>
     }
-    <partial name="_SomethingElse" for="First().ParentId" />
+    <div class="@columnSizes">
+        <partial name="_SomethingElse" for="First().ParentId" />
+    </div>
 </div>

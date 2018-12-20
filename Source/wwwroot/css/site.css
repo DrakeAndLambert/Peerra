@@ -51,39 +51,12 @@ footer {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Custom Card Columns */
-
-.card-columns {
-  column-gap: .75rem;
-}
-
-@media(max-width: 576px) {
-  .card-columns {
-      column-count: 1;
-  }
-}
-
-@media(min-width: 576px) {
-  .card-columns {
-      column-count: 2;
-  }
-}
-
-@media(min-width: 768px) {
-  .card-columns {
-      column-count: 3;
-  }
-}
-
-@media(min-width: 992px) {
-  .card-columns {
-      column-count: 4;
-  }
-}
+/* Custom Topic Cards */
 
 a .card {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   color: black;
+  min-height: 100%;
 }
 
 a .card:hover {

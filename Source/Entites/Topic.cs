@@ -9,11 +9,11 @@ namespace DrakeLambert.Peerra.Entities
 
         public string Description { get; set; }
 
+        public bool IsLeaf { get; set; } = true;
+        
         public Guid ParentId { get; set; }
 
         public Topic Parent { get; set; }
-
-        public bool IsLeaf { get; set; } = true;
 
         public List<Topic> Children { get; set; }
     }

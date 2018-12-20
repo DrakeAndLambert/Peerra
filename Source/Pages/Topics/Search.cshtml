@@ -16,22 +16,7 @@ ViewData["Title"] = "Topic Search";
     </div>
 </div>
 <hr class="mt-0">
-<div class="card-columns">
-    @foreach(var topic in Model.ChildTopics)
-    {
-    <a asp-page="@(topic.IsLeaf ? "Help" : "Search")" asp-route-id="@topic.Id">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">@topic.Title</h5>
-                @if (!string.IsNullOrWhiteSpace(topic.Description))
-                {
-                <p class="card-text">@topic.Description</p>
-                }
-            </div>
-        </div>
-    </a>
-    }
-</div>
+<partial name="_TopicCards" for="ChildTopics"/>
 
 <style>
     .card {

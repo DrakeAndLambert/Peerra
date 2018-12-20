@@ -12,22 +12,7 @@ ViewData["Title"] = "Home";
 <p class="mb-3">
     We live pretty diverse lives. Choose the topic that best relates to your issue.
 </p>
-<div class="card-columns">
-    @foreach(var topic in Model.RootTopics)
-    {
-    <a asp-page="Topics/Search" asp-route-id="@topic.Id">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">@topic.Title</h5>
-                @if (!string.IsNullOrWhiteSpace(topic.Description))
-                {
-                <p class="card-text">@topic.Description</p>
-                }
-            </div>
-        </div>
-    </a>
-    }
-</div>
+<partial name="_TopicCards" for="RootTopics"/>
 
 <style>
     .card {

@@ -80,3 +80,14 @@ footer {
       column-count: 4;
   }
 }
+
+a .card {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: black;
+}
+
+a .card:hover {
+  color: #007bff;
+  border-color: #007bff;
+  cursor: pointer;
+}

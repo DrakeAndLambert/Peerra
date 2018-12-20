@@ -21,10 +21,10 @@ var displaySecondary = Model.SecondaryUsers.Count() != 0;
         @foreach (var user in Model.PrimaryUsers) {
         <tr class="link-row">
             <td>
-                <a href="/">@user.User.UserName</a>
+                <a href="#">@user.User.UserName</a>
             </td>
             <td>
-                <a href="/">@user.RelatedTopicCount</a>
+                <a href="#">@user.RelatedTopicCount</a>
             </td>
         </tr>
         }
@@ -38,10 +38,10 @@ var displaySecondary = Model.SecondaryUsers.Count() != 0;
             @foreach (var user in Model.SecondaryUsers) {
             <tr class="link-row">
                 <td>
-                    <a href="/">@user.User.UserName</a>
+                    <a href="#">@user.User.UserName</a>
                 </td>
                 <td>
-                    <a href="/">@user.RelatedTopicCount</a>
+                    <a href="#">@user.RelatedTopicCount</a>
                 </td>
             </tr>
             }

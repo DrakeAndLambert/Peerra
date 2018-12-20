@@ -1,0 +1,14 @@
+@page
+@model NotFoundModel
+@{
+ViewData["Title"] = "Not Found";
+var supportEmail = "dlamb19@lsu.edu";
+}
+
+<h1 class="text-danger">Sorry, We Couldn't Find What You're Looking For :(</h1>
+
+<hr>
+
+<p>@Model.Message</p>
+
+<p><a href="mailto:@supportEmail">Contact support here.</a></p>

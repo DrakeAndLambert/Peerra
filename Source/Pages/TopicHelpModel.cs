@@ -30,7 +30,7 @@ namespace DrakeLambert.Peerra.Pages
             Topic = await _context.Topics.FindAsync(id);
             if (Topic == null)
             {
-                return NotFound("We could not find that topic.");
+                return RedirectToPage("NotFound", new { message = "Your topic may have moved. You can try searching for it again, or contact support." });
             }
 
             var relatedTopics = _context.Topics.Where(
@@ -75,7 +75,8 @@ namespace DrakeLambert.Peerra.Pages
                     )
                 }
             ).ToListAsync()).Select(
-                userGroup => new {
+                userGroup => new
+                {
                     UserGroup = new Tuple<ApplicationUser, int>(userGroup.User, userGroup.TopicCount).ToValueTuple(),
                     HasPrimaryTopic = userGroup.HasPrimaryTopic
                 }

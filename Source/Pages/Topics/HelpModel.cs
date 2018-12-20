@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace DrakeLambert.Peerra.Pages
+namespace DrakeLambert.Peerra.Pages.Topics
 {
-    public class TopicHelpModel : PageModel
+    public class HelpModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
@@ -20,7 +20,7 @@ namespace DrakeLambert.Peerra.Pages
 
         public IEnumerable<(ApplicationUser User, int RelatedTopicCount)> SecondaryUsers { get; set; }
 
-        public TopicHelpModel(ApplicationDbContext context)
+        public HelpModel(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace DrakeLambert.Peerra.Pages
             Topic = await _context.Topics.FindAsync(id);
             if (Topic == null)
             {
-                return RedirectToPage("NotFound", new { message = "Your topic may have moved. You can try searching for it again, or contact support." });
+                return RedirectToPage("/NotFound", new { message = "Your topic may have moved. You can try searching for it again, or contact support." });
             }
 
             var relatedTopics = _context.Topics.Where(

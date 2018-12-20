@@ -15,7 +15,7 @@ ViewData["Title"] = "Home";
 <div class="card-columns">
     @foreach(var topic in Model.RootTopics)
     {
-    <a asp-page="/TopicSearch" asp-route-id="@topic.Id">
+    <a asp-page="Topics/Search" asp-route-id="@topic.Id">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">@topic.Title</h5>

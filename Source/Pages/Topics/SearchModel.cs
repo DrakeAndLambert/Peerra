@@ -9,19 +9,19 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace DrakeLambert.Peerra.Pages
+namespace DrakeLambert.Peerra.Pages.Topics
 {
-    public class TopicSearchModel : PageModel
+    public class SearchModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        private readonly ILogger<TopicSearchModel> _logger;
+        private readonly ILogger<SearchModel> _logger;
 
         public Topic ParentTopic { get; set; }
 
         public IEnumerable<Topic> ChildTopics { get; set; }
 
-        public TopicSearchModel(ApplicationDbContext context, ILogger<TopicSearchModel> logger)
+        public SearchModel(ApplicationDbContext context, ILogger<SearchModel> logger)
         {
             _context = context;
             _logger = logger;
@@ -33,7 +33,7 @@ namespace DrakeLambert.Peerra.Pages
             ParentTopic = await _context.Topics.FindAsync(id);
             if (ParentTopic == null)
             {
-                return RedirectToPage("NotFound", new { message = "Your topic may have moved. You can try searching for it again, or contact support." });
+                return RedirectToPage("/NotFound", new { message = "Your topic may have moved. You can try searching for it again, or contact support." });
             }
             ChildTopics = await _context.Topics.Where(topic => topic.ParentId == id).ToListAsync();
             return Page();

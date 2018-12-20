@@ -11,13 +11,13 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace DrakeLambert.Peerra.Pages
+namespace DrakeLambert.Peerra.Pages.Topics
 {
-    public class TopicTreeModel : PageModel
+    public class JsonModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public TopicTreeModel(ApplicationDbContext context)
+        public JsonModel(ApplicationDbContext context)
         {
             _context = context;
         }

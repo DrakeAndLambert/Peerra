@@ -20,7 +20,8 @@ ViewData["Title"] = "Topic Explorer";
 
 @section Scripts {
 <script>
-    let cards = document.getElementsByClassName("card");
+    let cards = Array.from(document.getElementsByClassName("card-col"))
+    cards.pop();
     for (const card of cards) {
         card.topicTitle = card.querySelector(".card-title").innerHTML.toUpperCase() + card.querySelector(".card-body").innerHTML.toUpperCase();
     }

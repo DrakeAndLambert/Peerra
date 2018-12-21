@@ -1,0 +1,12 @@
+@using Entities
+@{
+    var newTopic = new Topic
+    {
+        Title = "Make a New Topic",
+        Description = "For when your issue doesn't quite fit anywhere else."
+    };
+}
+
+<a asp-page="/Topics/NewRequest">
+    <partial name="Topics/_Card" for="@newTopic" />
+</a>

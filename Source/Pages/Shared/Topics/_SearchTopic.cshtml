@@ -1,0 +1,12 @@
+@using Entities
+@{
+    var searchTopic = new Topic
+    {
+        Title = "Search All Topics",
+        Description = "Try to find your topic through search."
+    };
+}
+
+<a asp-page="/Topics/Search">
+    <partial name="Topics/_Card" for="@searchTopic" />
+</a>

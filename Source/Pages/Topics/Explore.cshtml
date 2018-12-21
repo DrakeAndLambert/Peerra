@@ -16,10 +16,8 @@ ViewData["Title"] = "Topic Explorer";
     </div>
 </div>
 <hr class="mt-0">
-<partial name="Topics/_Cards" for="ChildTopics"/>
-<div class="pb-3">
-    <partial name="Topics/_SomethingElse" />
-</div>
+<partial name="Topics/_Cards" for="ChildTopics" />
+<partial name="Topics/_TopicOptions" />
 
 @section Scripts {
 <script>

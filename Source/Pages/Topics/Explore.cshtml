@@ -17,11 +17,11 @@ ViewData["Title"] = "Topic Explorer";
 </div>
 <hr class="mt-0">
 <partial name="Topics/_Cards" for="ChildTopics"/>
+<partial name="Topics/_SomethingElse" />
 
 @section Scripts {
 <script>
-    let cards = Array.from(document.getElementsByClassName("card-col"))
-    cards.pop();
+    let cards = Array.from(document.getElementsByClassName("card-col"));
     for (const card of cards) {
         card.topicTitle = card.querySelector(".card-title").innerHTML.toUpperCase() + card.querySelector(".card-body").innerHTML.toUpperCase();
     }

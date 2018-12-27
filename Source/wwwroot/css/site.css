@@ -59,7 +59,7 @@ a .card {
   min-height: 100%;
 }
 
-a .card:hover {
+a .card:hover, a .card:focus {
   color: #007bff;
   border-color: #007bff;
   cursor: pointer;

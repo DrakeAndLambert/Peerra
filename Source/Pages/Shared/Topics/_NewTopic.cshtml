@@ -1,12 +1,13 @@
 @using Entities
+@model Topic
 @{
     var newTopic = new Topic
     {
         Title = "Make a New Topic",
-        Description = "For when your issue doesn't quite fit anywhere else."
+        Description = Model.Description
     };
 }
 
-<a asp-page="/Topics/NewRequest">
+<a asp-page="/Topics/New" asp-route-id="@Model.Id">
     <partial name="Topics/_Card" for="@newTopic" />
 </a>

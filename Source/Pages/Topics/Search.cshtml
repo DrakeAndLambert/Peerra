@@ -1,7 +1,12 @@
 @page
+@using Entities
 @model SearchModel
 @{
 ViewData["Title"] = "Topic Search";
+var newTopic = new Topic
+{
+Description = "For when your topic doesn't fit into any of the categories you searched."
+};
 }
 
 <div class="row align-items-center">
@@ -27,5 +32,5 @@ ViewData["Title"] = "Topic Search";
 
 <partial name="Topics/_Cards" for="Results" />
 <div class="pb-3">
-    <partial name="Topics/_NewTopic" />
+    <partial name="Topics/_NewTopic" for="@newTopic" />
 </div>

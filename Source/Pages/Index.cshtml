@@ -1,7 +1,11 @@
 ﻿@page
+@using Entities
 @model IndexModel
 @{
 ViewData["Title"] = "Home";
+var newTopic = new Topic {
+Description = "For when your topic doesn't fit into any of the categories above."
+};
 }
 
 <div class="text-center">
@@ -13,4 +17,4 @@ ViewData["Title"] = "Home";
     We live pretty diverse lives. Choose the topic that best relates to your issue.
 </p>
 <partial name="Topics/_Cards" for="RootTopics" />
-<partial name="Topics/_TopicOptions" />
+<partial name="Topics/_TopicOptions" for="@newTopic" />

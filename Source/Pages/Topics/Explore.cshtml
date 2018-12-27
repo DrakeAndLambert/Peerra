@@ -1,7 +1,13 @@
 @page "{id}"
+@using Entities
 @model ExploreModel
 @{
 ViewData["Title"] = "Topic Explorer";
+var newTopic = new Topic
+{
+Description = "For when your topic doesn't fit any of the above categories, but belongs in " + Model.ParentTopic.Title + ".",
+Id = Model.ParentTopic.Id
+};
 }
 
 <div class="row align-items-center">
@@ -17,7 +23,7 @@ ViewData["Title"] = "Topic Explorer";
 </div>
 <hr class="mt-0">
 <partial name="Topics/_Cards" for="ChildTopics" />
-<partial name="Topics/_TopicOptions" />
+<partial name="Topics/_TopicOptions" for="@newTopic"/>
 
 @section Scripts {
 <script>

@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace DrakeLambert.Peerra.ViewModels
@@ -12,8 +11,7 @@ namespace DrakeLambert.Peerra.ViewModels
         public string Description { get; set; }
 
         [Required]
-        public bool IsLeaf { get; set; }
-
-        public Guid? ParentId { get; set; }
+        [Display(Name = "This topic is a category.")]
+        public bool IsNotLeaf { get; set; }
     }
 }

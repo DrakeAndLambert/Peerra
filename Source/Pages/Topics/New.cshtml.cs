@@ -39,5 +39,37 @@ namespace DrakeLambert.Peerra.Pages.Topics
 
             return Page();
         }
+
+        public async Task<IActionResult> OnPostAsync([FromRoute] Guid id)
+        {
+            _logger.LogInformation("Adding new topic for parent {id}.", id);
+            if (id != Guid.Empty)
+            {
+                ParentTopic = await _context.Topics.FindAsync(id);
+                if (ParentTopic == null)
+                {
+                    return RedirectToPage("/NotFound", new { message = "We couldn't find the parent topic from your link. This may be because the topic has been deleted. You can use the topic search on the home page to try to find it again." });
+                }
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            var topicRequest = new TopicRequest
+            {
+                Title = NewTopic.Title,
+                Description = NewTopic.Description,
+                IsLeaf = !NewTopic.IsNotLeaf,
+                ParentId = id
+            };
+
+            _context.TopicRequests.Add(topicRequest);
+
+            await _context.SaveChangesAsync();
+
+            return Content("Your request has been added and is pending approval.");
+        }
     }
 }

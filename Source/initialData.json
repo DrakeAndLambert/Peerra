@@ -13,1071 +13,1071 @@
                         {
                             "Title": "Accounting",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "8ad0fb5a-9351-4900-b6ab-8ecbe2e970fe"
                         },
                         {
                             "Title": "Administrative and Foundation Se",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "5d1f7517-a681-4ea4-a5b5-81106765d74c"
                         },
                         {
                             "Title": "Aerospace Studies",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "8d9a3eb3-ec8f-4277-bd72-5ab50251e709"
                         },
                         {
                             "Title": "African and African-american Stu",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "6ce79d22-8568-4c3a-baf8-7708f0d7b037"
                         },
                         {
                             "Title": "Agric Education",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "84390424-6c46-4251-b39d-7b574760bbc7"
                         },
                         {
                             "Title": "Agric and Extension Ed and Evaluat",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "53b79d5e-e837-4e3d-8a2e-27e289b17ab8"
                         },
                         {
                             "Title": "Agricultural Economics",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "01fcd41a-60d7-46dd-a1f7-a59858ee4597"
                         },
                         {
                             "Title": "Agricultural Economics and Agrib",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "e89d93fd-7183-433a-b888-d6f5c842b5f6"
                         },
                         {
                             "Title": "Agriculture",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "c6f659de-4647-49b3-afd4-aef19c42bdb1"
                         },
                         {
                             "Title": "Agri, Extension and Adult Educat",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "bd0b6e70-03b5-43fa-83c6-be6c3803d2f6"
                         },
                         {
                             "Title": "Agronomy",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "c0a5696f-201c-40a3-a7ec-dbbe08ffc6cd"
                         },
                         {
                             "Title": "Animal Sciences",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "e9d4d9f3-00a4-4246-8e1d-242d2f2c3382"
                         },
                         {
                             "Title": "Anthropology",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "6ae6bff9-9e3c-4cab-86f9-572530b2f4d4"
                         },
                         {
                             "Title": "Arabic",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "856c6e54-bec6-4a26-a144-1d6260637b78"
                         },
                         {
                             "Title": "Architecture",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "f50bd314-856e-44f5-995b-b0f7d6b6d205"
                         },
                         {
                             "Title": "Art",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "d305c46a-87bd-40fa-a5f4-575d5692c470"
                         },
                         {
                             "Title": "Art History",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "cd38f6b9-49ea-4019-88c2-c154dc3f7b99"
                         },
                         {
                             "Title": "Astronomy",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "09c4eb37-7958-4aab-acfb-d75ff9f8909f"
                         },
                         {
                             "Title": "Athletic Training",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "d06b3d73-803f-4fc6-893f-fd4cc00cc025"
                         },
                         {
                             "Title": "Audio-visual Arts",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "bf67d1b1-6622-4f62-8e50-fdbdf0a7e8f9"
                         },
                         {
                             "Title": "Basic Sciences",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "ea5fc172-ad5d-4ba7-841c-41434f8a1558"
                         },
                         {
                             "Title": "Biological Engineering",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "c351f29d-228c-4bbb-8998-e1dbac7794c7"
                         },
                         {
                             "Title": "Biological Sciences",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "ae4f40e6-8d23-43c8-89bf-f6941b16abbe"
                         },
                         {
                             "Title": "Business Administration",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "6db29c9d-2d7f-4f3d-9405-8b17c1efba88"
                         },
                         {
                             "Title": "Business Education",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "5a6d5e56-ef8e-49ea-a638-43a384697fca"
                         },
                         {
                             "Title": "Business Law",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "deeb564b-a73f-49d5-afcc-ef0cdad69634"
                         },
                         {
                             "Title": "Chemical Engineering",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "d61306c0-0e05-4ab8-bb27-372b32f23231"
                         },
                         {
                             "Title": "Chemistry",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "3499a610-12ed-412a-b747-a5d16dc92119"
                         },
                         {
                             "Title": "Child and Family Studies",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "8f7b8b09-6e2f-4680-a785-25a35b9ad0e1"
                         },
                         {
                             "Title": "Chinese",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "6e094536-8ba2-4869-97b3-417d86312d3f"
                         },
                         {
                             "Title": "Civil Engineering",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "42a3e111-06a6-4c4e-96d4-d2b36f88b9a2"
                         },
                         {
                             "Title": "Civil and Environmental Engineer",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "e6102b90-12f7-4970-b070-b40f9903b0b6"
                         },
                         {
                             "Title": "Classical Studies",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "dfef91d8-7ca5-45e4-b775-13b7a67c5c7f"
                         },
                         {
                             "Title": "Communication Disorders",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "40a7f979-ef80-40d3-8fd3-b07becaa1cfb"
                         },
                         {
                             "Title": "Communication Studies",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "0678859c-8d07-4cef-9574-b7a7967cc90c"
                         },
                         {
                             "Title": "Comparative Biomedical Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "20f5fe46-3215-4272-b8f1-83b3ec828cd4"
                         },
                         {
                             "Title": "Comparative Literature",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "1eaac2e5-261b-484a-a0e8-641cb198f9d6"
                         },
                         {
                             "Title": "Computer Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "3c13118c-f460-4bd2-8198-0c3788254ca0"
                         },
                         {
                             "Title": "Construction Management",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "2ae925a5-c1e7-4c17-9f4c-5d343e86689a"
                         },
                         {
                             "Title": "Curriculum and Instruction",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "bb977d4b-caf4-4aaf-a43d-3e2f38bec4de"
                         },
                         {
                             "Title": "Dairy Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "aca428d3-052c-48b0-b0fe-3df7df20d4b9"
                         },
                         {
                             "Title": "Digital Media Arts and Engineeri",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "d1c5fe9e-deca-4288-af4c-9e47780bc975"
                         },
                         {
                             "Title": "Disaster Science Management",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "cefd5ff9-c0ca-4c5f-a681-04ade02deeea"
                         },
                         {
                             "Title": "Doctor of Design",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "6b5d3388-00eb-43e8-832d-ec84e92f4fad"
                         },
                         {
                             "Title": "Economics",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "165ee415-ecf3-4315-9452-3bdcb87576b5"
                         },
                         {
                             "Title": "Educ Leadership Research Couns",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "a4518cf3-44b2-4979-a0eb-3cc7e5b1c53e"
                         },
                         {
                             "Title": "Education",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "52297717-d6f8-45c8-9d18-4b645e49383c"
                         },
                         {
                             "Title": "Electrical Engineering",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "2c8e278a-3ea4-42e7-af5f-738a27ea660d"
                         },
                         {
                             "Title": "Engineering",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "20891979-ca82-459b-919e-0e2c74c17b7f"
                         },
                         {
                             "Title": "English",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "d7cb48d3-1dd6-4a19-8b7b-af15fac40d31"
                         },
                         {
                             "Title": "Entomology",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "4e02a90a-d21a-4e38-af70-c61e249c2e23"
                         },
                         {
                             "Title": "Entrepreneurship",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "731fd0b1-8c3f-40db-9e42-5301ad3dffd6"
                         },
                         {
                             "Title": "Environmental Engineering",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "f3cbf73a-bb08-42e1-954f-6b36889da22d"
                         },
                         {
                             "Title": "Environmental Management Syste",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "48ccb490-6627-4e92-967d-a2ca21bc038c"
                         },
                         {
                             "Title": "Environmental Sciences",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "e287aa21-cb66-4bc1-b945-2e1d05f7fc0f"
                         },
                         {
                             "Title": "Environmental Studies",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "a85adf30-00eb-4705-a965-ea5a357ee0a4"
                         },
                         {
                             "Title": "Epidemiology and Community Healt",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "d9f09f36-b7ea-4c38-a679-b3469d089255"
                         },
                         {
                             "Title": "Experimental Statistics",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "f6b9e6e6-e30c-4f12-aff4-fcfa257fe480"
                         },
                         {
                             "Title": "Extension Education",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "df9ecfc2-77ae-4259-af60-7a33890b7b13"
                         },
                         {
                             "Title": "Film and Media Arts",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "3486750a-fae8-4094-935e-4e6507bfecac"
                         },
                         {
                             "Title": "Finance",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "ffa1acf8-28de-44c6-86b8-f223e26efb4b"
                         },
                         {
                             "Title": "Fisheries",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "b6524f8c-767d-4c46-87da-fdd0d5dea961"
                         },
                         {
                             "Title": "Food Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "cdfc02c3-a2c5-4979-8e02-128f4cc2f6e5"
                         },
                         {
                             "Title": "Forestry",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "53f36ffa-af5d-40cb-a3e5-ca76ece9e1a1"
                         },
                         {
                             "Title": "French",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "fdebabe6-f134-4176-a88d-cf0a59cee2d3"
                         },
                         {
                             "Title": "French Studies",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "eb6aa473-9b7a-4b31-8a4a-91b8accd305b"
                         },
                         {
                             "Title": "Freshman Forum",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "f674a131-fa1e-46ed-9077-bf13984132aa"
                         },
                         {
                             "Title": "Freshman Seminar",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "d50d7cea-e303-42eb-89c1-4b6abb05397d"
                         },
                         {
                             "Title": "General Business",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "8e609119-410d-4f27-90b9-04fe5812cd64"
                         },
                         {
                             "Title": "Geography",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "aa712928-1ac7-476b-8b7e-5810e4ee46cf"
                         },
                         {
                             "Title": "Geology",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "73025eae-bd71-47ab-b1e4-a2381069c0e3"
                         },
                         {
                             "Title": "German",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "e5199464-02e2-4a6c-a784-0760d99e9cf0"
                         },
                         {
                             "Title": "Greek",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "9f12ce58-4ee2-4b3f-9e72-eb4c900c69f8"
                         },
                         {
                             "Title": "Hebrew",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "85885a12-f48a-4b31-8aa7-d5e707a57cef"
                         },
                         {
                             "Title": "History",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "dfdf0ef6-84ea-4c47-b4a8-650e9abd1da5"
                         },
                         {
                             "Title": "Home Econ Educ",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "9fa731ee-ec0a-4ce2-a63d-b78b656de0ab"
                         },
                         {
                             "Title": "Honors",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "a5ccf3e5-8e52-46a1-8737-62a44935c756"
                         },
                         {
                             "Title": "Horticulture",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "9e0df61f-d5be-4711-b214-2741fe01bc80"
                         },
                         {
                             "Title": "How to Do Lsu",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "ee4148d9-ff97-4cc7-bf0e-4e9f946891c6"
                         },
                         {
                             "Title": "Human Ecology",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "fae07e62-53ac-43a0-9982-7ca651f225bf"
                         },
                         {
                             "Title": "Human Resource Education",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "0da14092-4bc9-465a-be41-ab9478a01413"
                         },
                         {
                             "Title": "Humanities",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "ea4ad0b1-2238-4965-bfd8-09257217c498"
                         },
                         {
                             "Title": "Humanities and Social Sciences",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "b10e4bca-4923-4e93-abf5-19230255fed5"
                         },
                         {
                             "Title": "Industrial Education",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "8aa1b852-f9c0-49a4-9b60-aafbf108cb8a"
                         },
                         {
                             "Title": "Industrial Engineering",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "dd634146-5f80-4b08-b0bb-22f095a049c9"
                         },
                         {
                             "Title": "Industrial Technology",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "737394e9-a026-47db-b9f5-0d577736c5f6"
                         },
                         {
                             "Title": "Industrial and Manufactur Engine",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "ee1f2677-7edb-4290-beec-4b19eaa85cc6"
                         },
                         {
                             "Title": "Info Systems and Decision Scie",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "1113ea4c-3fc0-431c-bfc3-7ebae86ee9b3"
                         },
                         {
                             "Title": "Interior Design",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "8ccc9e73-16dc-4d54-949d-ec8f382ee435"
                         },
                         {
                             "Title": "International Studies",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "33c62b0c-fa4c-4dfd-9fa9-00470929e4dd"
                         },
                         {
                             "Title": "Italian",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "6b525bff-d024-462c-bc24-e67eceb494ca"
                         },
                         {
                             "Title": "Japanese",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "0e966664-de73-488c-8689-926e2cafaae5"
                         },
                         {
                             "Title": "Junior Division",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "8e864057-647f-4ad8-b11e-89df7db0e34f"
                         },
                         {
                             "Title": "Kinesiology",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "70238f3c-177f-45e4-834b-a175debaf3ee"
                         },
                         {
                             "Title": "Landscape Architecture",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "6b2e065a-b7eb-4a8e-84e6-042b6b882a03"
                         },
                         {
                             "Title": "Latin",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "b395b33d-4ffa-4ae0-87fd-23c9d1673911"
                         },
                         {
                             "Title": "Leadership and Human Resources D",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "30c6d1dd-fbe8-4f51-b027-0c823582cda1"
                         },
                         {
                             "Title": "Liberal Arts",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "5ae99119-5385-42b5-835e-1c1c7fa62895"
                         },
                         {
                             "Title": "Library and Information Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "afe8ee63-812f-4a7a-a419-24ef259fd715"
                         },
                         {
                             "Title": "Life Course and Aging",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "c65005af-bec3-4ce9-8bbb-1cc3cc1774d4"
                         },
                         {
                             "Title": "Life Course in Aging",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "e4529446-e858-4ecb-9918-643137d544df"
                         },
                         {
                             "Title": "Linguistics",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "913ea2ff-f0dc-4027-9104-1b848db74108"
                         },
                         {
                             "Title": "Management",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "6d594238-cada-49ef-9f3e-af4fc76d3419"
                         },
                         {
                             "Title": "Marketing",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "4e842e9c-b8f2-45b1-880c-77757d779535"
                         },
                         {
                             "Title": "Mass Communication",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "e09c83cd-d389-4983-9f26-3765994548c3"
                         },
                         {
                             "Title": "Mathematics",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "ed2585c3-7eb2-44db-9447-e05cdf04c469"
                         },
                         {
                             "Title": "Mechanical Engineering",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "886b4794-e852-4d4b-9cfe-ff7f1dcfe597"
                         },
                         {
                             "Title": "Medical Physics",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "88067360-c648-43bc-85ff-678fcc0e07ed"
                         },
                         {
                             "Title": "Military Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "db8f7da7-769d-415a-8db8-3403dd01b2d0"
                         },
                         {
                             "Title": "Music",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "ff648760-3167-436f-8826-5cc5f173cee5"
                         },
                         {
                             "Title": "Music Education",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "dce8a8da-1849-427a-b0af-a9179cee8277"
                         },
                         {
                             "Title": "Nuclear Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "b8e26ca3-5b44-44d9-9bf0-83ff4afad28d"
                         },
                         {
                             "Title": "Nutrition and Food Sciences",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "92ac9170-0931-411e-94cf-fdfff28bd467"
                         },
                         {
                             "Title": "Oceanography and Coastal Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "d2944862-0abe-414f-9d88-402393af3447"
                         },
                         {
                             "Title": "Pathobiological Sciences",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "1074bf58-6c0a-4793-9e25-9bc456ed45e7"
                         },
                         {
                             "Title": "Petroleum Engineering",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "1181c3b7-64fd-40cc-bae1-139054f99488"
                         },
                         {
                             "Title": "Philosophy",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "de150af2-d292-4dec-8bc9-9143286f075b"
                         },
                         {
                             "Title": "Philosophy and Religious Studies",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "296c214d-7188-4232-97a9-d844ef465739"
                         },
                         {
                             "Title": "Physical Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "1e45ae1b-bfaa-42e9-b026-df65cbe7e888"
                         },
                         {
                             "Title": "Physics",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "c8906a80-e1cd-4c58-876b-30f97880300f"
                         },
                         {
                             "Title": "Plant Health",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "34729ef0-e548-462b-b0ca-cb669b71aefa"
                         },
                         {
                             "Title": "Political Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "38edfea7-e7f3-4485-8dca-9a4af5fcfed3"
                         },
                         {
                             "Title": "Portuguese",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "61fa306f-7627-40dd-b185-9a6197044e7e"
                         },
                         {
                             "Title": "Poultry Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "842b85d5-12d0-4bf8-b2e1-bc20fb898834"
                         },
                         {
                             "Title": "Psychology",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "10a21f3d-70d0-4136-9787-28e8f326f6e3"
                         },
                         {
                             "Title": "Public Administration",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "f48ebd9a-a65a-4fcf-8ce6-22cf56c3f85b"
                         },
                         {
                             "Title": "Religious Studies",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "ef47e59b-ab06-4174-af15-13f047a58da2"
                         },
                         {
                             "Title": "Renewable Natural Resources",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "35068b21-dcae-4dc7-8c85-933bd0dbb845"
                         },
                         {
                             "Title": "Russian",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "1203cd58-85f0-445d-a4d1-9b3c40e5e5ff"
                         },
                         {
                             "Title": "Screen Arts",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "79cbf546-49cb-474b-b528-9f750fb57f3f"
                         },
                         {
                             "Title": "Social Work",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "f0e8079e-e520-48fe-a667-4f5fdd7ddf79"
                         },
                         {
                             "Title": "Sociology",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "a7dfaec8-c6eb-40e1-8c26-72b7965ef4c2"
                         },
                         {
                             "Title": "Spanish",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "85fe52ba-ab1d-48d1-bc20-2836d9288857"
                         },
                         {
                             "Title": "Speech Communication",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "af562368-11ff-4e9b-ac15-ce1f5974079c"
                         },
                         {
                             "Title": "Student Support Services",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "5f5e82f6-e369-4304-9efb-7339d4269ec1"
                         },
                         {
                             "Title": "Swahili",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "c2ff2147-f6cb-4c8f-bf99-69adf42dfe5b"
                         },
                         {
                             "Title": "Systems Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "d8fcd85c-da1f-4154-a245-fd33ee3787b7"
                         },
                         {
                             "Title": "Textiles,Apparel and Merchandisi",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "7a583f3b-1d4b-4baf-bd94-7d0a3082f8de"
                         },
                         {
                             "Title": "Theatre",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "849754f3-eff5-495a-918f-b0e3236bf21c"
                         },
                         {
                             "Title": "University",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "3447abf7-d101-447b-a899-9cdc84d54d44"
                         },
                         {
                             "Title": "University College",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "69c07f99-5288-4413-b034-a69aa78868f9"
                         },
                         {
                             "Title": "University Studies",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "abac32ef-79ac-49a3-9d8a-c71664c335ac"
                         },
                         {
                             "Title": "Veterinary Anatomy",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "b061de09-f9b5-4c4e-ab64-ebe6d509cb1d"
                         },
                         {
                             "Title": "Veterinary Clinical Sciences",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "c5e40f6e-983c-42bf-93d2-ed50a02f5de2"
                         },
                         {
                             "Title": "Veterinary Medicine",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "378bb52f-bd31-4130-9f76-cd7536588685"
                         },
                         {
                             "Title": "Veterinary Microbiol and Parasit",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "fbf6486e-80e6-4b42-aeab-127a290a1306"
                         },
                         {
                             "Title": "Veterinary Pathology",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "5d4bb17a-832d-441d-a025-61734728d76f"
                         },
                         {
                             "Title": "Veterinary Physiol, Pharmac And",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "2a3f8481-8f7a-4711-b79e-9d87f0c0184b"
                         },
                         {
                             "Title": "Veterinary Science",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "861b203a-d26a-4e47-bea1-5781d3eabe33"
                         },
                         {
                             "Title": "Vocational Education",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "d6fbcff6-69af-4bdf-8e7f-6c28690c6ac1"
                         },
                         {
                             "Title": "Vocational Trade and Ind Ed",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "5b220229-9c0e-4894-9fc9-d95688e1d7bd"
                         },
                         {
                             "Title": "Wildlife",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "86620f0c-396f-46f6-8c1d-1be5d6c996cf"
                         },
                         {
                             "Title": "Women's and Gender Studies",
                             "Description": "",
-                            "IsLeaf": true,
+                            "IsLeaf": false,
                             "Children": null,
                             "Id": "1d926a2c-042b-4dea-90fb-1a329720052a"
                         }
@@ -1087,14 +1087,14 @@
                 {
                     "Title": "Scheduling",
                     "Description": "For questions about how scheduling works, or recommendations on what courses to choose.",
-                    "IsLeaf": true,
+                    "IsLeaf": false,
                     "Children": null,
                     "Id": "817bd790-a24a-430d-8138-ca63573f2b7b"
                 },
                 {
                     "Title": "Professors",
                     "Description": "When you're having issues with a professor or want to know more about them.",
-                    "IsLeaf": true,
+                    "IsLeaf": false,
                     "Children": null,
                     "Id": "92089cf7-bea3-45de-a586-504c2d4517e7"
                 }
@@ -1124,7 +1124,7 @@
                 {
                     "Title": "Careers",
                     "Description": "",
-                    "IsLeaf": true,
+                    "IsLeaf": false,
                     "Children": null,
                     "Id": "ce0da378-4c9e-4b0d-9bf6-16b165752717"
                 }
@@ -1139,7 +1139,7 @@
                 {
                     "Title": "Scholarships",
                     "Description": "",
-                    "IsLeaf": true,
+                    "IsLeaf": false,
                     "Children": null,
                     "Id": "2be80197-3404-44cc-a203-245bdbd0496f"
                 }

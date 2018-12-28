@@ -10,25 +10,25 @@ Id = Model.ParentTopic.Id
 };
 }
 
-<div class="row align-items-center">
-    <div class="col-xl-9 col-lg-8">
-        <h1>@Model.ParentTopic.Title</h1>
-        <p class="mb-3">
-            Keep narrowing down your topic to get the best help.
-        </p>
-    </div>
-    <div class="col">
-        <input type="text" class="form-control mb-3" placeholder="Filter..." oninput="filterCards(this.value);" onkeydown="filterCards(this.value);">
-    </div>
+<div class="form-inline" style="margin: 0 -.5rem;">
+    <h1 class="mx-2">@Model.ParentTopic.Title</h1>
+    <a asp-page="Help" asp-route-id="@Model.ParentTopic.Id">
+        <button class="btn btn-outline-primary mb-2 mx-2">Get Help With This</button>
+    </a>
 </div>
+<p class="mb-3">
+    Keep narrowing down your topic to get the best help.
+</p>
 <hr class="mt-0">
-@if (Model.ChildTopics.Count() == 0) 
-{
+@if (Model.ChildTopics.Count() == 0) {
 <h4 class="mb-3 text-muted">There aren't any sub-topics here yet. Help us out by adding one below.</h4>
 }
+else {
+<input type="text" class="form-control mb-3" placeholder="Filter..." oninput="filterCards(this.value);" onkeydown="filterCards(this.value);">
 <partial name="Topics/_Cards" for="ChildTopics" />
+}
 <hr class="mt-0">
-<partial name="Topics/_TopicOptions" for="@newTopic"/>
+<partial name="Topics/_TopicOptions" for="@newTopic" />
 
 @section Scripts {
 <script>

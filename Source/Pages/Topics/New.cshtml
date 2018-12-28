@@ -35,12 +35,13 @@ else
         <input asp-for="NewTopic.IsNotLeaf" class="form-check-input" aria-describedby="isNotLeafHelp" placeholder="Enter description">
         <label class="mb-0" asp-for="NewTopic.IsNotLeaf">This topic is a category</label>
         <small id="isNotLeafHelp" class="form-text text-muted">Select this option if your new topic can have sub-topics.</small>
+        <small class="form-text text-muted">Not sure? Just leave the box unchecked.</small>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <style>
-    #isNotLeafHelp {
+    .form-check small {
         margin-left: -1.25rem;
     }
 </style>

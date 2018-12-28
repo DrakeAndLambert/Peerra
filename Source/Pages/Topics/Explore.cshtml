@@ -22,7 +22,10 @@ Id = Model.ParentTopic.Id
 </p>
 <hr class="mt-0">
 @if (Model.ChildTopics.Count() == 0) {
-<h4 class="mb-3 text-muted">There aren't any sub-topics here yet. Help us out by adding one below.</h4>
+    <div class="text-muted">
+        <h4>@Model.ParentTopic.Title doesn't have any sub-topics yet.</h4>
+        <p>You can add your own or get help with @Model.ParentTopic.Title directly.</p>
+    </div>
 }
 else {
 <div class="form-inline justify-content-between mb-2">

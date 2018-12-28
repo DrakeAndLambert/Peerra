@@ -30,7 +30,19 @@ Description = "For when your topic doesn't fit into any of the categories you se
 
 <hr class="mt-0">
 
+@if (Model.Results == null)
+{
+<h4 class="mb-3 text-muted">Your search results will appear here.</h4>
+}
+else if (Model.Results.Count() == 0)
+{
+<h4 class="mb-3 text-muted">Sorry! We couldn't find any topic with <q>@Model.Search</q> in the title or description.</h4>
+}
+else
+{
 <partial name="Topics/_Cards" for="Results" />
+}
+<hr class="mt-0">
 <div class="pb-3">
     <partial name="Topics/_NewTopic" for="@newTopic" />
 </div>

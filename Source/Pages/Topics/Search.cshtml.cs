@@ -28,11 +28,7 @@ namespace DrakeLambert.Peerra.Pages.Topics
 
         public async Task OnPostAsync()
         {
-            if (string.IsNullOrWhiteSpace(Search))
-            {
-                Results = new List<Topic>();
-            }
-            else
+            if (!string.IsNullOrWhiteSpace(Search))
             {
                 var search = Search.ToUpper();
                 _logger.LogInformation("Searching for {query}.", search);
@@ -45,8 +41,6 @@ namespace DrakeLambert.Peerra.Pages.Topics
         }
 
         public void OnGet()
-        {
-            Results = new List<Topic>();
-        }
+        { }
     }
 }

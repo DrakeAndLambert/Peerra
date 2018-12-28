@@ -25,9 +25,9 @@ Id = Model.ParentTopic.Id
 <h4 class="mb-3 text-muted">There aren't any sub-topics here yet. Help us out by adding one below.</h4>
 }
 else {
-<div class="form-inline justify-content-between mb-3">
-    <h4 class="mb-0">Narrow Down Your Issue's Topic</h4>
-    <input type="text" class="form-control w-auto" placeholder="Filter..." oninput="filterCards(this.value);" onkeydown="filterCards(this.value);">
+<div class="form-inline justify-content-between mb-2">
+    <h4 class="mb-2">Narrow Down Your Issue's Topic</h4>
+    <input type="text" class="form-control w-auto mb-2" placeholder="Filter..." oninput="filterCards(this.value);" onkeydown="filterCards(this.value);">
 </div>
 <partial name="Topics/_Cards" for="ChildTopics" />
 }

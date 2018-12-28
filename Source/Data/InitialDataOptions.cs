@@ -24,6 +24,8 @@ namespace DrakeLambert.Peerra.Data
 
         public string Description { get; set; }
 
+        public bool IsLeaf { get; set; }
+
         public TopicOption[] Children { get; set; }
 
         public static implicit operator Topic(TopicOption topicOption)
@@ -34,7 +36,7 @@ namespace DrakeLambert.Peerra.Data
                 Title = topicOption.Title,
                 Description = topicOption.Description,
                 Children = topicOption.Children?.Select(io => (Topic)io).ToList(),
-                IsLeaf = topicOption.Children == null
+                IsLeaf = topicOption.IsLeaf
             };
         }
     }

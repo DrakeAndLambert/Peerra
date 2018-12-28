@@ -29,7 +29,7 @@ namespace DrakeLambert.Peerra.Pages.Dev
             var topics = (await _context.Topics.ToListAsync()).Where(topic => topic.ParentId == Guid.Empty);
 
             var jsonResolver = new PropertyIgnoreContractResolver();
-            jsonResolver.Ignore<Topic>("Parent", "ParentId", "IsLeaf");
+            jsonResolver.Ignore<Topic>("Parent", "ParentId");
 
             var serializerSettings = new JsonSerializerSettings();
             serializerSettings.ContractResolver = jsonResolver;

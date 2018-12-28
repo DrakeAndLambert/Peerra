@@ -38,6 +38,11 @@
 
     <main class="container">
         <partial name="_CookieConsentPartial" />
+        @{
+            if (ViewData["UseDefaultHeader"] == null) {
+                ViewData["UseDefaultHeader"] = false;
+            }
+        }
         @if((bool)ViewData["UseDefaultHeader"]) {
         <h1>@ViewData["Title"]</h1>
         <hr>

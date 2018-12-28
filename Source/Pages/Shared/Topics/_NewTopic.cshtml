@@ -1,9 +1,12 @@
 @using Entities
 @model Topic
 @{
+    if (string.IsNullOrWhiteSpace(Model.Title)) {
+        Model.Title = "Make Your Own Topic";
+    }
     var newTopic = new Topic
     {
-        Title = "Make Your Own Topic",
+        Title = Model.Title,
         Description = Model.Description
     };
 }

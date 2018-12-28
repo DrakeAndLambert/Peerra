@@ -6,14 +6,15 @@ ViewData["Title"] = "New Topic";
 
 <h1>Make Your Own Topic@(Model.ParentTopic != null ? $" in {Model.ParentTopic.Title}" : "")</h1>
 
+<p>You're about to make a new topic for your issue. Other users will be able to see this topic and can use it to post their own issues in the future. When you're done, we'll notify other users, and get you help as fast as we can!</p>
+
 @if (Model.ParentTopic == null)
 {
-<p>You're about to make a topic that doesn't have a parent category. This will make it harder for us to find help for you. We recommend searching for a parent topic using the <a asp-page="/Index">topic explorer</a> or the <a asp-page="/Topics/Search">topic search</a>. You can then create your new topic in that category.</p>
+<p>It looks like you haven't selected a parent topic. This will make it harder for us to find help for you. We recommend searching for a parent topic using the <a asp-page="/Index">topic explorer</a> or the <a asp-page="/Topics/Search">topic search</a>. You can then create your new topic in that category.</p>
 }
 else
 {
-<p>You're about to make a new topic in the @Model.ParentTopic.Title category. We'll notify other users, and get help for your topic as fast as we can!</p>
-<p>If you don't think your new topic belongs in @Model.ParentTopic.Title, use the <a asp-page="/Index">topic explorer</a> or the <a asp-page="/Topics/Search">topic search</a> to find the right category.</p>
+<p>Your new topic will be placed under the @Model.ParentTopic.Title topic. If you don't think your new topic belongs under @Model.ParentTopic.Title, use the <a asp-page="/Index">topic explorer</a> or the <a asp-page="/Topics/Search">topic search</a> to find the right parent topic.</p>
 }
 
 <hr>

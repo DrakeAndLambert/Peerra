@@ -39,7 +39,7 @@ namespace DrakeLambert.Peerra
                 // TODO: Figure out real DB situation
                 // if (_environment.IsDevelopment())
                 // {
-                    options.UseInMemoryDatabase(nameof(ApplicationDbContext));
+                options.UseInMemoryDatabase(nameof(ApplicationDbContext));
                 // }
                 // else
                 // {
@@ -51,6 +51,13 @@ namespace DrakeLambert.Peerra
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddDefaultUI(UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddAuthentication()
+                .AddGoogle(googleOptions =>
+                {
+                    googleOptions.ClientId = _configuration["Authentication:Google:ClientId"];
+                    googleOptions.ClientSecret = _configuration["Authentication:Google:ClientSecret"];
+                });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

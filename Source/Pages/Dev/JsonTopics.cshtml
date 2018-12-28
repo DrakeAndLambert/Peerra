@@ -1,0 +1,10 @@
+@page
+@model JsonTopicsModel
+@{
+    ViewData["Title"] = "Topic Json";
+    ViewData["UseDefaultHeader"] = true;
+}
+
+<a class="btn btn-outline-secondary mb-3" asp-page="JsonTopics" asp-route-raw="true" target="_blank">View Raw</a>
+
+<pre><code>@Model.JsonTopics</code></pre>

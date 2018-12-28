@@ -11,13 +11,13 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace DrakeLambert.Peerra.Pages.Topics
+namespace DrakeLambert.Peerra.Pages.Dev
 {
-    public class JsonModel : PageModel
+    public class JsonTopicsModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        public JsonModel(ApplicationDbContext context)
+        public JsonTopicsModel(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -38,7 +38,7 @@ namespace DrakeLambert.Peerra.Pages.Topics
 
             if (raw)
             {
-                return new OkObjectResult(JsonTopics);
+                return Content(JsonTopics);
             }
             else
             {

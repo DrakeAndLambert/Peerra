@@ -22,10 +22,8 @@ Id = Model.ParentTopic.Id
 </p>
 <hr class="mt-0">
 @if (Model.ChildTopics.Count() == 0) {
-    <div class="text-muted">
-        <h4>@Model.ParentTopic.Title doesn't have any sub-topics yet.</h4>
-        <p>You can add your own or get help with @Model.ParentTopic.Title directly.</p>
-    </div>
+<h4>@Model.ParentTopic.Title doesn't have any sub-topics yet.</h4>
+<p>You can <a asp-page="/Topics/New" asp-route-id="@Model.ParentTopic.Id">add your own</a> or <a asp-page="Help" asp-route-id="@Model.ParentTopic.Id">get help with @Model.ParentTopic.Title directly</a>.</p>
 }
 else {
 <div class="form-inline justify-content-between mb-2">

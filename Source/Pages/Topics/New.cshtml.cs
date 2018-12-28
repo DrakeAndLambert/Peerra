@@ -4,6 +4,7 @@ using DrakeLambert.Peerra.Data;
 using DrakeLambert.Peerra.Entities;
 using DrakeLambert.Peerra.ViewModels;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
@@ -15,16 +16,18 @@ namespace DrakeLambert.Peerra.Pages.Topics
     {
         private readonly ApplicationDbContext _context;
         private readonly ILogger<NewModel> _logger;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
         public Topic ParentTopic { get; private set; }
 
         [BindProperty]
         public NewTopic NewTopic { get; set; }
 
-        public NewModel(ApplicationDbContext context, ILogger<NewModel> logger)
+        public NewModel(ApplicationDbContext context, ILogger<NewModel> logger, SignInManager<ApplicationUser> signInManager)
         {
             _context = context;
             _logger = logger;
+            _signInManager = signInManager;
         }
 
         public async Task<IActionResult> OnGetAsync([FromRoute] Guid id)
@@ -59,19 +62,28 @@ namespace DrakeLambert.Peerra.Pages.Topics
                 return Page();
             }
 
-            var topicRequest = new TopicRequest
+            var user = await _signInManager.UserManager.FindByNameAsync(User.Identity.Name);
+            if (user == null)
+            {
+                await _signInManager.SignOutAsync();
+                return RedirectToRoute("/Identity/Account/Logout");
+            }
+
+            var topicRequest = new Topic
             {
                 Title = NewTopic.Title,
                 Description = NewTopic.Description,
                 IsLeaf = !NewTopic.IsNotLeaf,
-                ParentId = id
+                ParentId = id,
+                OwnerId = user.Id,
+                Approved = false
             };
 
-            _context.TopicRequests.Add(topicRequest);
+            _context.Topics.Add(topicRequest);
 
             await _context.SaveChangesAsync();
 
-            return Content("Your request has been added and is pending approval.");
+            return RedirectToPage("/Topics/Explore", new { id = topicRequest.Id });
         }
     }
 }

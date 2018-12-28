@@ -12,8 +12,6 @@ namespace DrakeLambert.Peerra.Data
 
         public DbSet<UserTopic> UserTopics { get; set; }
 
-        public DbSet<TopicRequest> TopicRequests { get; set; }
-
         public ApplicationDbContext(DbContextOptions options) : base(options)
         { }
 

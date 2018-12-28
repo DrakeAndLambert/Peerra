@@ -36,7 +36,8 @@ namespace DrakeLambert.Peerra.Data
                 Title = topicOption.Title,
                 Description = topicOption.Description,
                 Children = topicOption.Children?.Select(io => (Topic)io).ToList(),
-                IsLeaf = topicOption.IsLeaf
+                IsLeaf = topicOption.IsLeaf,
+                Approved = true
             };
         }
     }

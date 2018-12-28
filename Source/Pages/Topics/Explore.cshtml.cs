@@ -35,7 +35,7 @@ namespace DrakeLambert.Peerra.Pages.Topics
             {
                 return RedirectToPage("/NotFound", new { message = "Your topic may have moved. You can try searching for it again, or contact support." });
             }
-            ChildTopics = await _context.Topics.Where(topic => topic.ParentId == id).ToListAsync();
+            ChildTopics = await _context.Topics.Where(topic => topic.ParentId == id && topic.Approved).ToListAsync();
             return Page();
         }
     }

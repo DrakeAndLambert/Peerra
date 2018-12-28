@@ -4,35 +4,36 @@
 ViewData["Title"] = "New Topic";
 }
 
-<h1>Make a New Topic@(Model.ParentTopic != null ? $" in {Model.ParentTopic.Title}" : "")</h1>
+<h1>Make Your Own Topic@(Model.ParentTopic != null ? $" in {Model.ParentTopic.Title}" : "")</h1>
 
 @if (Model.ParentTopic == null)
 {
-<p>You're about to make a topic that doesn't have a parent category. Topics without a parent will be hard to find. We recommend searching for a parent topic using the <a asp-page="/Index">topic explorer</a> or the <a asp-page="/Topics/Search">topic search</a>. You can then create your new topic in that category.</p>
+<p>You're about to make a topic that doesn't have a parent category. This will make it harder for us to find help for you. We recommend searching for a parent topic using the <a asp-page="/Index">topic explorer</a> or the <a asp-page="/Topics/Search">topic search</a>. You can then create your new topic in that category.</p>
 }
 else
 {
-<p>You're about to make a new topic that is in the @Model.ParentTopic.Title category. That's great! If you don't think your new topic belongs here, use the <a asp-page="/Index">topic explorer</a> or the <a asp-page="/Topics/Search">topic search</a> to find the right category.</p>
+<p>You're about to make a new topic in the @Model.ParentTopic.Title category. We'll notify other users, and get help for your topic as fast as we can!</p>
+<p>If you don't think your new topic belongs in @Model.ParentTopic.Title, use the <a asp-page="/Index">topic explorer</a> or the <a asp-page="/Topics/Search">topic search</a> to find the right category.</p>
 }
 
 <hr>
 
 <form method="POST" class="mb-3">
     <div class="form-group">
-        <label asp-for="NewTopic.Title"></label>
+        <label asp-for="NewTopic.Title">Give Your Topic a Title</label>
         <input asp-for="NewTopic.Title" class="form-control" aria-describedby="titleHelp" placeholder="Enter title">
         <small id="titleHelp" class="form-text text-muted">The title will be the first thing others see when looking at your topic. Keep it short and simple.</small>
         <span class="text-danger form-text mt-0" asp-validation-for="NewTopic.Title"></span>
     </div>
     <div class="form-group">
-        <label asp-for="NewTopic.Description"></label>
+        <label asp-for="NewTopic.Description">Describe Your Issue</label>
         <textarea asp-for="NewTopic.Description" class="form-control" aria-describedby="descriptionHelp" placeholder="Enter description" rows="3"></textarea>
         <small id="descriptionHelp" class="form-text text-muted">The description should provide more info about your topic and its sub-topics, if it has any.</small>
         <span class="text-danger form-text mt-0" asp-validation-for="NewTopic.Description"></span>
     </div>
     <div class="form-check mb-3">
         <input asp-for="NewTopic.IsNotLeaf" class="form-check-input" aria-describedby="isNotLeafHelp" placeholder="Enter description">
-        <label class="mb-0" asp-for="NewTopic.IsNotLeaf"></label>
+        <label class="mb-0" asp-for="NewTopic.IsNotLeaf">This topic is a category</label>
         <small id="isNotLeafHelp" class="form-text text-muted">Select this option if your new topic can have sub-topics.</small>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

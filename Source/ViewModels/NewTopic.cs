@@ -11,7 +11,6 @@ namespace DrakeLambert.Peerra.ViewModels
         public string Description { get; set; }
 
         [Required]
-        [Display(Name = "This topic is a category.")]
         public bool IsNotLeaf { get; set; }
     }
 }

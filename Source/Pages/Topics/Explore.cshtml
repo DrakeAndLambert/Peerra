@@ -5,7 +5,7 @@
 ViewData["Title"] = "Topic Explorer";
 var newTopic = new Topic
 {
-Description = "For when your topic doesn't fit any of the above categories, but belongs in " + Model.ParentTopic.Title + ".",
+Description = "For when your issue doesn't fit any of the above categories, but belongs in " + Model.ParentTopic.Title + ".",
 Id = Model.ParentTopic.Id
 };
 }
@@ -24,10 +24,12 @@ Id = Model.ParentTopic.Id
 <h4 class="mb-3 text-muted">There aren't any sub-topics here yet. Help us out by adding one below.</h4>
 }
 else {
+<h4 class="mb-3">Sub-Topics</h4>
 <input type="text" class="form-control mb-3" placeholder="Filter..." oninput="filterCards(this.value);" onkeydown="filterCards(this.value);">
 <partial name="Topics/_Cards" for="ChildTopics" />
 }
 <hr class="mt-0">
+<h4 class="mb-3">Can't Find Your Issue?</h4>
 <partial name="Topics/_TopicOptions" for="@newTopic" />
 
 @section Scripts {

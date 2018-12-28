@@ -3,12 +3,14 @@ using System.Threading.Tasks;
 using DrakeLambert.Peerra.Data;
 using DrakeLambert.Peerra.Entities;
 using DrakeLambert.Peerra.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
 namespace DrakeLambert.Peerra.Pages.Topics
 {
+    [Authorize]
     public class NewModel : PageModel
     {
         private readonly ApplicationDbContext _context;

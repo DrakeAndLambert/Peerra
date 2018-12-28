@@ -11,10 +11,10 @@ Id = Model.ParentTopic.Id
 };
 }
 
-<div class="form-inline justify-content-between" style="margin: 0 -.5rem;">
-    <h1 class="mx-2">@Model.ParentTopic.Title</h1>
+<div class="form-inline justify-content-between mb-1">
+    <h1 class="mb-1">@Model.ParentTopic.Title</h1>
     <a asp-page="Help" asp-route-id="@Model.ParentTopic.Id">
-        <button class="btn btn-outline-primary mb-2 mx-2">My Issue Is With This Topic</button>
+        <button class="btn btn-outline-primary mb-1">My Issue Is With This Topic</button>
     </a>
 </div>
 <p class="mb-3">

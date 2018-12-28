@@ -13,11 +13,11 @@ Id = Model.ParentTopic.Id
 <div class="form-inline" style="margin: 0 -.5rem;">
     <h1 class="mx-2">@Model.ParentTopic.Title</h1>
     <a asp-page="Help" asp-route-id="@Model.ParentTopic.Id">
-        <button class="btn btn-outline-primary mb-2 mx-2">Get Help With This</button>
+        <button class="btn btn-outline-primary mb-2 mx-2">Get Help</button>
     </a>
 </div>
 <p class="mb-3">
-    Keep narrowing down your topic to get the best help.
+    Keep narrowing down your topic to get the best help, or click above to get help with @Model.ParentTopic.Title.
 </p>
 <hr class="mt-0">
 @if (Model.ChildTopics.Count() == 0) {

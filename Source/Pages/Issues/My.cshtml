@@ -1,0 +1,16 @@
+@page "{id}"
+@model MyModel
+@{
+ViewData["Title"] = "My Issue";
+}
+
+<h1>Getting You Help Now...</h1>
+
+<p class="mb-3">
+    We've sent your issue to @Model.Issue.HelpRequests.Count of your peers.
+</p>
+<hr class="mt-0">
+
+<h3>@Model.Issue.Title</h3>
+
+<p>@Model.Issue.Description</p>

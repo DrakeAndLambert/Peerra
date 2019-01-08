@@ -27,7 +27,7 @@ else
         <span class="text-danger form-text mt-0" asp-validation-for="NewTopic.Title"></span>
     </div>
     <div class="form-group">
-        <label asp-for="NewTopic.Description">Describe Your Issue</label>
+        <label asp-for="NewTopic.Description">Describe Your Topic</label>
         <textarea asp-for="NewTopic.Description" class="form-control" aria-describedby="descriptionHelp" placeholder="Enter description" rows="3"></textarea>
         <small id="descriptionHelp" class="form-text text-muted">The description should provide more info about your topic and its sub-topics, if it has any.</small>
         <span class="text-danger form-text mt-0" asp-validation-for="NewTopic.Description"></span>
@@ -40,9 +40,3 @@ else
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<style>
-    .form-check small {
-        margin-left: -1.25rem;
-    }
-</style>

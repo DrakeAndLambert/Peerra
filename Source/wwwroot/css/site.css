@@ -64,3 +64,9 @@ a .card:hover, a .card:active {
   border-color: #007bff;
   cursor: pointer;
 }
+
+/* Aligned small text on forms */
+
+.form-check small {
+  margin-left: -1.25rem;
+}

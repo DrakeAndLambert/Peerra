@@ -22,5 +22,7 @@ namespace DrakeLambert.Peerra.Entities
         public ApplicationUser Owner { get; set; }
 
         public List<Topic> Children { get; set; }
+
+        public List<UserTopic> UserTopics { get; set; }
     }
 }

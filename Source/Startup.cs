@@ -9,6 +9,7 @@ using DrakeLambert.Peerra.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DrakeLambert.Peerra.Entities;
+using DrakeLambert.Peerra.Services;
 
 namespace DrakeLambert.Peerra
 {
@@ -60,6 +61,8 @@ namespace DrakeLambert.Peerra
                 });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddTransient<IHelpRequestService, HelpRequestService>();
         }
 
         public void Configure(IApplicationBuilder app)

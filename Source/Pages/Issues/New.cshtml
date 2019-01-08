@@ -4,34 +4,31 @@
 ViewData["Title"] = "New Issue";
 }
 
+@if (Model.ParentTopic == null)
+{
+<h1>Describe Your Issue</h1>
+<p><strong>Not selecting a topic for your issue will make it harder for us to find you help.</strong> We recommend searching for a parent topic using the <a asp-page="/Index">topic explorer</a> or the <a asp-page="/Topics/Search">topic search</a>. You can then submit your issue there.</p>
+}
+else
+{
 <h1>Describe Your Issue With @Model.ParentTopic.Title</h1>
+<p>If you don't think your new topic belongs under @Model.ParentTopic.Title, use the <a asp-page="/Index">topic explorer</a> or the <a asp-page="/Topics/Search">topic search</a> to find the right parent topic.</p>
+}
 
 <hr>
-<!-- 
+
 <form method="POST" class="mb-3">
     <div class="form-group">
-        <label asp-for="NewTopic.Title">Give Your Topic a Title</label>
-        <input asp-for="NewTopic.Title" class="form-control" aria-describedby="titleHelp" placeholder="Enter title">
-        <small id="titleHelp" class="form-text text-muted">The title will be the first thing others see when looking at your topic. Keep it short and simple.</small>
-        <span class="text-danger form-text mt-0" asp-validation-for="NewTopic.Title"></span>
+        <label asp-for="NewIssue.Title">Give Your Issue a Title</label>
+        <input asp-for="NewIssue.Title" class="form-control" aria-describedby="titleHelp" placeholder="Enter title">
+        <small id="titleHelp" class="form-text text-muted">Keep this short and simple.</small>
+        <span class="text-danger form-text mt-0" asp-validation-for="NewIssue.Title"></span>
     </div>
     <div class="form-group">
-        <label asp-for="NewTopic.Description">Describe Your Issue</label>
-        <textarea asp-for="NewTopic.Description" class="form-control" aria-describedby="descriptionHelp" placeholder="Enter description" rows="3"></textarea>
-        <small id="descriptionHelp" class="form-text text-muted">The description should provide more info about your topic and its sub-topics, if it has any.</small>
-        <span class="text-danger form-text mt-0" asp-validation-for="NewTopic.Description"></span>
-    </div>
-    <div class="form-check mb-3">
-        <input asp-for="NewTopic.IsNotLeaf" class="form-check-input" aria-describedby="isNotLeafHelp" placeholder="Enter description">
-        <label class="mb-0" asp-for="NewTopic.IsNotLeaf">This Topic Is a Category</label>
-        <small id="isNotLeafHelp" class="form-text text-muted">Select this option if your new topic can have sub-topics.</small>
-        <small class="form-text text-muted">Not sure? Just leave the box unchecked.</small>
+        <label asp-for="NewIssue.Description">Describe Your Issue</label>
+        <textarea asp-for="NewIssue.Description" class="form-control" aria-describedby="descriptionHelp" placeholder="Enter description" rows="3"></textarea>
+        <small id="descriptionHelp" class="form-text text-muted">In two or three sentences, tell us about your issue.</small>
+        <span class="text-danger form-text mt-0" asp-validation-for="NewIssue.Description"></span>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
-
-<style>
-    .form-check small {
-        margin-left: -1.25rem;
-    }
-</style>
+</form>

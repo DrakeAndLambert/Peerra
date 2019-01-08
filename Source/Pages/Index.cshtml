@@ -3,9 +3,6 @@
 @model IndexModel
 @{
 ViewData["Title"] = "Home";
-var newTopic = new Topic {
-Description = "For when your issue doesn't fit into any of the topics above."
-};
 }
 
 <div class="text-center">
@@ -18,5 +15,12 @@ Description = "For when your issue doesn't fit into any of the topics above."
 </p>
 <partial name="Topics/_Cards" for="RootTopics" />
 <hr class="mt-0">
-<h4 class="mb-3">Can't Find a Topic For Your Issue?</h4>
+<h4 class="mb-3">Can't Narrow Down Your Issue?</h4>
+@{
+var newTopic = new Topic {
+Title = "Submit an Orphan Issue.",
+Description = "It will be difficult to find you help without first narrowing down your issue above."
+};
+
+}
 <partial name="Topics/_TopicOptions" for="@newTopic" />

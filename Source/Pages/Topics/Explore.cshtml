@@ -3,27 +3,17 @@
 @model ExploreModel
 @{
 ViewData["Title"] = "Topic Explorer";
-var newTopic = new Topic
-{
-Title = "Make Your Own Topic in " + Model.ParentTopic.Title,
-Description = "For when your issue doesn't fit any of the sub-topics, but is more specific than " + Model.ParentTopic.Title + ".",
-Id = Model.ParentTopic.Id
-};
 }
 
-<div class="form-inline justify-content-between mb-1">
-    <h1 class="mb-1">@Model.ParentTopic.Title</h1>
-    <a asp-page="Help" asp-route-id="@Model.ParentTopic.Id">
-        <button class="btn btn-outline-primary mb-1">My Issue Is With This Topic</button>
-    </a>
-</div>
+<h1>@Model.ParentTopic.Title</h1>
+
 <p class="mb-3">
     Keep narrowing down your issue's topic to get the best help, or click above to get help with @Model.ParentTopic.Title in general.
 </p>
 <hr class="mt-0">
 @if (Model.ChildTopics.Count() == 0) {
 <h4>@Model.ParentTopic.Title doesn't have any sub-topics yet.</h4>
-<p>You can <a asp-page="/Topics/New" asp-route-id="@Model.ParentTopic.Id">make your own</a> or <a asp-page="Help" asp-route-id="@Model.ParentTopic.Id">get help with @Model.ParentTopic.Title directly</a>.</p>
+<p>You can <a asp-page="/Topics/New" asp-route-id="@Model.ParentTopic.Id">make your own</a> or <a asp-page="/Issues/New" asp-route-id="@Model.ParentTopic.Id">get help with @Model.ParentTopic.Title directly</a>.</p>
 }
 else {
 <div class="form-inline justify-content-between mb-2">
@@ -33,7 +23,15 @@ else {
 <partial name="Topics/_Cards" for="ChildTopics" />
 }
 <hr class="mt-0">
-<h4 class="mb-3">Can't Find a Topic For Your Issue?</h4>
+<h4 class="mb-3">Can't Narrow Down Your Issue?</h4>
+@{
+var newTopic = new Topic
+{
+Title = "Submit Your Issue in " + Model.ParentTopic.Title,
+Description = "For when your issue doesn't fit any of the sub-topics above.",
+Id = Model.ParentTopic.Id
+};
+}
 <partial name="Topics/_TopicOptions" for="@newTopic" />
 
 @section Scripts {

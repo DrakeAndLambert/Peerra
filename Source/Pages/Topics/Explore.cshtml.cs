@@ -33,7 +33,7 @@ namespace DrakeLambert.Peerra.Pages.Topics
             ParentTopic = await _context.Topics.FindAsync(id);
             if (ParentTopic == null)
             {
-                return RedirectToPage("/NotFound", new { message = "Your topic may have moved. You can try searching for it again, or contact support." });
+                return RedirectToPage("/NotFound", new { message = "Your topic may have moved. You can try searching for it again on the search page." });
             }
             ChildTopics = await _context.Topics.Where(topic => topic.ParentId == id && topic.Approved).ToListAsync();
             return Page();

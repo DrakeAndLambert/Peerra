@@ -11,5 +11,10 @@ namespace DrakeLambert.Peerra.Entities
         public Guid TopicId { get; set; }
 
         public Topic Topic { get; set; }
+
+        public override int GetHashCode()
+        {
+            return ValueTuple.Create(UserId, TopicId).GetHashCode();
+        }
     }
 }

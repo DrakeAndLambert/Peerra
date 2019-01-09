@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using DrakeLambert.Peerra.Data;
 using DrakeLambert.Peerra.Entities;
+using Microsoft.Extensions.Logging;
 
 namespace DrakeLambert.Peerra.Services
 {
     public class HelpRequestService : IHelpRequestService
     {
         private readonly ApplicationDbContext _context;
+        private readonly ILogger<HelpRequestService> _logger;
 
-        public HelpRequestService(ApplicationDbContext context)
+        public HelpRequestService(ApplicationDbContext context, ILogger<HelpRequestService> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         public async Task RequestHelpAsync(Issue issue)
         {
+            _logger.LogInformation("Requesting help for issue {id}.", issue.Id);
+
             await _context.Entry(issue).Reference(i => i.Topic).LoadAsync();
             if (issue.Topic == null)
             {
+                _logger.LogError("Issue does not have a valid topic.");
                 throw new InvalidOperationException("Issue must have a valid topic.");
             }
 

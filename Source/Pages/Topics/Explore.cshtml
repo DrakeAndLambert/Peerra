@@ -8,7 +8,7 @@ ViewData["Title"] = "Topic Explorer";
 <h1>@Model.ParentTopic.Title</h1>
 
 <p class="mb-3">
-    Keep narrowing down your issue's topic to get the best help, or click above to get help with @Model.ParentTopic.Title in general.
+    Keep narrowing down your issue's topic to get the best help, or <a asp-page="/Issues/New" asp-route-id="@Model.ParentTopic.Id">get help with @Model.ParentTopic.Title in general</a>.
 </p>
 <hr class="mt-0">
 @if (Model.ChildTopics.Count() == 0) {

@@ -79,7 +79,7 @@ namespace DrakeLambert.Peerra.Pages.Issues
 
             await _helpRequestService.RequestHelpAsync(NewIssue);
 
-            return RedirectToPage("My", new { Id = NewIssue.Id });
+            return RedirectToPage("Single", new { Id = NewIssue.Id });
         }
     }
 }

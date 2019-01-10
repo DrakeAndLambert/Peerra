@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using DrakeLambert.Peerra.Data;
 using DrakeLambert.Peerra.Entities;
@@ -20,110 +21,59 @@ namespace DrakeLambert.Peerra.Services
 
         public async Task RequestHelpAsync(Issue issue)
         {
-            _logger.LogInformation("Requesting help for issue {id}.", issue.Id);
+            await _context.Entry(issue).Collection(i => i.HelpRequests).LoadAsync();
+            var currentHelpers = issue.HelpRequests.Select(hr => hr.HelperId).ToList();
 
             await _context.Entry(issue).Reference(i => i.Topic).LoadAsync();
-            if (issue.Topic == null)
+
+            var newHelpers = await GetClosestUserIdsAsync(issue.Topic, 10, currentHelpers);
+
+            var newHelpRequests = newHelpers.Select(helperId => new HelpRequest
             {
-                _logger.LogError("Issue does not have a valid topic.");
-                throw new InvalidOperationException("Issue must have a valid topic.");
-            }
+                HelperId = helperId,
+                IssueId = issue.Id
+            });
 
-            var relatedUserTopics = await GetRelatedUserTopicsAsync(issue.Topic, 10);
-
-            foreach (var userTopic in relatedUserTopics)
-            {
-                var helpRequest = new HelpRequest
-                {
-                    HelperId = userTopic.UserId,
-                    IssueId = issue.Id,
-                    RelatedUserTopicId = userTopic.Id,
-                    Status = HelpRequestStatus.Pending
-                };
-
-                _context.HelpRequests.Add(helpRequest);
-            }
+            _context.HelpRequests.AddRange(newHelpRequests);
 
             await _context.SaveChangesAsync();
         }
 
-        private async Task<HashSet<UserTopic>> GetRelatedUserTopicsAsync(Topic topic, int minimumHelpers)
+        private async Task<List<Guid>> GetClosestUserIdsAsync(Topic topic, int minimumUserCount, List<Guid> excludedUserIds)
         {
-            var userTopics = await GetDownstreamUserTopicsAsync(topic, minimumHelpers);
+            var closestUserIds = await GetDownstreamUserIdsAsync(topic, minimumUserCount, excludedUserIds);
 
-            if (userTopics.Count < minimumHelpers)
+            if (closestUserIds.Count < minimumUserCount)
             {
                 await _context.Entry(topic).Reference(t => t.Parent).LoadAsync();
-
                 if (topic.Parent != null)
                 {
-                    userTopics = await GetRelatedUserTopicsAsync(topic.Parent, minimumHelpers - userTopics.Count);
+                    closestUserIds.AddRange(await GetClosestUserIdsAsync(topic.Parent, minimumUserCount - closestUserIds.Count, closestUserIds));
                 }
             }
 
-            return userTopics;
+            return closestUserIds;
         }
 
-        private async Task<HashSet<UserTopic>> GetDownstreamUserTopicsAsync(Topic topic, int minimumHelpers, HashSet<UserTopic> exclusions = null)
+        private async Task<List<Guid>> GetDownstreamUserIdsAsync(Topic topic, int minimumUserCount, IEnumerable<Guid> excludedUserIds)
         {
-            if (minimumHelpers <= 0)
-            {
-                return UserTopicHashSetFactory.NewZeroCapacity();
-            }
-
             await _context.Entry(topic).Collection(t => t.UserTopics).LoadAsync();
+            var downstreamUserIds = topic.UserTopics.Select(ut => ut.UserId).Except(excludedUserIds).ToList();
 
-            var downstreamUserTopics = UserTopicHashSetFactory.New(topic.UserTopics);
-
-            if (exclusions == null)
-            {
-                exclusions = UserTopicHashSetFactory.New();
-            }
-
-            downstreamUserTopics.ExceptWith(exclusions);
-
-            if (downstreamUserTopics.Count < minimumHelpers)
+            if (downstreamUserIds.Count < minimumUserCount)
             {
                 await _context.Entry(topic).Collection(t => t.Children).LoadAsync();
-
                 foreach (var child in topic.Children)
                 {
-                    downstreamUserTopics.UnionWith(await GetDownstreamUserTopicsAsync(child, minimumHelpers - downstreamUserTopics.Count));
+                    if (downstreamUserIds.Count >= minimumUserCount)
+                    {
+                        break;
+                    }
+                    downstreamUserIds.AddRange(await GetDownstreamUserIdsAsync(child, minimumUserCount - downstreamUserIds.Count, downstreamUserIds.Concat(excludedUserIds)));
                 }
             }
 
-            return downstreamUserTopics;
-        }
-
-        private class UserTopicUserIdComparer : IEqualityComparer<UserTopic>
-        {
-            public bool Equals(UserTopic x, UserTopic y)
-            {
-                return x.UserId.Equals(y.UserId);
-            }
-
-            public int GetHashCode(UserTopic obj)
-            {
-                return obj.UserId.GetHashCode();
-            }
-        }
-
-        private static class UserTopicHashSetFactory
-        {
-            public static HashSet<UserTopic> New()
-            {
-                return new HashSet<UserTopic>(new UserTopicUserIdComparer());
-            }
-
-            public static HashSet<UserTopic> New(IEnumerable<UserTopic> userTopics)
-            {
-                return new HashSet<UserTopic>(userTopics, new UserTopicUserIdComparer());
-            }
-
-            public static HashSet<UserTopic> NewZeroCapacity()
-            {
-                return new HashSet<UserTopic>(0, new UserTopicUserIdComparer());
-            }
+            return downstreamUserIds;
         }
     }
 }

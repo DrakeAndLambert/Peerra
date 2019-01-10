@@ -25,6 +25,10 @@ namespace DrakeLambert.Peerra.Entities
 
     public class HelpRequest : BaseEntity
     {
+        public HelpRequestStatus Status { get; set; }
+
+        public string Message { get; set; }
+
         public Guid IssueId { get; set; }
 
         public Issue Issue { get; set; }
@@ -33,6 +37,17 @@ namespace DrakeLambert.Peerra.Entities
 
         public ApplicationUser Helper { get; set; }
 
-        public bool IsAccepted { get; set; }
+        public Guid RelatedUserTopicId { get; set; }
+
+        public UserTopic RelatedUserTopic { get; set; }
+
+        public Guid ResponseId { get; set; }
+    }
+
+    public enum HelpRequestStatus
+    {
+        Pending,
+        Responded,
+        Declined
     }
 }

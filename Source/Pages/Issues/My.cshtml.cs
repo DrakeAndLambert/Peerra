@@ -21,6 +21,11 @@ namespace DrakeLambert.Peerra.Pages.Issues
         private readonly UserManager<ApplicationUser> _userManager;
 
         public Issue Issue { get; set; }
+        public IEnumerable<HelpRequest> Responses => Issue.HelpRequests.Where(h => h.Status == HelpRequestStatus.Responded);
+
+        public int RespondedCount => Responses.Count();
+        public int PendingCount => Issue.HelpRequests.Where(h => h.Status == HelpRequestStatus.Responded).Count();
+        public int DeclinedCount => Issue.HelpRequests.Count(h => h.Status == HelpRequestStatus.Responded);
 
         public MyModel(ApplicationDbContext context, ILogger<MyModel> logger, UserManager<ApplicationUser> userManager)
         {
@@ -38,17 +43,33 @@ namespace DrakeLambert.Peerra.Pages.Issues
                 return RedirectToPage("/Error");
             }
 
-            var issue = await _context.Issues.FindAsync(id);
+            Issue = await _context.Issues
+                .Include(i => i.Topic)
+                .Include(i => i.HelpRequests)
+                    .ThenInclude(h => h.Helper)
+                .Include(i => i.HelpRequests)
+                    .ThenInclude(h => h.RelatedUserTopic)
+                        .ThenInclude(u => u.Topic)
+                .SingleOrDefaultAsync(i => i.Id == id);
 
-            if (issue == null || user.Id != issue.OwnerId)
+            if (Issue == null || user.Id != Issue.OwnerId)
             {
                 return RedirectToPage("/NotFound", new { message = "Your issue may have been removed or moved. Return home to view all your issues." });
             }
 
-            await _context.Entry(issue).Reference(i => i.Topic).LoadAsync();
-            await _context.Entry(issue).Collection(i => i.HelpRequests).LoadAsync();
-
-            Issue = issue;
+            var random = new Random();
+            foreach (var request in Issue.HelpRequests)
+            {
+                if (random.NextDouble() > 0.5)
+                {
+                    request.Message = "Hi, I'd like to help you.";
+                    request.Status = HelpRequestStatus.Responded;
+                }
+                else if (random.NextDouble() > 0.5)
+                {
+                    request.Status = HelpRequestStatus.Declined;
+                }
+            }
 
             return Page();
         }

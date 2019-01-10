@@ -21,13 +21,6 @@ namespace DrakeLambert.Peerra.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<UserTopic>(userSkill =>
-            {
-                userSkill.HasKey(us => new { us.UserId, us.TopicId });
-                userSkill.HasIndex(us => us.UserId);
-                userSkill.HasIndex(us => us.TopicId);
-            });
-
             base.OnModelCreating(builder);
         }
     }

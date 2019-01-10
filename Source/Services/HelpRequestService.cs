@@ -35,9 +35,10 @@ namespace DrakeLambert.Peerra.Services
             {
                 var helpRequest = new HelpRequest
                 {
-                    IsAccepted = false,
                     HelperId = userTopic.UserId,
-                    IssueId = issue.Id
+                    IssueId = issue.Id,
+                    RelatedUserTopicId = userTopic.Id,
+                    Status = HelpRequestStatus.Pending
                 };
 
                 _context.HelpRequests.Add(helpRequest);
@@ -67,16 +68,16 @@ namespace DrakeLambert.Peerra.Services
         {
             if (minimumHelpers <= 0)
             {
-                return new HashSet<UserTopic>(0);
+                return UserTopicHashSetFactory.NewZeroCapacity();
             }
 
             await _context.Entry(topic).Collection(t => t.UserTopics).LoadAsync();
 
-            var downstreamUserTopics = new HashSet<UserTopic>(topic.UserTopics);
+            var downstreamUserTopics = UserTopicHashSetFactory.New(topic.UserTopics);
 
             if (exclusions == null)
             {
-                exclusions = new HashSet<UserTopic>();
+                exclusions = UserTopicHashSetFactory.New();
             }
 
             downstreamUserTopics.ExceptWith(exclusions);
@@ -92,6 +93,37 @@ namespace DrakeLambert.Peerra.Services
             }
 
             return downstreamUserTopics;
+        }
+
+        private class UserTopicUserIdComparer : IEqualityComparer<UserTopic>
+        {
+            public bool Equals(UserTopic x, UserTopic y)
+            {
+                return x.UserId.Equals(y.UserId);
+            }
+
+            public int GetHashCode(UserTopic obj)
+            {
+                return obj.UserId.GetHashCode();
+            }
+        }
+
+        private static class UserTopicHashSetFactory
+        {
+            public static HashSet<UserTopic> New()
+            {
+                return new HashSet<UserTopic>(new UserTopicUserIdComparer());
+            }
+
+            public static HashSet<UserTopic> New(IEnumerable<UserTopic> userTopics)
+            {
+                return new HashSet<UserTopic>(userTopics, new UserTopicUserIdComparer());
+            }
+
+            public static HashSet<UserTopic> NewZeroCapacity()
+            {
+                return new HashSet<UserTopic>(0, new UserTopicUserIdComparer());
+            }
         }
     }
 }

@@ -4,13 +4,81 @@
 ViewData["Title"] = "My Issue";
 }
 
-<h1>Getting You Help Now...</h1>
+<div class="row justify-content-between">
+    <div class="col-md-auto">
+        <h1>Getting You Help Now...</h1>
+        <p class="mb-3">
+            We've sent your issue to @Model.Issue.HelpRequests.Count of your peers.
+        </p>
+    </div>
+    <div class="col-md-auto">
+        <div class="row row-dense align-items-center" style="height: 100%">
+            <div class="col-auto">
+                <a href="#" class="btn btn-outline-success">Mark Solved</a>
+            </div>
+            <div class="col-auto">
+                <a href="#" class="btn btn-outline-info">Get More Help</a>
+            </div>
+            <div class="col-auto">
+                <a href="#" class="btn btn-outline-danger">Delete Issue</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p class="mb-3">
-    We've sent your issue to @Model.Issue.HelpRequests.Count of your peers.
-</p>
 <hr class="mt-0">
 
-<h3>@Model.Issue.Title</h3>
+<div class="row">
 
-<p>@Model.Issue.Description</p>
+    <div class="col-md-8">
+        @if (Model.RespondedCount == 0) {
+        <h3>Responses Will Appear Here</h3>
+        }
+        @foreach (var request in Model.Issue.HelpRequests.Where(h => h.Status )) {
+        <h4>@response.HelpRequest.Helper.UserName</h4>
+        <p>@response.Message</p>
+        }
+    </div>
+    <div class="col-md">
+        <hr class="d-md-none">
+        <h4>@Model.Issue.Title</h4>
+        <p>@Model.Issue.Description</p>
+        <hr class="mt-0">
+        @if (Model.PendingCount == 0) {
+        <h4>All Peers Responded!</h4>
+        } else if (Model.PendingCount == 1) {
+        <h4>Waiting On 1 Response</h4>
+        } else {
+        <h4>Waiting On @Model.PendingCount Responses</h4>
+        }
+        <table class="table table-sm">
+            <tbody>
+                @foreach (var request in Model.Issue.HelpRequests) {
+                <tr>
+                    <td>@request.Helper.UserName</td>
+                    <td>
+                        @if (request.IsAccepted) {
+                        <span class="text-success">Accepted</span>
+                        } else {
+                        <span>Pending</span>
+                        }
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<style>
+    .row-dense {
+        margin-right: -.5rem;
+        margin-left: -.5rem;
+    }
+
+    .row-dense div {
+        padding-right: .5rem;
+        padding-left: .5rem;
+        padding-bottom: 1rem;
+    }
+</style>

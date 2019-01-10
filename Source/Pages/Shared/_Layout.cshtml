@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using DrakeLambert.Peerra.Entities
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -31,6 +36,12 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="/">Home</a>
                     </li>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-page="/Issues/Overview">Issues</a>
+                    </li>
+                    }
                 </ul>
             </div>
         </div>

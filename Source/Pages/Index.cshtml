@@ -1,26 +1,39 @@
-﻿@page
-@using Entities
-@model IndexModel
+@page
 @{
 ViewData["Title"] = "Home";
 }
 
+<div class="row align-items-center justify-content-center">
+    <div class="col-auto pr-0">
+        <img src="/img/logo.svg" style="height: 4rem" alt="rocket logo">
+    </div>
+    <div class="col-auto">
+        <h1 class="display-3 text-primary">Peerra</h1>
+    </div>
+</div>
 <div class="text-center">
-    <h1 class="display-4">Get Help From Your Peers</h1>
+    <p class="lead">Empowered Peers Helping Each Other</p>
 </div>
 <hr>
-<h2>First, Let's Break Down Your Issue.</h2>
-<p class="mb-3">
-    We live pretty diverse lives. Choose the topic that best describes your issue.
-</p>
-<partial name="Topics/_Cards" for="RootTopics" />
-<hr class="mt-0">
-<h4 class="mb-3">Can't Narrow Down Your Issue?</h4>
-@{
-var newTopic = new Topic {
-Title = "Submit an Orphan Issue.",
-Description = "It will be difficult to find you help without first narrowing down your issue above."
-};
 
+<div class="row">
+    <div class="col-md">
+        <div class="text-center">
+            <h1 class="display-4">I Need Help!</h1>
+            <a asp-page="/Topics/Start" class="btn btn-lg btn-outline-primary">Start Here</a>
+        </div>
+        <hr class="d-md-none">
+    </div>
+    <div class="col-md">
+        <div class="text-center">
+            <h1 class="display-4">I Want To Help!</h1>
+            <a href="" class="btn btn-lg btn-outline-success">Start Here</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.display-4 {
+    font-size: 3rem;
 }
-<partial name="Topics/_TopicOptions" for="@newTopic" />
+</style>

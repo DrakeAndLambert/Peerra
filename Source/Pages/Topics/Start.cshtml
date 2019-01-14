@@ -1,0 +1,26 @@
+﻿@page
+@using Entities
+@model StartModel
+@{
+ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Get Help From Your Peers</h1>
+</div>
+<hr>
+<h2>First, Let's Break Down Your Issue.</h2>
+<p class="mb-3">
+    We live pretty diverse lives. Choose the topic that best describes your issue.
+</p>
+<partial name="Topics/_Cards" for="RootTopics" />
+<hr class="mt-0">
+<h4 class="mb-3">Can't Narrow Down Your Issue?</h4>
+@{
+var newTopic = new Topic {
+Title = "Submit an Orphan Issue.",
+Description = "It will be difficult to find you help without first narrowing down your issue above."
+};
+
+}
+<partial name="Topics/_TopicOptions" for="@newTopic" />

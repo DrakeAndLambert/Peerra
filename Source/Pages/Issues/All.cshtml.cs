@@ -17,7 +17,9 @@ namespace DrakeLambert.Peerra.Pages.Issues
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public List<Issue> Issues { get; set; }
+        public List<Issue> MyIssues { get; set; }
+
+        public List<Issue> OthersIssues { get; set; }
 
         public AllModel(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
@@ -34,7 +36,11 @@ namespace DrakeLambert.Peerra.Pages.Issues
                 return RedirectToPage("/Error");
             }
 
-            Issues = await _context.Issues.Where(i => i.OwnerId == user.Id).OrderBy(i => i.IsSolved).ToListAsync();
+            
+
+            OthersIssues = await _context.HelpRequests.Include(hr => hr.Issue).Where(hr => hr.HelperId == user.Id).Where(hr => hr.Status != HelpRequestStatus.Declined).Select(hr => hr.Issue).ToListAsync();
+
+            MyIssues = await _context.Issues.Include(i => i.HelpRequests).Where(i => i.OwnerId == user.Id).OrderBy(i => i.IsSolved).ToListAsync();
 
             return Page();
         }

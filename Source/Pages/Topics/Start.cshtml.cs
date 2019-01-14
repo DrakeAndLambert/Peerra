@@ -9,17 +9,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace DrakeLambert.Peerra.Pages
+namespace DrakeLambert.Peerra.Pages.Topics
 {
-    public class IndexModel : PageModel
+    public class StartModel : PageModel
     {
         private readonly ApplicationDbContext _context;
 
-        private readonly ILogger<IndexModel> _logger;
+        private readonly ILogger<StartModel> _logger;
 
         public IEnumerable<Topic> RootTopics { get; set; }
 
-        public IndexModel(ApplicationDbContext context, ILogger<IndexModel> logger)
+        public StartModel(ApplicationDbContext context, ILogger<StartModel> logger)
         {
             _context = context;
             _logger = logger;

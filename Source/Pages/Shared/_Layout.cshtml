@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container">
             <a class="navbar-brand text-primary" href="/">
                 <img src="/img/logo.svg" width="30" height="30" alt="rocket logo">
@@ -30,7 +30,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <div class="navbar-collapse collapse d-md-inline-flex flex-md-row-reverse">
                 <partial name="_LoginPartial" />
                 <ul class="navbar-nav flex-grow-1">
                     <li class="nav-item">
@@ -40,6 +40,9 @@
                     {
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-page="/Issues/All">Issues</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-page="/Issues/All">Help Others</a>
                     </li>
                     }
                 </ul>

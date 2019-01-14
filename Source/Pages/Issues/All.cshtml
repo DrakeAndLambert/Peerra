@@ -1,12 +1,38 @@
 @page
 @model AllModel
 @{
-ViewData["Title"] = "Issues Overview";
+ViewData["Title"] = "My Issues";
 }
 
 <h1>My Issues</h1>
+<p>All your issues can be found here.</p>
 <hr>
 
-@foreach (var issue in Model.MyIssues) {
-    <h3>@issue.Title</h3>
-}
+<div class="row" style="margin: 0 -.5rem">
+    <div class="col-sm-6 col-md-4 col-lg-3 px-2 pb-3 card-col">
+        <a asp-page="/Topics/Start">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Add An Issue</h5>
+                    <p class="card-text">Click here to start by selecting a topic.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    @foreach (var issue in Model.MyIssues) {
+    <div class="col-sm-6 col-md-4 col-lg-3 px-2 pb-3 card-col">
+        <a asp-page="/Issues/Single" asp-route-id="@issue.Id">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@issue.Title</h5>
+                    @if (issue.Description.Length > 100) {
+                    <p class="card-text">@issue.Description.Substring(0, 100)...</p>
+                    } else {
+                    <p class="card-text">@issue.Description</p>
+                    }
+                </div>
+            </div>
+        </a>
+    </div>
+    }
+</div>

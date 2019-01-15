@@ -63,6 +63,7 @@ namespace DrakeLambert.Peerra
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddTransient<IHelpRequestService, HelpRequestService>();
+            services.AddTransient<IUserIssueService, UserIssueService>();
         }
 
         public void Configure(IApplicationBuilder app)

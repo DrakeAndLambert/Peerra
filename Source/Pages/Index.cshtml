@@ -61,9 +61,9 @@ ViewData["Title"] = "Home";
     </div>
     <div class="col-md">
         <hr class="mb-2 d-md-none">
-        <h3>Others' Issues</h3>
+        <h3>Peer Issues</h3>
         @if (Model.OthersIssues.Count == 0) {
-        <h5 class="text-muted">When other people have issues you can solve, they'll show up here.</h5>
+        <h5 class="text-muted">When your peers have issues you can solve, they'll show up here.</h5>
         } else {
         <div class="list-group mb-2">
             @foreach (var issue in Model.OthersIssues) {
@@ -72,7 +72,7 @@ ViewData["Title"] = "Home";
             </a>
             }
         </div>
-        <a href="#" class="btn btn-outline-secondary">See More</a>
+        <a asp-page="/Issues/Others" class="btn btn-outline-secondary">See More</a>
         }
     </div>
 </div>

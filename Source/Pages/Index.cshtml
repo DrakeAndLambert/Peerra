@@ -1,6 +1,5 @@
-@using Microsoft.AspNetCore.Identity
-@inject SignInManager<ApplicationUser> SignInManager
 @page
+@model IndexModel
 @{
 ViewData["Title"] = "Home";
 }
@@ -16,8 +15,9 @@ ViewData["Title"] = "Home";
 <div class="text-center">
     <p class="lead">Empowered Peers Helping Each Other</p>
 </div>
-<hr>
 
+@if (!Model.IsSignedIn) {
+<hr>
 <div class="row">
     <div class="col-md">
         <div class="text-center">
@@ -33,13 +33,55 @@ ViewData["Title"] = "Home";
         </div>
     </div>
 </div>
-
-@if (SignInManager.IsSignedIn(User)) {
-
+} else {
+<hr class="mb-2">
+<div class="row">
+    <div class="col-md">
+        <h3>My Issues</h3>
+        @if (Model.MyIssues.Count == 0) {
+        <h5 class="text-muted">When you add issues, they'll show up here.</h5>
+        <a asp-page="/Topics/Start" class="btn btn-outline-primary">Add An Issue</a>
+        }
+        else {
+        <div class="list-group mb-2">
+            @foreach (var issue in Model.MyIssues) {
+            <a asp-page="/Issues/Single" asp-route-id="@issue.Id" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                @issue.Title
+                @if (issue.UnseenHelpRequestsCount != 0) {
+                <span class="badge badge-primary badge-pill">@issue.UnseenHelpRequestsCount</span>
+                }
+            </a>
+            }
+        </div>
+        <div class="d-flex">
+            <a asp-page="/Topics/Start" class="btn btn-outline-primary mr-2">Add An Issue</a>
+            <a asp-page="/Issues/All" class="btn btn-outline-secondary">See More</a>
+        </div>
+        }
+    </div>
+    <div class="col-md">
+        <hr class="mb-2 d-md-none">
+        <h3>Others' Issues</h3>
+        @if (Model.OthersIssues.Count == 0) {
+        <h5 class="text-muted">When other people have issues you can solve, they'll show up here.</h5>
+        } else {
+        <div class="list-group mb-2">
+            @foreach (var issue in Model.OthersIssues) {
+            <a asp-page="/Issues/Single" asp-route-id="@issue.Id" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                @issue.Title
+            </a>
+            }
+        </div>
+        <a href="#" class="btn btn-outline-secondary">See More</a>
+        }
+    </div>
+</div>
 }
+
+<br>
 
 <style>
-.display-4 {
-    font-size: 3rem;
-}
+    .display-4 {
+        font-size: 3rem;
+    }
 </style>

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace DrakeLambert.Peerra.Entities
 {
@@ -23,27 +24,7 @@ namespace DrakeLambert.Peerra.Entities
         public ApplicationUser Owner { get; set; }
 
         public List<HelpRequest> HelpRequests { get; set; }
-    }
 
-    public class HelpRequest : BaseEntity
-    {
-        public HelpRequestStatus Status { get; set; } = HelpRequestStatus.Pending;
-
-        public string Message { get; set; }
-
-        public Guid IssueId { get; set; }
-
-        public Issue Issue { get; set; }
-
-        public Guid HelperId { get; set; }
-
-        public ApplicationUser Helper { get; set; }
-    }
-
-    public enum HelpRequestStatus
-    {
-        Responded,
-        Pending,
-        Declined
+        public int? UnseenHelpRequestsCount => HelpRequests?.Count(hr => hr.Status == HelpRequestStatus.Responded && !hr.HasBeenViewed);
     }
 }

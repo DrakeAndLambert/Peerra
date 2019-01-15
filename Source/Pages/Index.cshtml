@@ -1,3 +1,5 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
 @page
 @{
 ViewData["Title"] = "Home";
@@ -31,6 +33,10 @@ ViewData["Title"] = "Home";
         </div>
     </div>
 </div>
+
+@if (SignInManager.IsSignedIn(User)) {
+
+}
 
 <style>
 .display-4 {

@@ -22,6 +22,7 @@ namespace DrakeLambert.Peerra.Services
                     .Where(i => i.OwnerId == user.Id)
                     .Where(i => !i.IsSolved)
                     .Include(i => i.HelpRequests)
+					.Include(i => i.Topic)
                     .OrderByDescending(i => i.UnseenHelpRequestsCount)
                     .ToListAsync();
         }
@@ -32,6 +33,7 @@ namespace DrakeLambert.Peerra.Services
                 .Where(i => i.OwnerId != user.Id)
                 .Where(i => !i.IsSolved)
                 .Include(i => i.HelpRequests)
+				.Include(i => i.Topic)
                 .Where(i => !i.HelpRequests.Any(hr => hr.HelperId == user.Id))
                 .OrderBy(i => i.HelpRequests.Count(hr => hr.Status == HelpRequestStatus.Responded))
                 .ToListAsync();
@@ -43,6 +45,7 @@ namespace DrakeLambert.Peerra.Services
                 .Where(i => i.OwnerId != user.Id)
                 .Where(i => !i.IsSolved)
                 .Include(i => i.HelpRequests)
+				.Include(i => i.Topic)
                 .Where(i => i.HelpRequests.Any(hr => hr.HelperId == user.Id && hr.Status == HelpRequestStatus.Pending))
                 .ToListAsync();
         }

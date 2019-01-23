@@ -81,7 +81,7 @@ namespace DrakeLambert.Peerra.Pages.Issues
 
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Issues/All");
+            return RedirectToPage("/Index");
         }
 
         public async Task<IActionResult> OnPostSolvedAsync([FromRoute] Guid id)

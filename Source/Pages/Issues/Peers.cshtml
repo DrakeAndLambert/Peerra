@@ -6,4 +6,39 @@ ViewData["Title"] = "Peer Issues";
 
 <h1>Help Your Peers</h1>
 
+<hr>
 
+<h3>Issues For You</h3>
+<p>Based on your experience, we think you'll be able to help with these issues.</p>
+
+@if (Model.TargetedIssues.Count == 0) {
+<h5 class="text-muted">When your peers have issues you can solve, they'll show up here.</h5>
+} else {
+<div class="list-group mb-3">
+	@foreach (var issue in Model.TargetedIssues) {
+	<a asp-page="/Issues/Single" asp-route-id="@issue.Id" class="list-group-item list-group-item-action">
+		<h5>@issue.Topic.Title: @issue.Title</h5>
+		<p class="mb-0">@issue.Description</p>
+	</a>
+	}
+</div>
+<a asp-page="/Issues/Others" class="btn btn-outline-secondary">See More</a>
+}
+
+<hr>
+
+<h3>All Issues</h3>
+<p>See all of your peers' unsolved issues.</p>
+@if (Model.AllIssues.Count == 0) {
+<h5 class="text-muted">When your peers have issues you can solve, they'll show up here.</h5>
+} else {
+<div class="list-group mb-3">
+	@foreach (var issue in Model.AllIssues) {
+	<a asp-page="/Issues/Single" asp-route-id="@issue.Id" class="list-group-item list-group-item-action">
+		<h5>@issue.Topic.Title: @issue.Title</h5>
+		<p class="mb-0">@issue.Description</p>
+	</a>
+	}
+</div>
+<a asp-page="/Issues/Others" class="btn btn-outline-secondary mb-3">See More</a>
+}

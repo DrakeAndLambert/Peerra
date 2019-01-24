@@ -83,3 +83,9 @@ a .card:hover, a .card:active {
 	padding-left: .5rem;
 	padding-bottom: 1rem;
 }
+
+/* always break words */
+
+body {
+	overflow-wrap: break-word;
+}

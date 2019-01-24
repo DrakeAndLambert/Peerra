@@ -32,11 +32,11 @@ ViewData["Title"] = "Peer Issue";
 <hr>
 <h4>@Model.Issue.Topic.Title</h4>
 <h5>@Model.Issue.Title</h5>
-<p style="overflow-wrap: break-word;">@Model.Issue.Description</p>
+<p>@Model.Issue.Description</p>
 
 <hr>
 @if (Model.Issue.HelpRequests.Where(h => h.Status == HelpRequestStatus.Responded ).Count() == 0) {
-<h3 class="text-muted">Peer Responses Will Appear Here</h3>
+<h4 class="text-muted">Peer Responses Will Appear Here</h4>
 }else {
 <h4 class="mb-3" id="responses-title">Responses:</h4>
 }
@@ -47,7 +47,7 @@ ViewData["Title"] = "Peer Issue";
 		<h5><span class="text-muted">From: </span> @request.Helper.UserName</h5>
 	</div>
 </div>
-<p style="overflow-wrap: break-word;">@request.Message</p>
+<p>@request.Message</p>
 }
 
 <style>

@@ -21,12 +21,15 @@ Model.Issue.HelpRequests.Sort((x, y) => (int)x.Status - (int)y.Status);
 	<div class="col-md-auto">
 		<div class="row row-dense align-items-center" style="height: 100%">
 			<div class="col-auto">
+				@if (Model.Issue.IsSolved) {
 				<form method="post">
 					<button type="submit" asp-page-handler="reopen" class="btn btn-outline-success">Re-Open</button>
 				</form>
+				} else {
 				<form method="post">
 					<button type="submit" asp-page-handler="solved" class="btn btn-outline-success">Mark Solved</button>
 				</form>
+				}
 			</div>
 			<div class="col-auto">
 				<form method="post">
@@ -42,7 +45,7 @@ Model.Issue.HelpRequests.Sort((x, y) => (int)x.Status - (int)y.Status);
 <div class="row">
 	<div class="col-md-8">
 		@if (Model.RespondedCount == 0) {
-		<h3 class="text-muted">Responses Will Appear Here</h3>
+		<h4 class="text-muted">Responses Will Appear Here</h4>
 		}
 		@foreach (var request in Model.Issue.HelpRequests.Where(h => h.Status == HelpRequestStatus.Responded )) {
 		<div class="row justify-content-between align-items-center">
@@ -53,7 +56,7 @@ Model.Issue.HelpRequests.Sort((x, y) => (int)x.Status - (int)y.Status);
 				<a href="mailto:@request.Helper.Email?subject=@request.Issue.Title" class="btn btn-outline-primary mb-2">Email</a>
 			</div>
 		</div>
-		<p style="overflow-wrap: break-word;">@request.Message</p>
+		<p>@request.Message</p>
 		<hr>
 		}
 	</div>
@@ -61,7 +64,7 @@ Model.Issue.HelpRequests.Sort((x, y) => (int)x.Status - (int)y.Status);
 		<hr class="d-md-none">
 		<h4>@Model.Issue.Topic.Title</h4>
 		<h5>@Model.Issue.Title</h5>
-		<p style="overflow-wrap: break-word;">@Model.Issue.Description</p>
+		<p>@Model.Issue.Description</p>
 		@if (!Model.Issue.IsSolved) {
 		<hr class="mt-0">
 		<div class="row justify-content-between align-items-center">

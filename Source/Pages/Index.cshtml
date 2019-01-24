@@ -43,7 +43,7 @@ ViewData["Title"] = "Home";
 		<a asp-page="/Topics/Start" class="btn btn-outline-primary">Add An Issue</a>
 		}
 		else {
-		<div class="list-group mb-2">
+		<div class="list-group mb-3">
 			@foreach (var issue in Model.MyIssues) {
 			<a asp-page="/Issues/Single" asp-route-id="@issue.Id" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 				<h5 class="mb-0">@issue.Topic.Title: @issue.Title</h5>
@@ -65,7 +65,7 @@ ViewData["Title"] = "Home";
 		@if (Model.OthersIssues.Count == 0) {
 		<h5 class="text-muted mb-3">When your peers have issues you can solve, they'll show up here.</h5>
 		} else {
-		<div class="list-group mb-2">
+		<div class="list-group mb-3">
 			@foreach (var issue in Model.OthersIssues) {
 			<a asp-page="/Issues/Single" asp-route-id="@issue.Id" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 				<h5 class="mb-0">@issue.Topic.Title: @issue.Title</h5>

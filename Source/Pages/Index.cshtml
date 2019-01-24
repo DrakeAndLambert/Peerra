@@ -67,7 +67,7 @@ ViewData["Title"] = "Home";
 		} else {
 		<div class="list-group mb-3">
 			@foreach (var issue in Model.OthersIssues) {
-			<a asp-page="/Issues/Single" asp-route-id="@issue.Id" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+			<a asp-page="/Issues/Peer" asp-route-id="@issue.Id" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
 				<h5 class="mb-0">@issue.Topic.Title: @issue.Title</h5>
 			</a>
 			}

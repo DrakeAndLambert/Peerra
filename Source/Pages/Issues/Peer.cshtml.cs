@@ -1,43 +1,50 @@
 using System;
 using System.Linq;
+using DrakeLambert.Peerra.Data;
 using DrakeLambert.Peerra.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace DrakeLambert.Peerra.Pages.Issues
 {
 	public class PeerModel : PageModel
 	{
+		private readonly ApplicationDbContext _context;
+		private readonly SignInManager<ApplicationUser> _signInManager;
+
 		public Issue Issue { get; set; }
 
-		public IActionResult OnGet(Guid id)
+		public PeerModel(ApplicationDbContext context, SignInManager<ApplicationUser> signInManager)
 		{
-			Issue = new Issue
+			_context = context;
+			_signInManager = signInManager;
+		}
+
+		public async System.Threading.Tasks.Task<IActionResult> OnGetAsync(Guid id)
+		{
+			Issue = await _context.Issues
+				.Include(i => i.HelpRequests)
+					.ThenInclude(hr => hr.Helper)
+				.Include(i => i.Owner)
+				.Include(i => i.Topic)
+				.SingleOrDefaultAsync(i => i.Id == id);
+
+			if (Issue == null)
 			{
-				Title = "How does banker's rounding work?",
-				Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic",
-				HelpRequests = Enumerable.Range(0, 5)
-					.Select(i => new HelpRequest
-					{
-						Message = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-						Status = HelpRequestStatus.Responded,
-						Helper = new ApplicationUser
-						{
-							UserName = (new[] { "Bob", "Sally", "Billy T" })[i % 3],
-							Email = "email@email.com"
-						}
-					}
-				).ToList(),
-				Topic = new Topic
+				return RedirectToPage("/NotFound", new { message = "This issue may have been removed or moved." });
+			}
+
+			if (_signInManager.IsSignedIn(User))
+			{
+				var user = await _signInManager.UserManager.GetUserAsync(User);
+				if (user.Id == Issue.OwnerId)
 				{
-					Title = "Accounting"
-				},
-				Owner = new ApplicationUser
-				{
-					UserName = "Thomas"
+					return RedirectToPage("/Issues/Single", new { id = id });
 				}
-			};
-			Issue.HelpRequests.ForEach(hr => hr.Issue = Issue);
+			}
+			
 			return Page();
 		}
 	}

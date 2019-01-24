@@ -70,3 +70,16 @@ a .card:hover, a .card:active {
 .form-check small {
   margin-left: -1.25rem;
 }
+
+/* Dense Rows */
+
+.row-dense {
+	margin-right: -.5rem;
+	margin-left: -.5rem;
+}
+
+.row-dense div {
+	padding-right: .5rem;
+	padding-left: .5rem;
+	padding-bottom: 1rem;
+}

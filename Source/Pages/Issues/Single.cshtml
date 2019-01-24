@@ -7,105 +7,92 @@ Model.Issue.HelpRequests.Sort((x, y) => (int)x.Status - (int)y.Status);
 }
 
 <div class="row justify-content-between">
-    <div class="col-md-auto">
-        @if (Model.Issue.IsSolved) {
-        <h1>You've Solved This Issue!</h1>
-        <p>Re-Open this issue to request more help.</p>
-        } else {
-        <h1>Getting You Help Now...</h1>
-        <p class="mb-3">
-            We've sent your issue to @Model.Issue.HelpRequests.Count of your peers.
-        </p>
-        }
-    </div>
-    <div class="col-md-auto">
-        <div class="row row-dense align-items-center" style="height: 100%">
-            <div class="col-auto">
-                @if (Model.Issue.IsSolved) {
-                <form method="post">
-                    <button type="submit" asp-page-handler="reopen" class="btn btn-outline-success">Re-Open</button>
-                </form>
-                } else {
-                <form method="post">
-                    <button type="submit" asp-page-handler="solved" class="btn btn-outline-success">Mark Solved</button>
-                </form>
-                }
-            </div>
-            <div class="col-auto">
-                <form method="post">
-                    <button type="submit" asp-page-handler="delete" class="btn btn-outline-danger">Delete Issue</button>
-                </form>
-            </div>
-        </div>
-    </div>
+	<div class="col-md-auto">
+		@if (Model.Issue.IsSolved) {
+		<h1>You've Solved This Issue!</h1>
+		<p>Re-Open this issue to request more help.</p>
+		} else {
+		<h1>Getting You Help Now...</h1>
+		<p class="mb-3">
+			We've sent your issue to @Model.Issue.HelpRequests.Count of your peers.
+		</p>
+		}
+	</div>
+	<div class="col-md-auto">
+		<div class="row row-dense align-items-center" style="height: 100%">
+			<div class="col-auto">
+				@if (Model.Issue.IsSolved) {
+				<form method="post">
+					<button type="submit" asp-page-handler="reopen" class="btn btn-outline-success">Re-Open</button>
+				</form>
+				} else {
+				<form method="post">
+					<button type="submit" asp-page-handler="solved" class="btn btn-outline-success">Mark Solved</button>
+				</form>
+				}
+			</div>
+			<div class="col-auto">
+				<form method="post">
+					<button type="submit" asp-page-handler="delete" class="btn btn-outline-danger">Delete Issue</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 
 <hr class="mt-0">
 
 <div class="row">
-    <div class="col-md-8">
-        @if (Model.RespondedCount == 0) {
-        <h3 class="text-muted">Responses Will Appear Here</h3>
-        }
-        @foreach (var request in Model.Issue.HelpRequests.Where(h => h.Status == HelpRequestStatus.Responded )) {
-        <div class="row justify-content-between align-items-center">
-            <div class="col-auto">
-                <h5><span class="text-muted">From: </span> @request.Helper.UserName</h5>
-            </div>
-            <div class="col-auto">
-                <a href="mailto:@request.Helper.Email?subject=@request.Issue.Title" class="btn btn-outline-primary mb-2">Email</a>
-            </div>
-        </div>
-        <p style="overflow-x: scroll">@request.Message</p>
-        <hr>
-        }
-    </div>
-    <div class="col-md-4">
-        <hr class="d-md-none">
-        <h4>@Model.Issue.Topic.Title</h4>
-        <h5>@Model.Issue.Title</h5>
-        <p style="overflow-wrap: break-word;">@Model.Issue.Description</p>
-        <hr class="mt-0">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-auto">
-                <h4>Help Requests</h4>
-            </div>
-            <div class="col-auto">
-                <form method="post">
-                    <button type="submit" asp-page-handler="morehelp" class="btn btn-outline-primary mb-2">More Help</button>
-                </form>
-            </div>
-        </div>
-        <table class="table table-sm">
-            <tbody>
-                @foreach (var request in Model.Issue.HelpRequests) {
-                @if (request.Status != HelpRequestStatus.Declined) {
-                <tr>
-                    <td>@request.Helper.UserName</td>
-                    <td style="text-align: right;">
-                        @if (request.Status == HelpRequestStatus.Responded) {
-                        <span class="text-success">Responded</span>
-                        } else {
-                        <span>Pending</span>
-                        }
-                    </td>
-                </tr>
-                }
-                }
-            </tbody>
-        </table>
-    </div>
+	<div class="col-md-8">
+		@if (Model.RespondedCount == 0) {
+		<h3 class="text-muted">Responses Will Appear Here</h3>
+		}
+		@foreach (var request in Model.Issue.HelpRequests.Where(h => h.Status == HelpRequestStatus.Responded )) {
+		<div class="row justify-content-between align-items-center">
+			<div class="col-auto">
+				<h5><span class="text-muted">From: </span> @request.Helper.UserName</h5>
+			</div>
+			<div class="col-auto">
+				<a href="mailto:@request.Helper.Email?subject=@request.Issue.Title" class="btn btn-outline-primary mb-2">Email</a>
+			</div>
+		</div>
+		<p style="overflow-wrap: break-word;">@request.Message</p>
+		<hr>
+		}
+	</div>
+	<div class="col-md-4">
+		<hr class="d-md-none">
+		<h4>@Model.Issue.Topic.Title</h4>
+		<h5>@Model.Issue.Title</h5>
+		<p style="overflow-wrap: break-word;">@Model.Issue.Description</p>
+		<hr class="mt-0">
+		<div class="row justify-content-between align-items-center">
+			<div class="col-auto">
+				<h4>Help Requests</h4>
+			</div>
+			<div class="col-auto">
+				<form method="post">
+					<button type="submit" asp-page-handler="morehelp" class="btn btn-outline-primary mb-2">More Help</button>
+				</form>
+			</div>
+		</div>
+		<table class="table table-sm">
+			<tbody>
+				@foreach (var request in Model.Issue.HelpRequests) {
+				@if (request.Status != HelpRequestStatus.Declined) {
+				<tr>
+					<td>@request.Helper.UserName</td>
+					<td style="text-align: right;">
+						@if (request.Status == HelpRequestStatus.Responded) {
+						<span class="text-success">Responded</span>
+						} else {
+						<span>Pending</span>
+						}
+					</td>
+				</tr>
+				}
+				}
+			</tbody>
+		</table>
+	</div>
 </div>
-
-<style>
-    .row-dense {
-        margin-right: -.5rem;
-        margin-left: -.5rem;
-    }
-
-    .row-dense div {
-        padding-right: .5rem;
-        padding-left: .5rem;
-        padding-bottom: 1rem;
-    }
-</style>

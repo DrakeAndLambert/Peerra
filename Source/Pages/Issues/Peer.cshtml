@@ -6,48 +6,37 @@ ViewData["Title"] = "Peer Issue";
 }
 
 <div class="row justify-content-between">
-	<div class="col-md-auto">
-		<h1 class="mb-md-0">@Model.Issue.Owner.UserName's Issue</h1>
-	</div>
-	<div class="col-md-auto">
-		<div class="row row-dense align-items-center" style="height: 100%">
-			@if (Model.Issue.IsSolved) {
-			<div class="col-auto pb-0">
-				<h3 class="text-success mb-0">Issue Solved!</h3>
-			</div>
-			} else {
-			@if (Model.UserHelpRequest == null) {
-			<div class="col-auto pb-0">	
-				<a href="#" class="btn btn-outline-success">Respond</a>
-			</div>
-			<div class="col-auto pb-0">
-				<form method="post">
-					<button type="submit" asp-page-handler="decline" class="btn btn-outline-danger">Can't Help</button>
-				</form>
-			</div>
-			} else {
-			@if (Model.UserHelpRequest.Status == HelpRequestStatus.Declined) {
-			<div class="col-auto pb-0">
-				<h3 class="text-danger mb-0">Help Declined</h3>
-			</div>
-			} else if (Model.UserHelpRequest.Status == HelpRequestStatus.Pending) {
-			<div class="col-auto pb-0">
-				<a href="#" class="btn btn-outline-success">Respond</a>
-			</div>
-			<div class="col-auto pb-0">
-				<form method="post">
-					<button type="submit" asp-page-handler="decline" class="btn btn-outline-danger">Can't Help</button>
-				</form>
-			</div>
-			} else {
-			<div class="col-auto pb-0">
-				<h3 class="text-success mb-0">Responded</h3>
-			</div>
-			}
-			}
-			}
-		</div>
-	</div>
+    <div class="col-md-auto">
+        <h1 class="mb-md-0">@Model.Issue.Owner.UserName's Issue</h1>
+    </div>
+    <div class="col-md-auto">
+        <div class="row row-dense align-items-center" style="height: 100%">
+            @if (Model.Issue.IsSolved) {
+            <div class="col-auto pb-0">
+                <h3 class="text-success mb-0">Issue Solved!</h3>
+            </div>
+            } else {
+            @if (Model.UserHelpRequest == null || Model.UserHelpRequest.Status == HelpRequestStatus.Pending) {
+            <div class="col-auto pb-0">
+                <a asp-page="Respond" asp-route-id="@Model.Issue.Id" class="btn btn-outline-success">Respond</a>
+            </div>
+            <div class="col-auto pb-0">
+                <form method="post">
+                    <button type="submit" asp-page-handler="decline" class="btn btn-outline-danger">Can't Help</button>
+                </form>
+            </div>
+            } else if (Model.UserHelpRequest.Status == HelpRequestStatus.Declined) {
+            <div class="col-auto pb-0">
+                <h3 class="text-danger mb-0">Help Declined</h3>
+            </div>
+            } else {
+            <div class="col-auto pb-0">
+                <h3 class="text-success mb-0">Responded</h3>
+            </div>
+            }
+            }
+        </div>
+    </div>
 </div>
 
 <hr>
@@ -64,15 +53,15 @@ ViewData["Title"] = "Peer Issue";
 @foreach (var request in Model.Issue.HelpRequests.Where(h => h.Status == HelpRequestStatus.Responded )) {
 <hr>
 <div class="row justify-content-between align-items-center">
-	<div class="col-auto">
-		<h5><span class="text-muted">From: </span> @request.Helper.UserName</h5>
-	</div>
+    <div class="col-auto">
+        <h5><span class="text-muted">From: </span> @request.Helper.UserName</h5>
+    </div>
 </div>
 <p>@request.Message</p>
 }
 
 <style>
-	#responses-title+hr {
-		display: none;
-	}
+    #responses-title+hr {
+        display: none;
+    }
 </style>

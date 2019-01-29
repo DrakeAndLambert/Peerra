@@ -11,16 +11,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DrakeLambert.Peerra.Pages.Issues
 {
-    public class PeerModel : PageModel
+    [Authorize]
+    public class RespondModel : PageModel
     {
         private readonly ApplicationDbContext _context;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
         public Issue Issue { get; set; }
 
+        [BindProperty]
         public HelpRequest UserHelpRequest { get; set; }
 
-        public PeerModel(ApplicationDbContext context, SignInManager<ApplicationUser> signInManager)
+        public RespondModel(ApplicationDbContext context, SignInManager<ApplicationUser> signInManager)
         {
             _context = context;
             _signInManager = signInManager;
@@ -29,45 +31,10 @@ namespace DrakeLambert.Peerra.Pages.Issues
         public async Task<IActionResult> OnGetAsync([FromRoute] Guid id)
         {
             Issue = await _context.Issues
-                .Include(i => i.HelpRequests)
-                    .ThenInclude(hr => hr.Helper)
-                .Include(i => i.Owner)
-                .Include(i => i.Topic)
-                .SingleOrDefaultAsync(i => i.Id == id);
-
-            if (Issue == null)
-            {
-                return RedirectToPage("/NotFound", new { message = "This issue may have been removed or moved." });
-            }
-
-            if (_signInManager.IsSignedIn(User))
-            {
-                var user = await _signInManager.UserManager.GetUserAsync(User);
-                if (user.Id == Issue.OwnerId)
-                {
-                    return RedirectToPage("/Issues/Single", new { id = id });
-                }
-
-                UserHelpRequest = Issue.HelpRequests.SingleOrDefault(hr => hr.HelperId == user.Id);
-            }
-
-            return Page();
-        }
-
-        public async Task<IActionResult> OnPostDeclineAsync([FromRoute] Guid id)
-        {
-            if (!_signInManager.IsSignedIn(User))
-            {
-                var returnUrl = Url.Page("/Issues/Peer", new { id = id });
-                return RedirectToPage("/Account/Login", new { returnUrl = returnUrl, area = "Identity" });
-            }
-
-            Issue = await _context.Issues
-                .Include(i => i.HelpRequests)
-                    .ThenInclude(hr => hr.Helper)
-                .Include(i => i.Owner)
-                .Include(i => i.Topic)
-                .SingleOrDefaultAsync(i => i.Id == id);
+            .Include(i => i.HelpRequests)
+            .Include(i => i.Owner)
+            .Include(i => i.Topic)
+            .SingleOrDefaultAsync(i => i.Id == id);
 
             if (Issue == null)
             {

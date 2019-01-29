@@ -1,46 +1,39 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using DrakeLambert.Peerra.Data;
 using DrakeLambert.Peerra.Entities;
+using DrakeLambert.Peerra.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DrakeLambert.Peerra.Pages.Issues
 {
-	public class PeersModel : PageModel
-	{
-		private readonly Topic _fakeTopic = new Topic
-		{
-			Title = "Accounting"
-		};
+    [Authorize]
+    public class PeersModel : PageModel
+    {
+        private readonly ApplicationDbContext _context;
+        private readonly IUserIssueService _userIssueService;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-		public List<Issue> TargetedIssues { get; set; } = new List<Issue> {
-			new Issue {
-				Title = "How Does Banker's Rounding Work?",
-				Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-			},
-			new Issue {
-				Title = "How Does Banker's Rounding Work?",
-				Description = "Description, How Does Banker's Rounding Work?",
-			},
-			new Issue {
-				Title = "How Does Banker's Rounding Work?",
-				Description = "Description, How Does Banker's Rounding Work?",
-			},
-			new Issue {
-				Title = "How Does Banker's Rounding Work?",
-				Description = "Description, How Does Banker's Rounding Work?",
-			}
-		};
+        public List<Issue> TargetedIssues { get; set; }
+        public List<Issue> AllIssues { get; set; }
 
-		public PeersModel()
-		{
-			TargetedIssues.ForEach(issue => { issue.Topic = _fakeTopic; });
-		}
+        public PeersModel(ApplicationDbContext context, IUserIssueService userIssueService, SignInManager<ApplicationUser> signInManager)
+        {
+            _context = context;
+            _userIssueService = userIssueService;
+            _signInManager = signInManager;
+        }
 
-		public List<Issue> AllIssues => TargetedIssues;
+        public async Task<IActionResult> OnGetAsync()
+        {
+            var user = await _signInManager.UserManager.GetUserAsync(User);
+            AllIssues = await _userIssueService.GetOthersIssuesAsync(user);
+            TargetedIssues = await _userIssueService.GetOthersTargetedIssuesAsync(user);
 
-		public IActionResult OnGet()
-		{
-			return Page();
-		}
-	}
+            return Page();
+        }
+    }
 }

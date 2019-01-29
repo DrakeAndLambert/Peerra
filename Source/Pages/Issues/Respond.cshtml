@@ -4,3 +4,19 @@
 ViewData["Title"] = "Respond";
 }
 
+<h1>Respond to @Model.Issue.Owner.UserName</h1>
+<hr>
+<h4>@Model.Issue.Topic.Title</h4>
+<h5>@Model.Issue.Title</h5>
+<p>@Model.Issue.Description</p>
+<hr>
+
+<form method="POST" class="mb-3">
+    <div class="form-group">
+        <label asp-for="HelpRequest.Message">Your Response</label>
+        <textarea asp-for="HelpRequest.Message" class="form-control" aria-describedby="messageHelp" placeholder="Here's how I can help..." rows="3"></textarea>
+        <small id="messageHelp" class="form-text text-muted">In two or three sentences, try to give the best help you can. @Model.Issue.Owner.UserName will be able to email you for more help.</small>
+        <span class="text-danger form-text mt-0" asp-validation-for="HelpRequest.Message"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -20,7 +20,7 @@ namespace DrakeLambert.Peerra.Pages.Issues
         public Issue Issue { get; set; }
 
         [BindProperty]
-        public HelpRequest UserHelpRequest { get; set; }
+        public HelpRequest HelpRequest { get; set; }
 
         public RespondModel(ApplicationDbContext context, SignInManager<ApplicationUser> signInManager)
         {
@@ -31,10 +31,10 @@ namespace DrakeLambert.Peerra.Pages.Issues
         public async Task<IActionResult> OnGetAsync([FromRoute] Guid id)
         {
             Issue = await _context.Issues
-            .Include(i => i.HelpRequests)
-            .Include(i => i.Owner)
-            .Include(i => i.Topic)
-            .SingleOrDefaultAsync(i => i.Id == id);
+                .Include(i => i.HelpRequests)
+                .Include(i => i.Owner)
+                .Include(i => i.Topic)
+                .SingleOrDefaultAsync(i => i.Id == id);
 
             if (Issue == null)
             {
@@ -48,24 +48,63 @@ namespace DrakeLambert.Peerra.Pages.Issues
                 return RedirectToPage("/Issues/Single", new { id = id });
             }
 
-            UserHelpRequest = Issue.HelpRequests.SingleOrDefault(hr => hr.HelperId == user.Id);
+            HelpRequest = Issue.HelpRequests.SingleOrDefault(hr => hr.HelperId == user.Id);
 
-            if (UserHelpRequest == null)
+            if (HelpRequest == null)
             {
-                UserHelpRequest = new HelpRequest
+                HelpRequest = new HelpRequest
                 {
                     Helper = user,
                     Issue = Issue
                 };
 
-                Issue.HelpRequests.Add(UserHelpRequest);
+                Issue.HelpRequests.Add(HelpRequest);
             }
-
-            UserHelpRequest.Status = HelpRequestStatus.Declined;
 
             await _context.SaveChangesAsync();
 
             return Page();
+        }
+
+        public async Task<IActionResult> OnPostAsync([FromRoute] Guid id)
+        {
+            Issue = await _context.Issues
+                .Include(i => i.HelpRequests)
+                .Include(i => i.Owner)
+                .Include(i => i.Topic)
+                .SingleOrDefaultAsync(i => i.Id == id);
+
+            if (Issue == null)
+            {
+                return RedirectToPage("/NotFound", new { message = "This issue may have been removed or moved." });
+            }
+
+            var user = await _signInManager.UserManager.GetUserAsync(User);
+
+            if (user.Id == Issue.OwnerId)
+            {
+                return RedirectToPage("/Issues/Single", new { id = id });
+            }
+
+            var existingHelpRequest = Issue.HelpRequests.SingleOrDefault(hr => hr.HelperId == user.Id);
+
+            if (existingHelpRequest == null)
+            {
+                existingHelpRequest = new HelpRequest
+                {
+                    Helper = user,
+                    Issue = Issue
+                };
+
+                Issue.HelpRequests.Add(existingHelpRequest);
+            }
+
+            existingHelpRequest.Message = HelpRequest.Message;
+            existingHelpRequest.Status = HelpRequestStatus.Responded;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("Peer", new { id = id });
         }
     }
 }

@@ -16,7 +16,7 @@ ViewData["Title"] = "Peer Issues";
 } else {
 <div class="list-group mb-3">
 	@foreach (var issue in Model.TargetedIssues) {
-	<a asp-page="/Issues/Single" asp-route-id="@issue.Id" class="list-group-item list-group-item-action">
+	<a asp-page="/Issues/Peer" asp-route-id="@issue.Id" class="list-group-item list-group-item-action">
 		<h5>@issue.Topic.Title: @issue.Title</h5>
 		<p class="mb-0">@issue.Description</p>
 	</a>
@@ -34,7 +34,7 @@ ViewData["Title"] = "Peer Issues";
 } else {
 <div class="list-group mb-3">
 	@foreach (var issue in Model.AllIssues) {
-	<a asp-page="/Issues/Single" asp-route-id="@issue.Id" class="list-group-item list-group-item-action">
+	<a asp-page="/Issues/Peer" asp-route-id="@issue.Id" class="list-group-item list-group-item-action">
 		<h5>@issue.Topic.Title: @issue.Title</h5>
 		<p class="mb-0">@issue.Description</p>
 	</a>

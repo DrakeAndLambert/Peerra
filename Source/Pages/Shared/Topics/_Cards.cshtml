@@ -1,13 +1,19 @@
 @using Entities
 @model IEnumerable<Topic>
-<!-- style="margin: 0 -.5rem" px-2 pb-3 -->
+
 <div class="row row-dense">
 	@foreach(var topic in Model)
 	{
 	<div class="col-sm-6 col-md-4 col-lg-3 card-col">
-		<a asp-page="/Topics/@(topic.IsLeaf ? "Help" : "Explore" )" asp-route-id="@topic.Id">
+		@if (topic.IsLeaf) {
+		<a asp-page="/Issues/New" asp-route-id="@topic.Id">
 			<partial name="Topics/_Card" for="@topic" />
 		</a>
+		} else {
+		<a asp-page="/Topics/Explore" asp-route-id="@topic.Id">
+			<partial name="Topics/_Card" for="@topic" />
+		</a>
+		}
 	</div>
 	}
 </div>

@@ -13,9 +13,24 @@ ViewData["Title"] = "Peer Issue";
 		<div class="row row-dense align-items-center" style="height: 100%">
 			@if (Model.Issue.IsSolved) {
 			<div class="col-auto pb-0">
-				<h1 class="text-success mb-0">Solved</h1>
+				<h3 class="text-success mb-0">Issue Solved!</h3>
 			</div>
 			} else {
+			@if (Model.UserHelpRequest == null) {
+			<div class="col-auto pb-0">	
+				<a href="#" class="btn btn-outline-success">Respond</a>
+			</div>
+			<div class="col-auto pb-0">
+				<form method="post">
+					<button type="submit" asp-page-handler="decline" class="btn btn-outline-danger">Can't Help</button>
+				</form>
+			</div>
+			} else {
+			@if (Model.UserHelpRequest.Status == HelpRequestStatus.Declined) {
+			<div class="col-auto pb-0">
+				<h3 class="text-danger mb-0">Help Declined</h3>
+			</div>
+			} else if (Model.UserHelpRequest.Status == HelpRequestStatus.Pending) {
 			<div class="col-auto pb-0">
 				<a href="#" class="btn btn-outline-success">Respond</a>
 			</div>
@@ -24,6 +39,12 @@ ViewData["Title"] = "Peer Issue";
 					<button type="submit" asp-page-handler="decline" class="btn btn-outline-danger">Can't Help</button>
 				</form>
 			</div>
+			} else {
+			<div class="col-auto pb-0">
+				<h3 class="text-success mb-0">Responded</h3>
+			</div>
+			}
+			}
 			}
 		</div>
 	</div>

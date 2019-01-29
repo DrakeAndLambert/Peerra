@@ -61,15 +61,3 @@ namespace DrakeLambert.Peerra.Data
 		}
 	}
 }
-/*
-
-Knowing when and how to schedule advising appointments
-finding interesting easy a electives
-good and bad professors
-
-
-            "A Professor",
-            "Choosing Courses",
-            "Choosing Majors",
-            "Residential Life",
- */

@@ -23,7 +23,7 @@ namespace DrakeLambert.Peerra.Data
         {
             builder.Entity<Topic>().HasMany(t => t.Children).WithOne(t => t.Parent).OnDelete(DeleteBehavior.Restrict);
 
-            builder.Entity<Issue>().HasOne(i => i.Topic).WithMany().OnDelete(DeleteBehavior.SetNull);
+            builder.Entity<Issue>().HasOne(i => i.Topic).WithMany().OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(builder);
         }

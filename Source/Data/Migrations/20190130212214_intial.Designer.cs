@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Peerra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190130211446_intial")]
+    [Migration("20190130212214_intial")]
     partial class intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -300,7 +300,7 @@ namespace Peerra.Data.Migrations
                     b.HasOne("DrakeLambert.Peerra.Entities.Topic", "Topic")
                         .WithMany()
                         .HasForeignKey("TopicId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("DrakeLambert.Peerra.Entities.Topic", b =>

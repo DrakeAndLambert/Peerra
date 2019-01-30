@@ -298,7 +298,7 @@ namespace Peerra.Data.Migrations
                     b.HasOne("DrakeLambert.Peerra.Entities.Topic", "Topic")
                         .WithMany()
                         .HasForeignKey("TopicId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("DrakeLambert.Peerra.Entities.Topic", b =>

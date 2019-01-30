@@ -37,14 +37,14 @@ namespace DrakeLambert.Peerra
 
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                var connectionString = _configuration.GetConnectionString("default");
-                if (connectionString != null)
+                if (_environment.IsDevelopment())
                 {
-                    options.UseSqlServer(connectionString);
+                    options.UseInMemoryDatabase(nameof(ApplicationDbContext));
                 }
                 else
                 {
-                    options.UseInMemoryDatabase(nameof(ApplicationDbContext));
+                    var connectionString = _configuration.GetConnectionString("default");
+                    options.UseSqlServer(connectionString);
                 }
             });
             services.AddTransient<DbInitializer>();

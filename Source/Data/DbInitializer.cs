@@ -26,7 +26,10 @@ namespace DrakeLambert.Peerra.Data
 
         public void Seed()
         {
-            _context.Database.Migrate();
+            if (_context.Database.IsSqlServer())
+            {
+                _context.Database.Migrate();
+            }
 
             if (_context.Topics.Any())
             {

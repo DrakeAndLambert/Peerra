@@ -26,6 +26,7 @@ namespace DrakeLambert.Peerra.Data
 
         public void Seed()
         {
+            _logger.LogInformation("Seeding database using provider: {0}", _context.Database.ProviderName);
             if (_context.Database.IsSqlServer())
             {
                 _context.Database.Migrate();

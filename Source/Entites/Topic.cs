@@ -17,7 +17,7 @@ namespace DrakeLambert.Peerra.Entities
 
         public bool Approved { get; set; } = false;
 
-        public Guid OwnerId { get; set; }
+        public Guid? OwnerId { get; set; }
 
         public ApplicationUser Owner { get; set; }
 

@@ -179,7 +179,7 @@ namespace Peerra.Data.Migrations
                         column: x => x.ParentId,
                         principalTable: "Topics",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

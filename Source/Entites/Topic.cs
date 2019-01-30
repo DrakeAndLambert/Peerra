@@ -11,7 +11,7 @@ namespace DrakeLambert.Peerra.Entities
 
         public bool IsLeaf { get; set; } = true;
 
-        public Guid ParentId { get; set; }
+        public Guid? ParentId { get; set; }
 
         public Topic Parent { get; set; }
 

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Peerra.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190130212214_intial")]
+    [Migration("20190130212752_intial")]
     partial class intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -282,12 +282,12 @@ namespace Peerra.Data.Migrations
                     b.HasOne("DrakeLambert.Peerra.Entities.ApplicationUser", "Helper")
                         .WithMany()
                         .HasForeignKey("HelperId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("DrakeLambert.Peerra.Entities.Issue", "Issue")
                         .WithMany("HelpRequests")
                         .HasForeignKey("IssueId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("DrakeLambert.Peerra.Entities.Issue", b =>
@@ -321,12 +321,12 @@ namespace Peerra.Data.Migrations
                     b.HasOne("DrakeLambert.Peerra.Entities.Topic", "Topic")
                         .WithMany("UserTopics")
                         .HasForeignKey("TopicId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("DrakeLambert.Peerra.Entities.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>

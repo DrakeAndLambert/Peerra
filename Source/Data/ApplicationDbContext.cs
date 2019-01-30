@@ -25,6 +25,12 @@ namespace DrakeLambert.Peerra.Data
 
             builder.Entity<Issue>().HasOne(i => i.Topic).WithMany().OnDelete(DeleteBehavior.Restrict);
 
+            builder.Entity<UserTopic>().HasOne(u => u.Topic).WithMany(t => t.UserTopics).OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<UserTopic>().HasOne(u => u.User).WithMany().OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<HelpRequest>().HasOne(h => h.Helper).WithMany().OnDelete(DeleteBehavior.Restrict);
+            builder.Entity<HelpRequest>().HasOne(h => h.Issue).WithMany(i => i.HelpRequests).OnDelete(DeleteBehavior.Restrict);
+
             base.OnModelCreating(builder);
         }
     }

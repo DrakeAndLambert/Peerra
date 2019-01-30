@@ -131,7 +131,7 @@ namespace Peerra.Data.Migrations
 
                     b.Property<bool>("IsLeaf");
 
-                    b.Property<Guid>("OwnerId");
+                    b.Property<Guid?>("OwnerId");
 
                     b.Property<Guid>("ParentId");
 
@@ -305,8 +305,7 @@ namespace Peerra.Data.Migrations
                 {
                     b.HasOne("DrakeLambert.Peerra.Entities.ApplicationUser", "Owner")
                         .WithMany()
-                        .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("OwnerId");
 
                     b.HasOne("DrakeLambert.Peerra.Entities.Topic", "Parent")
                         .WithMany("Children")

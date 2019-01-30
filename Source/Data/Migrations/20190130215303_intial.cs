@@ -163,7 +163,7 @@ namespace Peerra.Data.Migrations
                     IsLeaf = table.Column<bool>(nullable: false),
                     ParentId = table.Column<Guid>(nullable: false),
                     Approved = table.Column<bool>(nullable: false),
-                    OwnerId = table.Column<Guid>(nullable: false)
+                    OwnerId = table.Column<Guid>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -173,7 +173,7 @@ namespace Peerra.Data.Migrations
                         column: x => x.OwnerId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Topics_Topics_ParentId",
                         column: x => x.ParentId,

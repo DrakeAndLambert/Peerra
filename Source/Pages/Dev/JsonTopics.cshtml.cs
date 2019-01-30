@@ -26,7 +26,7 @@ namespace DrakeLambert.Peerra.Pages.Dev
 
         public async Task<IActionResult> OnGet([FromQuery] bool raw = false)
         {
-            var topics = (await _context.Topics.ToListAsync()).Where(topic => topic.ParentId == Guid.Empty);
+            var topics = (await _context.Topics.ToListAsync()).Where(topic => topic.ParentId == null);
 
             var jsonResolver = new PropertyIgnoreContractResolver();
             jsonResolver.Ignore<Topic>("Parent", "ParentId");

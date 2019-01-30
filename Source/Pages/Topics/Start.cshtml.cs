@@ -27,7 +27,7 @@ namespace DrakeLambert.Peerra.Pages.Topics
 
         public async Task<IActionResult> OnGetAsync()
         {
-            RootTopics = await _context.Topics.Where(topic => topic.ParentId == Guid.Empty).ToListAsync();
+            RootTopics = await _context.Topics.Where(topic => topic.ParentId == null).ToListAsync();
             return Page();
         }
     }

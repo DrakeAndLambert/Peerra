@@ -21,7 +21,7 @@ namespace DrakeLambert.Peerra.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Topic>().HasMany(t => t.Children).WithOne(t => t.Parent).OnDelete(DeleteBehavior.ClientSetNull);
+            builder.Entity<Topic>().HasMany(t => t.Children).WithOne(t => t.Parent).OnDelete(DeleteBehavior.Restrict);            
 
             base.OnModelCreating(builder);
         }

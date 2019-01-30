@@ -310,7 +310,8 @@ namespace Peerra.Data.Migrations
 
                     b.HasOne("DrakeLambert.Peerra.Entities.Topic", "Parent")
                         .WithMany("Children")
-                        .HasForeignKey("ParentId");
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("DrakeLambert.Peerra.Entities.UserTopic", b =>

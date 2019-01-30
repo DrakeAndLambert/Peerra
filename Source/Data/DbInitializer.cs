@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DrakeLambert.Peerra.Entities;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -25,6 +26,8 @@ namespace DrakeLambert.Peerra.Data
 
         public void Seed()
         {
+            _context.Database.Migrate();
+
             if (_context.Topics.Any())
             {
                 return;

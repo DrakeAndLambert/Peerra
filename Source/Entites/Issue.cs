@@ -25,6 +25,6 @@ namespace DrakeLambert.Peerra.Entities
 
         public List<HelpRequest> HelpRequests { get; set; }
 
-        public int? UnseenHelpRequestsCount => HelpRequests?.Count(hr => hr.Status == HelpRequestStatus.Responded && !hr.HasBeenViewed);
+        public int UnseenHelpRequestsCount => HelpRequests?.Count(hr => hr.Status == HelpRequestStatus.Responded && !hr.HasBeenViewed) ?? 0;
     }
 }

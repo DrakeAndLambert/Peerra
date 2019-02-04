@@ -24,5 +24,7 @@ namespace DrakeLambert.Peerra.Entities
         public ApplicationUser Owner { get; set; }
 
         public List<HelpRequest> HelpRequests { get; set; }
+
+        public int UnseenHelpRequestsCount => HelpRequests?.Count(helpRequest => !helpRequest.HasBeenViewed) ?? 0;
     }
 }

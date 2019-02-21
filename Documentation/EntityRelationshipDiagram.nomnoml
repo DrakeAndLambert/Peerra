@@ -1,17 +1,39 @@
-[Skill] - [Related To]
-[Related To] -> [Skill]
+[ApplicationUser |
+Username
+Email
+]
 
-[User] +- [Has Experience With]
-[Has Experience With] -> [Skill]
-[User] +- [Is Mentor of]
-[Is Mentor of] -> [Connection]
-[User] +- [Is Mentoree of]
-[Is Mentoree of] -> [Connection]
 
-[Connection] +- [Has Common]
-[Has Common] -> [Skill]
+[Issue |
+Title
+Description
+IsSolved
+TopicId
+OwnerId
+]
+[Issue] <-+ [Topic]
+[Issue] <-+ [ApplicationUser]
 
-[User] +- [Is Requesting]
-[Is Requesting] -> [Connection Request]
-[Connection Request] +- [Is Looking For]
-[Is Looking For] -> [Skill]
+[HelpRequest |
+Status
+HasBeenViewed
+Message
+IssueId
+HelperId
+]
+[HelpRequest
+]
+
+
+[Topic |
+Title
+Description
+IsLeaf
+ParentId
+OwnerId
+]
+
+[UserTopic |
+UserId
+TopicId
+]

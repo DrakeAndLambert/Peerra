@@ -3,37 +3,32 @@ Username
 Email
 ]
 
-
 [Issue |
 Title
 Description
 IsSolved
-TopicId
-OwnerId
 ]
 [Issue] <-+ [Topic]
-[Issue] <-+ [ApplicationUser]
+[Issue] <- [<note>Has Submitted]
+[<note>Has Submitted] -+ [ApplicationUser]
 
 [HelpRequest |
 Status
 HasBeenViewed
 Message
-IssueId
-HelperId
 ]
-[HelpRequest
-]
-
+[HelpRequest] <-+ [Issue]
+[HelpRequest] <- [<note>Is Helper For]
+[<note>Is Helper For]-+ [ApplicationUser]
 
 [Topic |
 Title
 Description
 IsLeaf
-ParentId
-OwnerId
 ]
-
-[UserTopic |
-UserId
-TopicId
-]
+[Topic] +- [<note> Has Children]
+[<note> Has Children] -> [Topic]
+[ApplicationUser] +- [<note>Is Creator Of]
+[<note>Is Creator Of] -> [Topic]
+[ApplicationUser] +- [<note>Has Knowledge In]
+[<note>Has Knowledge In] -> [Topic]

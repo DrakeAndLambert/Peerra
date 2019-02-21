@@ -55,6 +55,13 @@ namespace DrakeLambert.Peerra.Pages.Issues
                 return RedirectToPage("/NotFound", new { message = "Your issue may have been removed or moved. Return home to view all your issues." });
             }
 
+            foreach (var response in Responses)
+            {
+                response.HasBeenViewed = true;
+            }
+
+            await _context.SaveChangesAsync();
+
             return Page();
         }
 

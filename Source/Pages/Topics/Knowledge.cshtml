@@ -1,0 +1,34 @@
+@page
+@{
+ViewData["Title"] = "Topic Knowledge";
+}
+<h1>Add Your Knowledge</h1>
+
+<p>
+    Mark topics that you can provide assistance for. As you check them off, you'll be shown more specific topics.
+</p>
+
+<hr>
+
+<ul id="topics">
+</ul>
+
+<script>
+    fetch('/api/topicknowledge/roottopics')
+        .then(response => {
+            return response.json();
+        })
+        .then(rootTopics => {
+            const topicsList = document.getElementById('topics');
+            rootTopics.forEach(topic => {
+                topicsList.appendChild(topicBox(topic));
+            });
+        });
+
+    function topicBox(topic) {
+        const topicListItem = document.createElement('li');
+        topicListItem.innerText = topic.title + ': ' + topic.description;
+        topicListItem.appendChild(document.createElement('ul'));
+        return topicListItem;
+    }
+</script>

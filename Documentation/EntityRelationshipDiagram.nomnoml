@@ -26,8 +26,8 @@ Title
 Description
 IsLeaf
 ]
-[Topic] +- [<note> Has Children]
-[<note> Has Children] -> [Topic]
+[Topic] +- [<note> Has Sub-Topics]
+[<note> Has Sub-Topics] -> [Topic]
 [ApplicationUser] +- [<note>Is Creator Of]
 [<note>Is Creator Of] -> [Topic]
 [ApplicationUser] +- [<note>Has Knowledge In]

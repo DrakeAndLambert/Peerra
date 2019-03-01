@@ -18,7 +18,7 @@ Id = Model.ParentTopic.Id
 </p>
 <hr class="mt-0">
 @if (Model.ChildTopics.Count() == 0) {
-<h4>@Model.ParentTopic.Title doesn't have any sub-topics yet.</h4>
+<h4 class="mb-3">@Model.ParentTopic.Title doesn't have any sub-topics yet.</h4>
 <partial name="Topics/_TopicOptions" for="@newTopic" />
 }
 else {

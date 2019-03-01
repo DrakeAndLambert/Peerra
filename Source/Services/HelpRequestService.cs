@@ -19,6 +19,12 @@ namespace DrakeLambert.Peerra.Services
             _logger = logger;
         }
 
+        /*
+        pop
+        visit
+        enqueue children
+         */
+         
         public async Task RequestHelpAsync(Issue issue)
         {
             await _context.Entry(issue).Collection(i => i.HelpRequests).LoadAsync();

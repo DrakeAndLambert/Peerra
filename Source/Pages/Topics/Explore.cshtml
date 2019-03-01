@@ -3,6 +3,12 @@
 @model ExploreModel
 @{
 ViewData["Title"] = "Topic Explorer";
+var newTopic = new Topic
+{
+Title = "Submit Your Issue in " + Model.ParentTopic.Title,
+Description = "For when your issue doesn't fit any of the sub-topics above.",
+Id = Model.ParentTopic.Id
+};
 }
 
 <h1>@Model.ParentTopic.Title</h1>
@@ -13,8 +19,7 @@ ViewData["Title"] = "Topic Explorer";
 <hr class="mt-0">
 @if (Model.ChildTopics.Count() == 0) {
 <h4>@Model.ParentTopic.Title doesn't have any sub-topics yet.</h4>
-<!-- <p>You can <a asp-page="/Topics/New" asp-route-id="@Model.ParentTopic.Id">make your own</a> or <a asp-page="/Issues/New" asp-route-id="@Model.ParentTopic.Id">get help with @Model.ParentTopic.Title directly</a>.</p> -->
-<p>You can <a asp-page="/Issues/New" asp-route-id="@Model.ParentTopic.Id">get help with @Model.ParentTopic.Title directly</a> or go back to explore different topics.</p>
+<partial name="Topics/_TopicOptions" for="@newTopic" />
 }
 else {
 <div class="form-inline justify-content-between mb-2">
@@ -22,18 +27,12 @@ else {
     <input type="text" class="form-control w-auto mb-2" placeholder="Filter..." oninput="filterCards(this.value);" onkeydown="filterCards(this.value);">
 </div>
 <partial name="Topics/_Cards" for="ChildTopics" />
-}
+
 <hr class="mt-0">
+
 <h4 class="mb-3">Can't Narrow Down Your Issue?</h4>
-@{
-var newTopic = new Topic
-{
-Title = "Submit Your Issue in " + Model.ParentTopic.Title,
-Description = "For when your issue doesn't fit any of the sub-topics above.",
-Id = Model.ParentTopic.Id
-};
-}
 <partial name="Topics/_TopicOptions" for="@newTopic" />
+}
 
 @section Scripts {
 <script>

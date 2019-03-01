@@ -1,8 +1,9 @@
 @page
+@model KnowledgeModel
 @{
 ViewData["Title"] = "Topic Knowledge";
 }
-<h1>Add Your Knowledge</h1>
+<h1>Add Your Knowledge: <span class="text-success">Auto-Saving...</span></h1>
 
 <p>
     Mark topics that you can provide assistance for. As you check them off, you'll be shown more specific topics.
@@ -14,21 +15,86 @@ ViewData["Title"] = "Topic Knowledge";
 </ul>
 
 <script>
-    fetch('/api/topicknowledge/roottopics')
-        .then(response => {
-            return response.json();
-        })
-        .then(rootTopics => {
-            const topicsList = document.getElementById('topics');
-            rootTopics.forEach(topic => {
-                topicsList.appendChild(topicBox(topic));
-            });
+    const apiPath = (rest) => '/api/topicknowledge/' + rest;
+
+    const getRootTopics = () => fetch(apiPath('roottopics')).then(response => response.json());
+    const getSubTopics = (parentId) => fetch(apiPath(`topics/${parentId}`)).then(response => response.json());
+
+    const registerKnowledge = (topicId) => {
+        fetch(apiPath(`register/${topicId}`), { method: 'POST' });
+    };
+
+    const unregisterKnowledge = (topicId) => {
+        fetch(apiPath(`unregister/${topicId}`), { method: 'POST' });
+    };
+
+    const getKnowledgeOfTopic = (topicId) => {
+        return fetch(apiPath(`has/${topicId}`)).then(response => response.json());
+    };
+
+    const topicBoxChecked = (topicBox) => {
+        registerKnowledge(topicBox.id);
+
+        const subTopicList = topicBox.children[2];
+        getSubTopics(topicBox.id)
+            .then(subTopics => populateTopicList(subTopics, subTopicList));
+    };
+
+    const topicBoxUnchecked = (topicBox) => {
+        unregisterKnowledge(topicBox.id);
+
+        const subTopicList = topicBox.children[2];
+        const subTopicListItems = [...subTopicList.children];
+        subTopicListItems.forEach(subTopicListItem => topicBoxUnchecked(subTopicListItem));
+        while (subTopicList.firstChild) {
+            subTopicList.removeChild(subTopicList.firstChild);
+        }
+    };
+
+    const createTopicListItem = (topic) => {
+        const topicListItem = document.createElement('li');
+        topicListItem.id = topic.id;
+
+        const checkBox = document.createElement('input');
+        checkBox.type = 'checkbox';
+
+        const subTopicList = document.createElement('ul');
+
+        getKnowledgeOfTopic(topic.id).then(hasKnowledge => {
+            if (hasKnowledge) {
+                checkBox.checked = true;
+                getSubTopics(topic.id)
+                    .then(subTopics => populateTopicList(subTopics, subTopicList));
+            }
         });
 
-    function topicBox(topic) {
-        const topicListItem = document.createElement('li');
-        topicListItem.innerText = topic.title + ': ' + topic.description;
-        topicListItem.appendChild(document.createElement('ul'));
+        checkBox.addEventListener('input', () => {
+            if (checkBox.checked) {
+                topicBoxChecked(topicListItem);
+            } else {
+                topicBoxUnchecked(topicListItem);
+            }
+        });
+        const label = document.createElement('span');
+        label.innerText = topic.title + ': ' + topic.description;
+
+        topicListItem.appendChild(checkBox);
+        topicListItem.appendChild(label);
+        topicListItem.appendChild(subTopicList);
+
         return topicListItem;
-    }
+    };
+
+    const populateTopicList = (subTopics, topicList) => {
+        subTopics.forEach(topic => {
+            topicList.appendChild(createTopicListItem(topic));
+        });
+    };
+
+    // Start
+
+    // Fill in root topics
+    const topicListRoot = document.getElementById('topics');
+    getRootTopics()
+        .then(subTopics => populateTopicList(subTopics, topicListRoot));
 </script>

@@ -18,7 +18,7 @@ namespace DrakeLambert.Peerra.Data
 
     public class TopicOption
     {
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         public string Title { get; set; }
 
@@ -32,7 +32,7 @@ namespace DrakeLambert.Peerra.Data
         {
             return new Topic
             {
-                Id = topicOption.Id,
+                Id = topicOption.Id.HasValue ? topicOption.Id : Guid.Empty,
                 Title = topicOption.Title,
                 Description = topicOption.Description,
                 Children = topicOption.Children?.Select(io => (Topic)io).ToList(),

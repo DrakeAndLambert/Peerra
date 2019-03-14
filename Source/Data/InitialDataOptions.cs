@@ -9,6 +9,8 @@ namespace DrakeLambert.Peerra.Data
         public TopicOption[] Topics { get; set; }
 
         public UserOption[] Users { get; set; }
+
+        public bool OverwriteTopics { get; set; }
     }
 
     public class UserOption
@@ -32,7 +34,7 @@ namespace DrakeLambert.Peerra.Data
         {
             return new Topic
             {
-                Id = topicOption.Id.HasValue ? topicOption.Id.Value : Guid.Empty,
+                Id = topicOption.Id.HasValue ? topicOption.Id.Value : Guid.NewGuid(),
                 Title = topicOption.Title,
                 Description = topicOption.Description,
                 Children = topicOption.Children?.Select(io => (Topic)io).ToList(),

@@ -32,44 +32,46 @@ namespace DrakeLambert.Peerra.Data
                 _context.Database.Migrate();
             }
 
-            if (_context.Topics.Any())
+            if (_initialData.OverwriteTopics)
             {
-                return;
+                _context.Topics.RemoveRange(_context.Topics);
+
+                _logger.LogInformation("Adding {count} top level topics.", _initialData.Topics.Length);
+
+                _context.Topics.AddRange(_initialData.Topics.Select(io => (Topic)io));
+                _context.SaveChanges();
             }
 
-            _context.Topics.RemoveRange(_context.Topics);
-
-            _logger.LogInformation("Adding {count} top level topics.", _initialData.Topics.Length);
-
-            _context.Topics.AddRange(_initialData.Topics.Select(io => (Topic)io));
-            _context.SaveChanges();
-
-            foreach (var user in _initialData.Users)
+            if (!_context.Users.Any())
             {
-                var applicationUser = new ApplicationUser
+                foreach (var user in _initialData.Users)
                 {
-                    UserName = user.UserName,
-                    Email = $"{user.UserName}@email.com",
-                    EmailConfirmed = true
-                };
-                _userManager.CreateAsync(applicationUser, "Password1!").GetAwaiter().GetResult();
-            }
-
-            var random = new Random();
-            foreach (var user in _context.Users)
-            {
-                var skillCount = random.Next(5, 10);
-                var skillSet = new HashSet<Guid>();
-                for (int i = 0; i < skillCount; i++)
-                {
-                    var topic = _context.Topics.OrderBy(iss => iss.Id).Skip(random.Next(0, _context.Topics.Count() - 1)).First();
-                    skillSet.Add(topic.Id);
+                    var applicationUser = new ApplicationUser
+                    {
+                        UserName = user.UserName,
+                        Email = $"{user.UserName}@email.com",
+                        EmailConfirmed = true
+                    };
+                    _userManager.CreateAsync(applicationUser, "Password1!").GetAwaiter().GetResult();
                 }
-                _context.UserTopics.AddRange(skillSet
-                    .Select(topicId => new UserTopic { UserId = user.Id, TopicId = topicId })
-                );
+
+                var random = new Random();
+                foreach (var user in _context.Users)
+                {
+                    var skillCount = random.Next(5, 10);
+                    var skillSet = new HashSet<Guid>();
+                    for (int i = 0; i < skillCount; i++)
+                    {
+                        var topic = _context.Topics.OrderBy(iss => iss.Id).Skip(random.Next(0, _context.Topics.Count() - 1)).First();
+                        skillSet.Add(topic.Id);
+                    }
+                    _context.UserTopics.AddRange(skillSet
+                        .Select(topicId => new UserTopic { UserId = user.Id, TopicId = topicId })
+                    );
+                }
+                _context.SaveChanges();
             }
-            _context.SaveChanges();
+
         }
     }
 }

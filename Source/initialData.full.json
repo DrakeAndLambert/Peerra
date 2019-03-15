@@ -23,17 +23,17 @@
                             "Description": "",
                             "IsLeaf": false,
                             "Children": null,
-                            "Id": "null"
+                            "Id": null
                         },
                         {
                             "Title": "Meal Plans",
                             "Description": "",
                             "IsLeaf": false,
                             "Children": null,
-                            "Id": "null"
+                            "Id": null
                         }
                     ],
-                    "Id": "null"
+                    "Id": null
                 },
                 {
                     "Title": "Transportation",
@@ -45,24 +45,24 @@
                             "Description": "",
                             "IsLeaf": false,
                             "Children": null,
-                            "Id": "null"
+                            "Id": null
                         },
                         {
                             "Title": "Tiger Trails",
                             "Description": "",
                             "IsLeaf": false,
                             "Children": null,
-                            "Id": "null"
+                            "Id": null
                         }
                     ],
-                    "Id": "null"
+                    "Id": null
                 },
                 {
                     "Title": "Recreation",
                     "Description": "",
                     "IsLeaf": false,
                     "Children": null,
-                    "Id": "null"
+                    "Id": null
                 }
             ],
             "Id": "31f6b2eb-16ca-438f-800c-11971c963d7c"
@@ -3445,14 +3445,14 @@
                             "Id": null
                         }
                     ],
-                    "Id": "null"
+                    "Id": null
                 },
                 {
                     "Title": "LSU Food Pantry",
                     "Description": "",
                     "IsLeaf": false,
                     "Children": null,
-                    "Id": "null"
+                    "Id": null
                 }
             ],
             "Id": "6657329e-ea16-4ed2-97c4-6319b6e3438f"
@@ -4491,21 +4491,21 @@
                     "Description": "",
                     "IsLeaf": false,
                     "Children": null,
-                    "Id": "null"
+                    "Id": null
                 },
                 {
                     "Title": "Internships",
                     "Description": "",
                     "IsLeaf": false,
                     "Children": null,
-                    "Id": "null"
+                    "Id": null
                 },
                 {
                     "Title": "Local Businesses",
                     "Description": "",
                     "IsLeaf": false,
                     "Children": null,
-                    "Id": "null"
+                    "Id": null
                 }
             ],
             "Id": "d7248573-19df-4435-8cc2-db8d149d1dd9"

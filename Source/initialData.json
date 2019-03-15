@@ -2,1023 +2,6 @@
     "Overwrite": false,
     "Topics": [
         {
-            "Title": "Academic Life",
-            "Description": "When you're having trouble dealing with courses, professors, and more.",
-            "IsLeaf": false,
-            "Children": [
-                {
-                    "Title": "Course Work",
-                    "Description": "For problems with course material, or general questions.",
-                    "IsLeaf": false,
-                    "Children": [
-                        {
-                            "Title": "Accounting",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Actuarial Science",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "DigitalAdvertising",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "African and African American Studies",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Agribusiness Finance",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Agricultural Business",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Agricultural Pest Management/ Plant Pathology",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Agricultural Pest Management/Entomology",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Agriculture and Extension Education",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "American Government and Politics",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Animal Science and Technology",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Animal Sciences",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Anthropology",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Apparel Design",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Applied Coastal Environmental Science",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Architecture",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Art History",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "DigitalArt",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Graphic DesignArt",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "StudioArt",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Arts Administration",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Astronomy",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Athletic Training",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Film and Television",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Finance",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Fisheries and Aquaculture",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Fitness Studies",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Food Industry Management",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Food Science and Technology",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Forest Enterprise",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Forest Resource Management",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Forestry",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "French",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "French Secondary Education",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "General Business",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Geographic Environmental Studies",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Geographic Information Science",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Geography",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Geology",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Geophysics",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Graphic Design",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Health and Physical Education Teacher Certification",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "History",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "History Secondary Education",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "ArtHistory",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Horticulture Science",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Human Movement Science",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Human Resource Education",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Human Resource Management",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Industrial Engineering",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Information Systems and Decision Sciences",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Information Technology",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Interior Design",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Agricultural Business",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Management",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Politics and Law",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Studies: Africa",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Studies: Asia",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Studies: Environment and Development",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Studies: Europe",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Studies: Global Cultures",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Studies: Global Diplomacy",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Studies: Global Studies",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Studies: Latin America",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Studies: Middle East",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "International Trade and Finance",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Jazz",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Journalism",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Landscape and Turf Management",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Landscape Architecture",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Law and Legal Systems",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Law, Ethics, and Social Justice",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Pre-Law",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Leadership Development",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "SportLeadership",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "StrategicLeadership",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Liberal Arts",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Literature",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Natural Resource Ecology and Management",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Pre-Nursing",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Nutrition and Food Sciences",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Nutrition, Health, and Society",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Nutritional Sciences/Pre-Medicine",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Pre-Occupational Therapy",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Organ (Music)",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Race and Politics",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Religious Studies",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Rhetoric, Writing, and Culture",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Rural Development",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "ProfessionalSales",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "ActuarialScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "AnimalScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "BiologicalScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Coastal EnvironmentalScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "ComputerScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "CropScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Data and AnalyticsScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Disaster and ManagementScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Environmental and ResearchScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Food and TechnologyScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Geographic InformationScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "HorticultureScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Human MovementScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Nutrition and FoodScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "PoultryScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "SoilScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "TextileScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "WetlandScience",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Screen Arts",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Sculpture",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Social Work",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Sociology",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Software Engineering",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Soil Science",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Spanish",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Spanish Secondary Education",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Special Education (Grades 1-5)",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Sport Administration",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Sport Commerce",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Sport Leadership",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Sport Studies",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Strategic Leadership",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "String Instruments",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Studio Art",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Sustainable Production Systems",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Teaching in Formal Agriculture and Extension Education",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Textile Science",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Textiles, Apparel, and Merchandising",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Theatre",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Theatre Design/Technology",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Theatre Performance",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Turf and Landscape Management",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Urban Entomology",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Pre-Veterinary Medicine",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Voice (Music)",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Wetland Science",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Wildlife Ecology",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Wildlife Habitat Conservation",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Women's and Gender Studies",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "Woodwind Instruments",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        },
-                        {
-                            "Title": "CreativeWriting",
-                            "Description": null,
-                            "IsLeaf": false,
-                            "Children": [],
-                            "Id": null
-                        }
-                    ],
-                    "Id": "fd180cf2-409d-40c4-99a8-d617b508583a"
-                },
-                {
-                    "Title": "Scheduling",
-                    "Description": "For questions about how scheduling works, or recommendations on what courses to choose.",
-                    "IsLeaf": false,
-                    "Children": null,
-                    "Id": "817bd790-a24a-430d-8138-ca63573f2b7b"
-                },
-                {
-                    "Title": "Professors",
-                    "Description": "When you're having issues with a professor or want to know more about them.",
-                    "IsLeaf": false,
-                    "Children": null,
-                    "Id": "92089cf7-bea3-45de-a586-504c2d4517e7"
-                }
-            ],
-            "Id": "8a3dc3d9-1df0-4844-b729-d3e308417b5c"
-        },
-        {
             "Title": "Campus Life",
             "Description": "On campus housing, dining, transportation, and the like.",
             "IsLeaf": false,
@@ -1034,21 +17,6 @@
             "Id": "31f6b2eb-16ca-438f-800c-11971c963d7c"
         },
         {
-            "Title": "Off Campus Life",
-            "Description": "Careers, local restaurants, and everything in between.",
-            "IsLeaf": false,
-            "Children": [
-                {
-                    "Title": "Careers",
-                    "Description": "",
-                    "IsLeaf": false,
-                    "Children": null,
-                    "Id": "ce0da378-4c9e-4b0d-9bf6-16b165752717"
-                }
-            ],
-            "Id": "d7248573-19df-4435-8cc2-db8d149d1dd9"
-        },
-        {
             "Title": "University Affairs",
             "Description": "Financial aid, clubs... really anything outside of class.",
             "IsLeaf": false,
@@ -1062,6 +30,1038 @@
                 }
             ],
             "Id": "6657329e-ea16-4ed2-97c4-6319b6e3438f"
+        },
+        {
+            "Title": "Academic Life",
+            "Description": "When you're having trouble dealing with courses, professors, and more.",
+            "IsLeaf": false,
+            "Children": [
+                {
+                    "Title": "Professors",
+                    "Description": "When you're having issues with a professor or want to know more about them.",
+                    "IsLeaf": false,
+                    "Children": null,
+                    "Id": "92089cf7-bea3-45de-a586-504c2d4517e7"
+                },
+                {
+                    "Title": "Scheduling",
+                    "Description": "For questions about how scheduling works, or recommendations on what courses to choose.",
+                    "IsLeaf": false,
+                    "Children": null,
+                    "Id": "817bd790-a24a-430d-8138-ca63573f2b7b"
+                },
+                {
+                    "Title": "Course Work",
+                    "Description": "For problems with course material, or general questions.",
+                    "IsLeaf": false,
+                    "Children": [
+                        {
+                            "Title": "Art History",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "41b86346-2d33-4978-8bf5-01b04a721192"
+                        },
+                        {
+                            "Title": "Forest Enterprise",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "da9ddedd-a3d1-4505-9e78-032d9f66754a"
+                        },
+                        {
+                            "Title": "Studio Art",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "fe995682-7417-46cf-b03e-05dd7eb0d5d2"
+                        },
+                        {
+                            "Title": "Accounting",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "510b9b1c-3be6-4daa-b833-06e0712e13c6"
+                        },
+                        {
+                            "Title": "Athletic Training",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "a889ee2d-c664-43b4-8030-07a5e5a5e730"
+                        },
+                        {
+                            "Title": "Wildlife Habitat Conservation",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "184f5984-ec50-48e9-8021-0b29fda24979"
+                        },
+                        {
+                            "Title": "BiologicalScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "a7e98db0-bfdd-423b-9124-0ec0c0dfa016"
+                        },
+                        {
+                            "Title": "International Politics and Law",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "54c4ee4f-37cd-4971-aec2-0ee6982d4f58"
+                        },
+                        {
+                            "Title": "Law, Ethics, and Social Justice",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "628c0b97-3fea-4612-bd15-0facdc598684"
+                        },
+                        {
+                            "Title": "International Studies: Environment and Development",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "0060d61c-2991-4bae-b1cf-1218ea7dd958"
+                        },
+                        {
+                            "Title": "History Secondary Education",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "af6e9343-d40e-4dbb-a0f0-1650531ef62d"
+                        },
+                        {
+                            "Title": "Voice (Music)",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "e731c56d-8eaf-49d6-8e48-192bda914a45"
+                        },
+                        {
+                            "Title": "Geographic InformationScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "a5a802b1-a2d8-4be2-bf33-196885b6f70f"
+                        },
+                        {
+                            "Title": "Sport Studies",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "c01d641a-423b-4d11-94c5-19b210d72012"
+                        },
+                        {
+                            "Title": "Nutritional Sciences/Pre-Medicine",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "52670c60-594b-4749-8292-1d782c560337"
+                        },
+                        {
+                            "Title": "Pre-Veterinary Medicine",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "68debd81-f94f-4f84-a031-210232b10b23"
+                        },
+                        {
+                            "Title": "Soil Science",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "691a1c18-b4ee-4694-8c35-22d5f5639096"
+                        },
+                        {
+                            "Title": "PoultryScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "e30ebc53-535a-4a33-8cc6-234c6eff44c4"
+                        },
+                        {
+                            "Title": "Agriculture and Extension Education",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "0de8ef33-4ec7-4172-8e7f-25da28c2ab5b"
+                        },
+                        {
+                            "Title": "Jazz",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "0e110c76-d710-4703-a87a-26c2057df9c1"
+                        },
+                        {
+                            "Title": "Leadership Development",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "11763e81-ca32-4a94-9039-28b5876676ac"
+                        },
+                        {
+                            "Title": "French",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "7fc4bf82-8387-4b10-bdae-2906e035c834"
+                        },
+                        {
+                            "Title": "Geographic Environmental Studies",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "c8095ec5-fea2-4662-baae-2d8c727a845c"
+                        },
+                        {
+                            "Title": "SportLeadership",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "bc7ea83e-6c6b-4e2c-b9be-30f38312adda"
+                        },
+                        {
+                            "Title": "Spanish Secondary Education",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "d9b4d768-23d2-4f62-8501-340163b39754"
+                        },
+                        {
+                            "Title": "Human Resource Management",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "46d4769f-a182-4648-9cc9-35bc65e469c2"
+                        },
+                        {
+                            "Title": "International Studies: Africa",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "fec26137-4e63-4b85-8be4-36477f431f09"
+                        },
+                        {
+                            "Title": "ArtHistory",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "6c3e731b-498a-4616-8f70-372a50abb49f"
+                        },
+                        {
+                            "Title": "String Instruments",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "76638ee5-fd70-4cb0-b616-373b03cab473"
+                        },
+                        {
+                            "Title": "StudioArt",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "a31b4369-a900-435d-9b48-3773a9f9ca94"
+                        },
+                        {
+                            "Title": "Wildlife Ecology",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "0685100b-da7f-42fb-bf58-392bd8f2fe80"
+                        },
+                        {
+                            "Title": "Turf and Landscape Management",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "06a5ffe5-50c8-4773-b53f-3ab074693b51"
+                        },
+                        {
+                            "Title": "Film and Television",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "c3d55e00-144a-4c2c-927d-3e2d264b550f"
+                        },
+                        {
+                            "Title": "Woodwind Instruments",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "8aadd575-9fbb-4bc2-88a2-3ee09364648b"
+                        },
+                        {
+                            "Title": "Horticulture Science",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "d458f166-1682-4706-94f9-43ee5ddffe91"
+                        },
+                        {
+                            "Title": "International Studies: Global Studies",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "25cf5239-fb19-43af-b18a-45187d4a0394"
+                        },
+                        {
+                            "Title": "Rhetoric, Writing, and Culture",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "dd906e8b-f00d-4a53-b73b-4691fcae0702"
+                        },
+                        {
+                            "Title": "Screen Arts",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "4408e1e3-6d07-42fc-b088-49c26146f1a6"
+                        },
+                        {
+                            "Title": "Nutrition and Food Sciences",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "2f49ad3c-288c-491a-88fd-4b106480cf0a"
+                        },
+                        {
+                            "Title": "Human MovementScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "a82b16c5-ac48-4762-8109-4bae54bb8f49"
+                        },
+                        {
+                            "Title": "ComputerScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "0e3a5424-4b9e-4ac5-a3de-4d55dfc4af56"
+                        },
+                        {
+                            "Title": "Sport Administration",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "db72f23c-bb2e-4682-9e2e-517ccec5c778"
+                        },
+                        {
+                            "Title": "Pre-Occupational Therapy",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "cd0aea20-e637-4aa3-8c8c-518e36bb4a3e"
+                        },
+                        {
+                            "Title": "History",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "1801075d-29ae-4abf-b6ca-52ea669464bc"
+                        },
+                        {
+                            "Title": "Agricultural Business",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "83ae68c6-4cdb-4c67-b7f3-532b3a9acd54"
+                        },
+                        {
+                            "Title": "TextileScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "0bbbade8-15f6-4dc3-b3a0-5333b19baeed"
+                        },
+                        {
+                            "Title": "Human Movement Science",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "efd9e62d-327e-4032-834b-5448c34b2e98"
+                        },
+                        {
+                            "Title": "Sociology",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "47b666c2-b6cf-4695-bd74-55c562cfc5fa"
+                        },
+                        {
+                            "Title": "Pre-Nursing",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "a01327b5-f743-4ac2-97b7-5855a4afb01e"
+                        },
+                        {
+                            "Title": "Anthropology",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "71294c85-3fa3-43ba-9040-5c0c1ca11a2e"
+                        },
+                        {
+                            "Title": "Food Science and Technology",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "f4aaf0bb-bbf3-44dd-af47-5ca8468ca26f"
+                        },
+                        {
+                            "Title": "Theatre Performance",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "89f47519-f4d3-4abe-af50-5f1e75fa3887"
+                        },
+                        {
+                            "Title": "Geology",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "524b6149-7bbf-49be-b8c4-61a9e1bbd3a8"
+                        },
+                        {
+                            "Title": "Sculpture",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "f1b62387-08c0-4351-b869-630df5634ddc"
+                        },
+                        {
+                            "Title": "Religious Studies",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "dc837c2b-b11c-4c76-adb5-6c87c0de347d"
+                        },
+                        {
+                            "Title": "Sustainable Production Systems",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "03c9d36c-7d9c-4139-9f77-6eb3393cfe7f"
+                        },
+                        {
+                            "Title": "Animal Science and Technology",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "d396c95d-d9fa-439c-bb05-6f5181b02d18"
+                        },
+                        {
+                            "Title": "Forestry",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "a279fb02-c7ee-4683-9e2a-6f6ab276f453"
+                        },
+                        {
+                            "Title": "StrategicLeadership",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "660c8f14-b083-4b18-8c3b-7249a4d6e977"
+                        },
+                        {
+                            "Title": "Wetland Science",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "99f69015-d2dd-443f-9e21-7338c9895f46"
+                        },
+                        {
+                            "Title": "International Studies: Europe",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "ffa5780c-22af-4752-937e-7455ee25e18f"
+                        },
+                        {
+                            "Title": "Animal Sciences",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "53ccf041-fda6-4929-bbc8-74923c3074d5"
+                        },
+                        {
+                            "Title": "International Studies: Asia",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "090991a9-97e9-4bf1-bc43-78b74c2ff542"
+                        },
+                        {
+                            "Title": "CropScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "16713c9a-a0e3-4d76-9942-7c4f323d3038"
+                        },
+                        {
+                            "Title": "Food and TechnologyScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "3f1d9787-3b02-457f-bba8-8119c4052175"
+                        },
+                        {
+                            "Title": "Landscape Architecture",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "2c03ce73-b6e6-4548-b192-8178c430e49a"
+                        },
+                        {
+                            "Title": "Urban Entomology",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "c7110315-aaa2-4a06-8db6-823829417634"
+                        },
+                        {
+                            "Title": "Information Systems and Decision Sciences",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "41066063-c8cb-43d9-9d6c-82ba98929f91"
+                        },
+                        {
+                            "Title": "HorticultureScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "afe78e19-07e6-400e-8fd2-84c6ee24ad6e"
+                        },
+                        {
+                            "Title": "International Agricultural Business",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "8cd0efff-25c1-42a1-abd2-84d13d47c03a"
+                        },
+                        {
+                            "Title": "Rural Development",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "41a3f6c5-0438-4c30-b488-86777ebde7b8"
+                        },
+                        {
+                            "Title": "International Studies: Middle East",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "f48cbc59-8323-459e-a61f-87d04006ece4"
+                        },
+                        {
+                            "Title": "Human Resource Education",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "c15d005e-3c5e-4e78-a96b-87f7d647f338"
+                        },
+                        {
+                            "Title": "AnimalScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "90c93711-98c7-4d0f-bce3-88c5f5f12b22"
+                        },
+                        {
+                            "Title": "Apparel Design",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "68796f61-3a08-43f4-9521-891a71ad789e"
+                        },
+                        {
+                            "Title": "Textile Science",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "3b2f08ce-2bb6-4a15-b47b-8a188a414e7e"
+                        },
+                        {
+                            "Title": "Law and Legal Systems",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "f68004d2-a770-4e7d-a6b8-8a46f6b66ffc"
+                        },
+                        {
+                            "Title": "Nutrition, Health, and Society",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "8ef4ee22-8b95-4054-a630-8e3d48af2241"
+                        },
+                        {
+                            "Title": "French Secondary Education",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "7b1d43d0-079d-4fcf-add4-8ef4227c425a"
+                        },
+                        {
+                            "Title": "Astronomy",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "9efcdc09-ea20-4a43-9f8b-9008a85376b3"
+                        },
+                        {
+                            "Title": "Coastal EnvironmentalScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "9c2b6fd4-c5b1-4d37-b116-904ba932c9ab"
+                        },
+                        {
+                            "Title": "Applied Coastal Environmental Science",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "ef94773b-a8f9-48ca-a115-91e99637b372"
+                        },
+                        {
+                            "Title": "Social Work",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "22441f6c-7c63-4ea1-a623-93f12f723634"
+                        },
+                        {
+                            "Title": "International Studies: Global Cultures",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "d2669e0d-83e1-4a03-95c5-94acd2407f66"
+                        },
+                        {
+                            "Title": "Information Technology",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "f8c3c98f-e396-4ac5-a651-9667f7629edf"
+                        },
+                        {
+                            "Title": "Software Engineering",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "b0b11d3f-738e-429f-828d-9b23d58360bc"
+                        },
+                        {
+                            "Title": "Agricultural Pest Management/Entomology",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "bd09ce42-a682-40f4-84fe-9b2d3e4a1c9d"
+                        },
+                        {
+                            "Title": "Data and AnalyticsScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "2854436a-57d7-418d-9b87-9b77195f2082"
+                        },
+                        {
+                            "Title": "Environmental and ResearchScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "a5506b2c-563d-4bdf-8dd9-9d163e139970"
+                        },
+                        {
+                            "Title": "Food Industry Management",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "a0662d70-8a22-45da-a5c6-9eaa1026e5a5"
+                        },
+                        {
+                            "Title": "WetlandScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "257846ee-aa62-4524-8fd2-a0facb1e2aec"
+                        },
+                        {
+                            "Title": "American Government and Politics",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "b6ff7049-10f0-4295-82ca-a2c0f5e22826"
+                        },
+                        {
+                            "Title": "International Trade and Finance",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "820521f2-effc-48a9-bb89-a6457633d9ed"
+                        },
+                        {
+                            "Title": "Liberal Arts",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "24009f06-ecc7-4973-b27a-ad8ad525bcf6"
+                        },
+                        {
+                            "Title": "Strategic Leadership",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "0754b79b-b360-4255-98f6-b2089bf7bccd"
+                        },
+                        {
+                            "Title": "Theatre Design/Technology",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "f6e1e086-9569-412c-a89e-b2826d67c464"
+                        },
+                        {
+                            "Title": "Geography",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "452ea0d0-13e5-42d5-b537-b2d82ae4c03a"
+                        },
+                        {
+                            "Title": "Teaching in Formal Agriculture and Extension Education",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "e594a79b-966d-4cac-a57d-b391eee0f9d7"
+                        },
+                        {
+                            "Title": "Architecture",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "c96251a1-b021-42c8-8d43-b3b16addf09c"
+                        },
+                        {
+                            "Title": "Finance",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "1b7b2a51-ed24-438f-bfc9-b8b70586772a"
+                        },
+                        {
+                            "Title": "Geographic Information Science",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "45cbdc3f-01f2-4d73-9b08-b9d836dd3acd"
+                        },
+                        {
+                            "Title": "Theatre",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "33a4a82b-8add-46b4-bfdf-ba39b8a312fc"
+                        },
+                        {
+                            "Title": "Sport Commerce",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "60f19684-6449-4af5-980e-bb2a39773e53"
+                        },
+                        {
+                            "Title": "Agricultural Pest Management/ Plant Pathology",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "83182c5a-3579-4c73-948c-bb982cdebbc3"
+                        },
+                        {
+                            "Title": "Forest Resource Management",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "0fbcb881-44da-46d4-b601-bdab55cffadb"
+                        },
+                        {
+                            "Title": "Agribusiness Finance",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "7fe33ec8-4e87-4012-bdfc-c00e2eb38e33"
+                        },
+                        {
+                            "Title": "General Business",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "b35bc6ad-1013-454c-9993-c3d10b460574"
+                        },
+                        {
+                            "Title": "Interior Design",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "f930fc7a-b9ab-4bc2-9e7d-c546a703b296"
+                        },
+                        {
+                            "Title": "Geophysics",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "c445fdab-8467-46f7-9eae-c7e2edc87bb0"
+                        },
+                        {
+                            "Title": "Landscape and Turf Management",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "113d1107-7455-42f4-9b7d-c8c6ac0fa302"
+                        },
+                        {
+                            "Title": "Textiles, Apparel, and Merchandising",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "23bcb3aa-c4dc-4285-9b4b-ca5d096e9ef3"
+                        },
+                        {
+                            "Title": "Special Education (Grades 1-5)",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "d6f76317-18d2-4b0b-b40e-cd19caa06eb8"
+                        },
+                        {
+                            "Title": "Graphic DesignArt",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "a71c750c-0f75-4830-8a13-cd34d59a8211"
+                        },
+                        {
+                            "Title": "Graphic Design",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "da647a5a-df9e-4653-87d5-d03ac08f6342"
+                        },
+                        {
+                            "Title": "International Studies: Global Diplomacy",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "13d854f9-4b0c-4ee2-8c26-d0ec3b1f526b"
+                        },
+                        {
+                            "Title": "Women's and Gender Studies",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "d525739e-375e-4fbd-9fbb-d326a14cec1a"
+                        },
+                        {
+                            "Title": "DigitalAdvertising",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "a43e946f-ec89-4941-adff-d40c5035977c"
+                        },
+                        {
+                            "Title": "Pre-Law",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "556e6b68-f9e0-4b85-9ce0-d9dfc672d2b6"
+                        },
+                        {
+                            "Title": "DigitalArt",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "40ba45e3-0d94-450e-827f-daa19f94abcb"
+                        },
+                        {
+                            "Title": "Race and Politics",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "1d822081-2f36-4f49-b901-dbc8658a1131"
+                        },
+                        {
+                            "Title": "Spanish",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "955c04c7-fa4b-495d-b71e-e092f1ae6a51"
+                        },
+                        {
+                            "Title": "Actuarial Science",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "2abe6e52-2519-48f5-be2f-e598a18a51cb"
+                        },
+                        {
+                            "Title": "African and African American Studies",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "55ac435d-2285-40d7-a0b2-e851dd49327e"
+                        },
+                        {
+                            "Title": "ActuarialScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "9b5945d5-8692-464e-b4ef-e8f50df152ea"
+                        },
+                        {
+                            "Title": "International Studies: Latin America",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "495f48cc-59e5-4edc-ab66-ea18f10a5fc0"
+                        },
+                        {
+                            "Title": "Fisheries and Aquaculture",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "2c2f5235-a689-40b8-9bde-ee105b45bbfc"
+                        },
+                        {
+                            "Title": "International Management",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "15c8e40a-3cfd-4a94-b851-ee51638ef5e3"
+                        },
+                        {
+                            "Title": "Disaster and ManagementScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "08472d7f-3427-4548-a513-f208cce7d36a"
+                        },
+                        {
+                            "Title": "Sport Leadership",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "32560669-ee21-4675-b6a8-f20cc7e4eba8"
+                        },
+                        {
+                            "Title": "Journalism",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "063c3be9-0ff2-4ca9-a3bd-f2ca79958d59"
+                        },
+                        {
+                            "Title": "Health and Physical Education Teacher Certification",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "4a312b55-9ded-4973-aacd-f6ef8cff3b62"
+                        },
+                        {
+                            "Title": "Fitness Studies",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "4c540443-512a-4765-8c95-f7733f6d65c2"
+                        },
+                        {
+                            "Title": "CreativeWriting",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "ac31f5ee-b0fc-4e9a-8727-f777cb5dabe2"
+                        },
+                        {
+                            "Title": "Natural Resource Ecology and Management",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "025d5265-26dd-40d2-b198-f7c23d38f62e"
+                        },
+                        {
+                            "Title": "SoilScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "8170d707-0388-43e3-aaff-f8c0ef8495dd"
+                        },
+                        {
+                            "Title": "Industrial Engineering",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "136232ff-f15c-41cc-9ac9-fa47d44eb2f0"
+                        },
+                        {
+                            "Title": "Arts Administration",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "f0289f6d-2472-4e31-b7fb-fac700c5257f"
+                        },
+                        {
+                            "Title": "Organ (Music)",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "72616520-818a-4a95-9b9d-fbe6d5d55a03"
+                        },
+                        {
+                            "Title": "ProfessionalSales",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "8b49b41d-b4c5-4c78-8818-fcdc07f3a5b9"
+                        },
+                        {
+                            "Title": "Literature",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "2d18449e-f931-41b6-a786-fd53849995b0"
+                        },
+                        {
+                            "Title": "Nutrition and FoodScience",
+                            "Description": "",
+                            "IsLeaf": false,
+                            "Children": null,
+                            "Id": "3833e43d-2710-478b-8169-ff278ad21d27"
+                        }
+                    ],
+                    "Id": "fd180cf2-409d-40c4-99a8-d617b508583a"
+                }
+            ],
+            "Id": "8a3dc3d9-1df0-4844-b729-d3e308417b5c"
+        },
+        {
+            "Title": "Off Campus Life",
+            "Description": "Careers, local restaurants, and everything in between.",
+            "IsLeaf": false,
+            "Children": [
+                {
+                    "Title": "Careers",
+                    "Description": "",
+                    "IsLeaf": false,
+                    "Children": null,
+                    "Id": "ce0da378-4c9e-4b0d-9bf6-16b165752717"
+                }
+            ],
+            "Id": "d7248573-19df-4435-8cc2-db8d149d1dd9"
         }
     ],
     "Users": [

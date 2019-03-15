@@ -35,6 +35,7 @@ namespace DrakeLambert.Peerra.Data
             if (_initialData.OverwriteTopics)
             {
                 _context.Topics.RemoveRange(_context.Topics);
+                _context.SaveChanges();
 
                 _logger.LogInformation("Adding {count} top level topics.", _initialData.Topics.Length);
 

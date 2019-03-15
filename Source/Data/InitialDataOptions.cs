@@ -10,7 +10,7 @@ namespace DrakeLambert.Peerra.Data
 
         public UserOption[] Users { get; set; }
 
-        public bool OverwriteTopics { get; set; }
+        public bool Overwrite { get; set; }
     }
 
     public class UserOption

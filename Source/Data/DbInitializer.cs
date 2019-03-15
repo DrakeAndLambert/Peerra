@@ -32,19 +32,27 @@ namespace DrakeLambert.Peerra.Data
                 _context.Database.Migrate();
             }
 
-            if (_initialData.OverwriteTopics)
+            if (_initialData.Overwrite)
             {
+                _context.RoleClaims.RemoveRange(_context.RoleClaims);
+                _context.Roles.RemoveRange(_context.Roles);
+                _context.UserClaims.RemoveRange(_context.UserClaims);
+                _context.UserLogins.RemoveRange(_context.UserLogins);
+                _context.UserRoles.RemoveRange(_context.UserRoles);
+                _context.UserTokens.RemoveRange(_context.UserTokens);
+                _context.UserTopics.RemoveRange(_context.UserTopics);
+                _context.HelpRequests.RemoveRange(_context.HelpRequests);
+                _context.Issues.RemoveRange(_context.Issues);
                 _context.Topics.RemoveRange(_context.Topics);
+                _context.Users.RemoveRange(_context.Users);
+
                 _context.SaveChanges();
 
                 _logger.LogInformation("Adding {count} top level topics.", _initialData.Topics.Length);
 
                 _context.Topics.AddRange(_initialData.Topics.Select(io => (Topic)io));
                 _context.SaveChanges();
-            }
 
-            if (!_context.Users.Any())
-            {
                 foreach (var user in _initialData.Users)
                 {
                     var applicationUser = new ApplicationUser

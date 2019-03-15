@@ -1,5 +1,5 @@
 {
-    "OverwriteTopics": true,
+    "Overwrite": true,
     "Topics": [
         {
             "Title": "Academic Life",

@@ -71,7 +71,7 @@ namespace DrakeLambert.Peerra.Pages.Issues
 
             NewIssue.OwnerId = user.Id;
 
-            NewIssue.TopicId = ParentTopic.Id;
+            NewIssue.TopicId = id;
 
             _context.Issues.Add(NewIssue);
 

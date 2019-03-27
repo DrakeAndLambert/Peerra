@@ -2,6 +2,13 @@
     "Overwrite": false,
     "Topics": [
         {
+            "Title": "Orphan",
+            "Description": "This topic is for issues that can't find a home.",
+            "Children": null,
+            "IsLeaf": false,
+            "Id": "00000000-0000-0000-0000-000000000000"
+        },
+        {
             "Title": "Campus Life",
             "Description": "On campus housing, dining, transportation, and the like.",
             "IsLeaf": false,
